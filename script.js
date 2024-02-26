@@ -59,3 +59,28 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId).style.display = 'block';
 }
+
+
+// JavaScript code to toggle button color based on dark mode
+
+// Assuming you have a variable darkMode that indicates whether dark mode is active
+const darkMode = true; // Set this variable based on your logic
+
+// Select the button element
+const navbarToggleBtn = document.getElementById('navbarToggleBtn');
+
+// Function to toggle button color based on dark mode
+function toggleButtonColor() {
+    if (darkMode) {
+        // Apply dark mode styles
+        navbarToggleBtn.style.backgroundColor = '#333'; // Set background color to dark gray
+        navbarToggleBtn.style.color = '#eee'; // Set text color to white
+    } else {
+        // Apply light mode styles
+        navbarToggleBtn.style.backgroundColor = '#fff'; // Set background color to white
+        navbarToggleBtn.style.color = '#333'; // Set text color to dark gray
+    }
+}
+
+// Call the function initially to set the button color based on the initial mode
+toggleButtonColor();
