@@ -10,6 +10,7 @@
 /* Set default font family */
 body {
     font-family: "Poppins", sans-serif;
+    background-color: black;
 }
 
 /* Smooth scrolling behavior */
