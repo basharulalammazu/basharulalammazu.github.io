@@ -404,7 +404,20 @@ section {
     }
 }
 
+/* Define animation keyframes */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 /* Apply animation to icons */
 .icon {
-    animation: bounce 1s infinite; /* Apply bouncing animation */
+    animation: float 3s ease-in-out infinite; /* Apply floating animation */
 }
