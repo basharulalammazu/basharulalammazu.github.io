@@ -75,6 +75,16 @@ nav {
     color: #007bff; /* Formal color on hover */
 }
 
+/* Light mode background color */
+.navbar-toggler-icon.light-mode {
+    background-color: #fff;
+}
+
+/* Dark mode background color */
+.navbar-toggler-icon.dark-mode {
+    background-color: #000;
+}
+
 
 a {
     color: black;
