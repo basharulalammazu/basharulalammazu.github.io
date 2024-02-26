@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Basharul Alam Mazu's Personal Website">
+      <meta name="keywords" content="Basharul Alam Mazu, Home. Portfolio, About, Education, Projects, Experience, Publication">
+      <meta name="author" content="Basharul Alam Mazu">
+      <title>Basharul Alam Mazu</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="mediaqueries.css">
+
+      <style>
+         /* Custom CSS for adjusting space between sections */
+         section {
+             padding-top: 100px; /* Adjust this value to leave space for the top navigation bar */
+             padding-bottom: 50px; /* Adjust this value to leave space for the footer */
+             margin-top: 50px; /* Compensate for the top navigation bar */
+             margin-bottom: -70px; /* Compensate for the footer */
+            display: none; /* Hide all sections by default */
+         }
+         
+         .section {
+             margin-bottom: 10px; /* Adjust this value as needed */
+             min-height: fit-content;
+         }
+
+         #home {
+             display: block; /* Display the home section by default */
+         }
+      </style>
+   </head>
+
+
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+         <div class="container">
+            <a class="navbar-brand" href="#">Basharul Alam Mazu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                   <li class="nav-item">
+                     <a class="nav-link" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#experience">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#projects">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#publication">Publication</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+
+
+      <main class="mt-8">
+         
+         <section id="home" class="section">
+            <div class="container">
+               <img src="./assets/profile-pic.jpg" class="rounded-image" alt="Basharul Alam Mazu profile picture" />
+            </div>
+             <div class="section__text">
+               <h1 class="title">Hello, I'm Basharul Alam Mazu!👋</h1>
+               <p class="section__text__p1"> 
+                  I'm a Computer Science and Engineering student, passionate about developing machine learning models 
+                  <br>
+                  for real-time decision-making and crafting insightful dashboards with tools like 
+                  <br>
+                  Tableau and Power BI.
+                  <br> <br>
+                  Please feel free to get in touch! 💬
+               </p>
+               <div id="socials-container">
+                  <img src="./assets/cv.png" alt="My CV" class="icon animate__animated animate__bounce" onclick="window.open('./assets/Portfolio.pdf')" />
+                  <img src="./assets/mail.png" alt="Email" class="icon animate__animated animate__bounce" onclick="location.href='mailto:basharulalam6@gmail.com'" />
+                  <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon animate__animated animate__bounce" onclick="location.href='https://www.linkedin.com/in/basharul-alam-mazu-361464267/'" />
+                  <img src="./assets/github.png" alt="My Github profile" class="icon animate__animated animate__bounce" onclick="location.href='https://github.com/basharul2002/'" />
+               </div>
+            </div>
+         </section>
+         
+
+         <section></section>
+         <!-- About Section -->
+         <section id="about" class="section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <h2 class="section-title">About Me</h2>
+                     <div class="about-content">
+                        <p class="section-description">I am currently pursuing a degree in Computer Science and Software Engineering, eager to delve into the world of data science and machine learning. While I am still a student, I am passionate about applying my knowledge and skills to real-world projects and challenges. In my academic journey, I have excelled in courses related to algorithms, data science, and machine learning. I am eager to explore the intersection of computer science and data analytics, with a keen interest in leveraging machine learning techniques to derive meaningful insights from data. Outside of academia, I am actively engaged in honing my technical skills. I am proficient in programming languages such as Python, Java, and C++, and I have a solid understanding of machine learning concepts, including deep learning and natural language processing (NLP). I am excited about the prospect of applying my skills to solve complex problems and contribute to innovative projects. Whether it's forecasting product demand or optimizing inventory levels, I am eager to leverage my expertise to make a positive impact. Feel free to reach out for a more detailed discussion or if you would like to explore potential collaborations. Let's connect and create something amazing together!</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                     <div class="about-image text-center">
+                        <img src="./assets/profile-pic.jpg" class="rounded-image img-fluid" alt="Basharul Alam Mazu about picture">
+                     </div>
+                  </div>
+               </div>
+            </div>
+                <div class="container">
+            <div class="row">
+               <!-- Left column for Interests -->
+               <div class="col-md-6">
+                  <h2 class="section-title">Interests</h2>
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item">Large language Models</li>
+                     <li class="list-group-item">Explainable AI</li>
+                     <li class="list-group-item">Machine learning</li>
+                     <li class="list-group-item">Deep learning</li>
+                     <li class="list-group-item">Medical Image Processing</li>
+                  </ul>
+               </div>
+               <!-- Right column for Education -->
+               <div class="col-md-6">
+                  <h2 class="section-title">Education</h2>
+                  <div class="card border-0 shadow-sm">
+                     <div class="card-body">
+                        <h3 class="card-title">BSc, Computer Science and Engineering</h3>
+                        <p class="card-text">American International University Bangladesh (Running)</p>
+                     </div>
+                  </div>
+                  <div class="card border-0 shadow-sm">
+                     <div class="card-body">
+                        <h3 class="card-title">HSC, Science</h3>
+                        <p class="card-text">Ideal College (2021)</p>
+                     </div>
+                  </div>
+                  <div class="card border-0 shadow-sm">
+                     <div class="card-body">
+                        <h3 class="card-title">SSC, Science</h3>
+                        <p class="card-text">Motijheel Model School & College (2021)</p>
+                     </div>
+                     <!-- Add more education cards if needed -->
+                  </div>
+               </div>
+            </div>
+            <div class="container">
+               <h2>Skills</h2>
+               <div class="row" >
+                  <div class="col-md-6">
+                     <h3 class="card-title md-3">Technical Skills</h3>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>Programming Languages: </b>Python, C/C++, Java, C#</li>
+                        <li class="list-group-item"><b>Web Development: </b>HTML, CSS, JavaScript</li>
+                        <li class="list-group-item"><b>Data Science: </b>Pandas, NumPy, Scikit-learn</li>
+                        <li class="list-group-item"><b>Machine Learning: </b>TensorFlow, Keras</li>
+                        <li class="list-group-item"><b>Development Tools: </b>Git, Jupyter Notebook</li>
+                        <li class="list-group-item"><b>Mathematics and Statistics: </b>Linear Algebra, Probability, Statistics</li>
+                        <li class="list-group-item"><b>Data Visualization: </b>Matplotlib, Seaborn</li>
+                        <li class="list-group-item"><b>Deep Learning Architectures: </b>Basic Understanding</li>
+                     </ul>
+                  </div>
+                  <div class="col-md-6">
+                     <h3 class="card-title md-3">Soft Skills</h3>
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Punctuality</li>
+                              <li class="list-group-item">Time Management</li>
+                              <li class="list-group-item">Organization</li>
+                              <li class="list-group-item">Attention to Detail</li>
+                              <li class="list-group-item">Communication</li>
+                           </ul>
+                        </div>
+                        <div class="col-sm-6">
+                           <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Problem Solving</li>
+                              <li class="list-group-item">Teamwork</li>
+                              <li class="list-group-item">Reliability</li>
+                              <li class="list-group-item">Adaptability</li>
+                              <li class="list-group-item">Stress Management</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <h2 class="mt-5">Co-curricular Activities</h2>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <h3>Hackathons</h3>
+                        <p>Participated in various hackathons and developed innovative projects.</p>
+                        <!-- Button for Hackathon Certificates -->
+                        <a href="#" class="btn btn-primary animate__animated animate__bounce">View Certificates</a>
+                     </div>
+                     <div class="col-md-6">
+                        <h3>Clubs & Organizations</h3>
+                        <p>
+                             <ul>
+                           <li>
+                              <b>General Secretary(2019-2021)</b><br>
+                              Motijheel Model Debating Society
+                           </li>
+                        </ul>
+                        </p>
+                        <!-- Button for Club & Organization Certificates -->
+                        <a href="#" class="btn btn-primary animate__animated animate__bounce">View Certificates</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+
+         <!-- Experience Section -->
+         <section id="experience" class="section mt-6">
+            <div class="container">
+               <h2>Experience</h2>
+               <div class="row">
+                  <div class="col-md-6">
+                     <h3>Position</h3>
+                     <p>Company Name - Duration</p>
+                  </div>
+                  <div class="col-md-6">
+                     <h3>Internship</h3>
+                     <p>Company Name - Duration</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         
+         <section id="projects" class="section mt-10">
+            <div class="container-fluid">
+               <div class="text-center mb-5">
+                  <p class="section__text__p1">Browse My Recent</p>
+                  <h1 class="title">Projects</h1>
+               </div>
+               <div class="row">
+                  <div class="col-md-4 mb-4">
+                     <div class="card border-0 shadow-sm project-card">
+                        <img src="./assets/project-1.png" class="card-img-top project-img" alt="Project 1">
+                        <div class="card-body">
+                           <h5 class="card-title project-title">Fresh Food Supply (C#)</h5>
+                           <div class="btn-container">
+                              <a href="https://github.com/Basharul2002/Fresh-Food-Supply" class="btn btn-primary animate__animated animate__bounce">View Project</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                     <div class="card border-0 shadow-sm project-card">
+                        <img src="./assets/project-2.png" class="card-img-top project-img" alt="Project 2">
+                        <div class="card-body">
+                           <h5 class="card-title project-title">Bus Ticket Management System (C#)</h5>
+                           <div class="btn-container">
+                              <a href="https://github.com/Basharul2002/VOVO" class="btn btn-primary animate__animated animate__bounce">View Project</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                      <div class="card border-0 shadow-sm project-card">
+                          <img src="./assets/project-3.png" class="card-img-top project-img" alt="Project 3">
+                          <div class="card-body">
+                              <h5 class="card-title project-title">Car Selling (JAVA)</h5>
+                              <div class="btn-container">
+                                  <a href="https://github.com/Basharul2002/Prestige-Motor-Sales" class="btn btn-primary animate__animated animate__bounce">View Project</a>
+                              </div>
+                         </div>
+                     </div>
+                  </div>
+                  <!-- Add more project cards here if needed -->
+               </div>
+            </div>
+         </section>
+
+         
+         <section id="publication" class="section">
+            <div class="container-fluid">
+               <h2 class="text-center mb-4">Publication</h2>
+               <p></p>
+            </div>
+         </section>
+
+      </main>
+      <footer class="bg-light text-center text-lg-start">
+          <div class="container p-4">
+              <div class="d-flex justify-content-center">
+                  <p class="mb-0 mt-3">&copy; 2023 Basharul Alam Mazu. All Rights Reserved.</p>
+              </div>
+          </div>
+      </footer>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+      <script src="script.js"></script>
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+          const sections = document.querySelectorAll('section');
+          const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+          
+          navLinks.forEach(link => {
+              link.addEventListener('click', () => {
+                  const targetId = link.getAttribute('href').substring(1);
+                  sections.forEach(section => {
+                      section.style.display = 'none';
+                      if (section.getAttribute('id') === targetId) {
+                          section.style.display = 'block';
+                      }
+                  });
+              });
+          });
+      });
+
+      </script>
+   </body>
+</html>
