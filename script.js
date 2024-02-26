@@ -1,21 +1,26 @@
-// Function to toggle dark mode
-function toggleDarkMode() {
-    const icon = document.getElementById('navbar-toggler-icon');
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
+
     // Check if dark mode is enabled
-    const darkModeEnabled = /* Your logic to determine dark mode state */;
-    // Toggle classes based on dark mode state
-    if (darkModeEnabled) {
-        icon.classList.remove('light-mode');
-        icon.classList.add('dark-mode');
-    } else {
-        icon.classList.remove('dark-mode');
-        icon.classList.add('light-mode');
+    const darkModeEnabled = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        if (darkModeEnabled) {
+            // Dark mode
+            navbarTogglerIcon.style.backgroundColor = "#333";
+        } else {
+            // Light mode
+            navbarTogglerIcon.style.backgroundColor = "#fff"; // Change to light mode background color
+        }
     }
-}
 
-// Call the function when needed
-toggleDarkMode();
+    // Call the function to initially set the color based on the mode
+    toggleDarkMode();
 
+    // Listen for changes in color scheme
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(toggleDarkMode);
+});
 
 
 
