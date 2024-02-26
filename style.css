@@ -207,9 +207,9 @@ section {
     align-items: center;
 }
 
-.icon {
-    width: 10px;
-    height: 10px;
+socials-container .icon {
+    width: 40px;
+    height: 40px;
     margin-right: 1rem;
     border-radius: 50%;
     background-color: #007bff; /* Formal color for icons */
