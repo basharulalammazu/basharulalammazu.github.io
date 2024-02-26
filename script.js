@@ -1,20 +1,21 @@
+// Function to toggle dark mode
 function toggleDarkMode() {
+    const icon = document.getElementById('navbar-toggler-icon');
     // Check if dark mode is enabled
-    const isDarkMode = document.body.classList.contains("dark-mode");
-
-    // Toggle dark mode class on the body
-    document.body.classList.toggle("dark-mode", !isDarkMode);
-
-    // Update navigation button background color based on mode
-    const navbarTogglerIcon = document.querySelector(".navbar-toggler-icon");
-    if (navbarTogglerIcon) {
-        navbarTogglerIcon.style.backgroundColor = isDarkMode ? "#fff" : "#000";
+    const darkModeEnabled = /* Your logic to determine dark mode state */;
+    // Toggle classes based on dark mode state
+    if (darkModeEnabled) {
+        icon.classList.remove('light-mode');
+        icon.classList.add('dark-mode');
+    } else {
+        icon.classList.remove('dark-mode');
+        icon.classList.add('light-mode');
     }
 }
 
-// Call the function to toggle dark mode when needed
-// For example, you can call this function when a button or toggle is clicked
+// Call the function when needed
 toggleDarkMode();
+
 
 
 
