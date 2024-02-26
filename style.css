@@ -232,8 +232,8 @@ section {
 
 /* CV icon styling */
 .social-icon {
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
     margin-right: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease; /* Add transition for animation */
