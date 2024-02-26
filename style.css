@@ -48,9 +48,12 @@ nav {
     color: #007bff; /* Formal color on hover */
 }
 
+
 .navbar-toggler {
     border: none; /* Remove default border */
+    background-color: transparent; /* Set background color to transparent */
 }
+
 
 .navbar-toggler-icon {
   /*  background-color: #333; /* Formal color */
