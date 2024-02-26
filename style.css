@@ -198,14 +198,36 @@ section {
     font-size: 2.5rem;
 }
 
+
+/*Home page contact icon */
 #socials-container {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#socials-container .icon {
+.icon {
     width: 40px;
     height: 40px;
     margin-right: 1rem;
+    border-radius: 50%;
+    background-color: #007bff; /* Formal color for icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Text color for icons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon:last-child {
+    margin-right: 0; /* Remove right margin for the last icon */
 }
 
 /* About section styles */
