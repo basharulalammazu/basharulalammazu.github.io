@@ -16,25 +16,7 @@ body {
 /* Smooth scrolling behavior */
 html {
     scroll-behavior: smooth;
-}
-
-         /* Custom CSS for adjusting space between sections */
-         section {
-             padding-top: 100px; /* Adjust this value to leave space for the top navigation bar */
-             padding-bottom: 50px; /* Adjust this value to leave space for the footer */
-             margin-top: 50px; /* Compensate for the top navigation bar */
-             margin-bottom: -70px; /* Compensate for the footer */
-            display: none; /* Hide all sections by default */
-         }
-         
-         .section {
-             margin-bottom: 10px; /* Adjust this value as needed */
-             min-height: fit-content;
-         }
-
-         #home {
-             display: block; /* Display the home section by default */
-         }
+}    
 
 /* Paragraph styles */
 p {
