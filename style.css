@@ -18,7 +18,6 @@ html {
     scroll-behavior: smooth;
 }
 
-      <style>
          /* Custom CSS for adjusting space between sections */
          section {
              padding-top: 100px; /* Adjust this value to leave space for the top navigation bar */
