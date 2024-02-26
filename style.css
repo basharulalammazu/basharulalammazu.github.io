@@ -392,3 +392,19 @@ section {
 .project-btn:hover:before {
     opacity: 0.5;
 }
+
+
+/* Add animation keyframes */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Apply animation to icons */
+.icon {
+    animation: bounce 1s infinite; /* Apply bouncing animation */
+}
