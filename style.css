@@ -230,6 +230,27 @@ section {
     margin-right: 0; /* Remove right margin for the last icon */
 }
 
+/* CV icon styling */
+.social-icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add transition for animation */
+    filter: grayscale(100%); /* Apply grayscale effect by default */
+    border-radius: 50%; /* Rounded shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* CV icon hover effect */
+.social-icon:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    filter: grayscale(0); /* Remove grayscale effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add larger shadow on hover */
+    /* Add any additional hover effects here */
+}
+
+
 /* About section styles */
 .about-content {
     display: flex;
