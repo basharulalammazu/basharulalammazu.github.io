@@ -1,3 +1,35 @@
+function enableDarkMode() {
+    // Apply dark mode styles to the entire document
+    const darkModeStyles = `
+        /* Dark mode styles */
+        body {
+            background-color: #222; /* Dark background color */
+            color: #fff; /* Light text color */
+        }
+        
+        /* Add more styles for other elements as needed */
+    `;
+    
+    // Create a <style> element to inject the dark mode styles
+    const styleElement = document.createElement("style");
+    styleElement.textContent = darkModeStyles;
+    
+    // Append the <style> element to the <head> of the document
+    document.head.appendChild(styleElement);
+    
+    // Additionally, you can update specific elements or apply specific classes
+    // For example, you can update the background color of a navigation bar
+    const navbar = document.querySelector("nav");
+    if (navbar) {
+        navbar.style.backgroundColor = "#333"; // Darker color for the navigation bar
+    }
+}
+
+// Call the function to enable dark mode
+enableDarkMode();
+
+
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
