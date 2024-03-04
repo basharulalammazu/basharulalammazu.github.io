@@ -436,4 +436,9 @@ section {
 /* Apply animation to icons */
 .icon {
     animation: float 3s ease-in-out infinite; /* Apply floating animation */
+    cursor: pointer;
 }
+
+.icon:hover {
+        filter: brightness(80%); /* Optionally reduce brightness on hover for visual feedback */
+    }
