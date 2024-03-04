@@ -60,8 +60,11 @@ nav {
     border-radius: 2px; /* Rounded shape */
 }
 
-.navbar-toggler:focus {
-    outline: none; /* Remove focus outline */
+/* Selected button color */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    background-color: #007bff; /* Blue color */
+    border-color: #007bff; /* Blue color */
 }
 
 .navbar-nav .nav-item {
