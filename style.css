@@ -63,9 +63,6 @@ nav {
 /* Selected button color */
 .navbar-toggler:focus,
 .navbar-toggler:active {
-  /*  background-color: #transparent; /* Blue color */
-  /*  border-color: #007bff; /* Blue color */
-    background-color: #007bff; /* Set the background color when the link is active */
     color: #fff; /* Set the text color when the link is active */
     outline: none;
 }
