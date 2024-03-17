@@ -63,8 +63,9 @@ nav {
 /* Selected button color */
 .navbar-toggler:focus,
 .navbar-toggler:active {
-    background-color: #007bff; /* Blue color */
-    border-color: #007bff; /* Blue color */
+  /*  background-color: #transparent; /* Blue color */
+  /*  border-color: #007bff; /* Blue color */
+    outline: none;
 }
 
 .navbar-nav .nav-item {
