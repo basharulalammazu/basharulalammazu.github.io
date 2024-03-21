@@ -87,3 +87,42 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById(sectionId).style.display = 'block';
     }
 });
+
+
+// JavaScript for image swapping
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to handle slideshow for each project
+        function startSlideshow(containerId) {
+            const container = document.getElementById(containerId);
+            const images = container.querySelectorAll('.project-img');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    if (i === index) {
+                        img.style.display = 'block';
+                    } else {
+                        img.style.display = 'none';
+                    }
+                });
+            }
+
+            function nextImage() {
+                const nextIndex = (currentIndex + 1) % images.length;
+                showImage(nextIndex);
+                currentIndex = nextIndex;
+            }
+
+            // Initially, show the first image
+            showImage(currentIndex);
+
+            // Change image every 5 seconds
+            setInterval(nextImage, 3000);
+        }
+
+        // Start slideshow for each project
+        startSlideshow('project1-slideshow');
+        startSlideshow('project2-slideshow');
+        startSlideshow('project3-slideshow');
+    });
+
