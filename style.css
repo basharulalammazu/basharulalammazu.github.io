@@ -187,7 +187,9 @@ section {
     box-sizing: border-box;
 }
 
-
+.section-title {
+    margin-top: 4rem; /* Adjust the margin-top value as needed */
+}
 
 /* HOME SECTION */
 #home {
