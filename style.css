@@ -236,6 +236,10 @@ section {
     margin-bottom: 2rem;
 }
 
+.section-description {
+    text-align: justify;
+}
+
 .about-image {
     width: 40%;
     display: flex;
