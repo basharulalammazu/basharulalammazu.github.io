@@ -302,17 +302,18 @@ section {
 
 /* CSS for Animated Button */
 /* Default button styles */
+/* Default button styles */
 .btn-primary {
     background: none;
     border: 2px solid #007bff; /* Soft color border */
     color: #007bff;
-    padding: 15px 45px;
+    padding: 10px 10px;
     border-radius: 50px; /* Increased border radius for a rounder shape */
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px; /* Increased font size for better readability */
+    font-size: 12px; /* Increased font size for better readability */
     font-weight: bold;
     transition: all 0.3s ease; /* Simplified transition */
     cursor: pointer;
@@ -354,10 +355,11 @@ section {
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .btn-primary {
-        padding: 10px 30px; /* Adjusted padding for smaller screens */
+        padding: 10px 10px; /* Adjusted padding for smaller screens */
         font-size: 14px; /* Adjusted font size for smaller screens */
     }
 }
+
 
 
     
@@ -381,74 +383,62 @@ section {
 }
 
     
-/* Button styling */
-.project-btn {
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+/* Project */
+/* Default button styles */
+.btn-project {
+    background: none;
+    border: 2px solid #007bff; /* Soft color border */
+    color: #007bff;
+    padding: 15px 45px;
+    border-radius: 50px; /* Increased border radius for a rounder shape */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Increased font size for better readability */
+    font-weight: bold;
+    transition: all 0.3s ease; /* Simplified transition */
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    position: relative; /* Required for pseudo-element positioning */
+    overflow: hidden; /* Hide overflowing gradient */
 }
 
-.project-btn:hover {
-    background-color: #0056b3;
-}
-
-.project-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.project-btn:before {
+.btn-project::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #007bff, #00bfff);
-    border-radius: 1.5rem;
-    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.3) 0%, rgba(0, 123, 255, 0) 70%); /* Soft color gradient */
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    z-index: -1; /* Ensure it's behind the button */
 }
 
-.project-btn:hover:before {
-    opacity: 0.5;
+.btn-project span {
+    position: relative;
+    z-index: 1; /* Ensure it's above the pseudo-element */
 }
 
-
-/* Add animation keyframes */
-@keyframes bounce {
-    0%, 100% {
+@keyframes animate__bounce {
+    0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
-    50% {
-        transform: translateY(-5px);
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
     }
 }
 
-/* Define animation keyframes */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .btn-project {
+        padding: 10px 30px; /* Adjusted padding for smaller screens */
+        font-size: 14px; /* Adjusted font size for smaller screens */
     }
 }
-
-/* Apply animation to icons */
-.icon {
-    animation: float 3s ease-in-out infinite; /* Apply floating animation */
-    cursor: pointer;
-}
-
-.icon:hover {
-        filter: brightness(80%); /* Optionally reduce brightness on hover for visual feedback */
-    }
+    
