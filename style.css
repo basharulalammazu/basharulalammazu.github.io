@@ -226,6 +226,7 @@ section {
     width: 40px;
     height: 40px;
     margin-right: 1rem;
+    cursor: pointer;
 }
 
 /* About section styles */
