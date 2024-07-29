@@ -50,36 +50,35 @@
 
    <body>
       <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-         <div class="container">
-            <a class="navbar-brand" href="#">Basharul Alam Mazu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="#">Basharul Alam Mazu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                   <li class="nav-item">
-                     <a class="nav-link" href="#home">Home</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#home">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#about">About</a>
+                      <a class="nav-link" href="#about">About</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#experience">Experience</a>
+                      <a class="nav-link" href="#experience">Experience</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#projects">Projects</a>
+                      <a class="nav-link" href="#projects">Projects</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#publication">Publication</a>
+                      <a class="nav-link" href="#publication">Publication</a>
                   </li>
-               </ul>
-            </div>
-         </div>
-      </nav>
-
+              </ul>
+          </div>
+      </div>
+  </nav>
 
       <main class="mt-6">
          
@@ -88,17 +87,18 @@
             <div class="container">
                <img src="./assets/profile-pic.jpeg" class="rounded-image" alt="Basharul Alam Mazu profile picture" />
             </div>
-             <div class="section__text">
-               <h1 class="title">Hello, I'm Basharul Alam Mazu!👋</h1>
-               <p class="section__text__p1"> 
-                  I'm a Computer Science and Engineering student, passionate about developing machine learning models 
-                  <br>
-                  for real-time decision-making and crafting insightful dashboards with tools like 
-                  <br>
-                  Tableau and Power BI.
-                  <br> <br>
-                  Please feel free to get in touch! 💬
-               </p>
+            <div class = "container">
+               <div class="section__text">
+                  <h1 class="title">Hello, I'm Basharul Alam Mazu!👋</h1>
+                  <p class="section__text__p1"> 
+                     I'm a Computer Science and Engineering student, passionate about developing machine learning models 
+                     
+                     for real-time decision-making and crafting insightful dashboards with tools like 
+                     
+                     Tableau and Power BI.
+                     <br> <br>
+                     Please feel free to get in touch! 💬
+                  </p>
                   <div id="socials-container">
                       <img src="./assets/cv.png" alt="My CV" class="icon animate__animated animate__bounce" onclick="window.open('./assets/Portfolio.pdf')" />
                       <img src="./assets/mail.png" alt="Email" class="icon animate__animated animate__bounce" onclick="location.href='mailto:basharulalam6@gmail.com'" />
@@ -106,6 +106,7 @@
                       <img src="./assets/github.png" alt="My Github profile" class="icon animate__animated animate__bounce" onclick="location.href='https://github.com/basharul2002/'" />
                   </div>
                </div>
+            </div>
          </section>
          
 
@@ -114,7 +115,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-lg-6">
-                    <h2 class="about-section-title">About Me</h2>
+                    <h2 class="title">About Me</h2>
                     <div class="about-content">
                       <p class="section-description">I am currently pursuing a degree in Computer Science and Engineering, interested 
                          to learn more about machine learning and data science. While I am still a student, I am passionate about 
@@ -142,7 +143,7 @@
             <div class="row">
                <!-- Left column for Interests -->
                <div class="col-md-6">
-                  <h2 class="section-title">Interests</h2>
+                  <h2 class="about-section-title">Interests</h2>
                   <ul class="list-group list-group-flush">
                      <li class="list-group-item">Large language Models</li>
                      <li class="list-group-item">Explainable AI</li>
@@ -154,7 +155,7 @@
                </div>
                <!-- Right column for Education -->
                <div class="col-md-6">
-                  <h2 class="section-title">Education</h2>
+                  <h2 class="about-section-title">Education</h2>
                   <div class="card border-0 shadow-sm">
                      <div class="card-body">
                         <h3 class="card-title" style="font-size: 1.1rem;">BSc, Computer Science and Engineering</h3>
@@ -383,87 +384,81 @@
 
 
          <!-- Project Section-->      
-        <section id="projects" class="section mt-6">
-            <div class="container-fluid">
-               <div class="text-center mb-5">
-                  <p class="section__text__p1">Browse My Recent</p>
-                  <h1 class="title">Projects</h1>
+<section id="projects" class="section mt-6">
+   <div class="container">
+      <div class="text-center mb-5">
+         <p class="section__text__p1">Browse My Recent</p>
+         <h1 class="title">Projects</h1>
+      </div>
+      <div class="row justify-content-center">
+         
+         <!-- Project Card 4-->
+         <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
+               <!-- Image Container -->
+               <div class="image-container-project">
+                  <img src="./assets/project 4/login.png" class="card-img-top project-img active" alt="Project 4 Image"  width="300" height="300">
                </div>
-               <div class="row">
-
-                  <!-- Add more project cards here if needed -->
-                   <!-- Project Card 3 -->
-                  <div class="col-md-4 mb-4">
-                     <div class="card border-0 shadow-sm project-card">
-                        <!-- Image Container -->
-                        <div class="image-container-project" id="project3-slideshow">
-                           <img src="./assets/project 3/project3.1.png" class="card-img-top project-img active" alt="Project 2"  width="300" height="300">
-                           <img src="./assets/project 3/project3.2.png" class="card-img-top project-img" alt="Project 2 Alternate"  width="300" height="300">
-                           <img src="./assets/project 3/project3.3.png" class="card-img-top project-img active" alt="Project 2 Alternate"  width="300" height="300">
-                           <img src="./assets/project 3/project3.4.png" class="card-img-top project-img active" alt="Project 2 Alternate"  width="300" height="300">
-                           <img src="./assets/project 3/project3.5.png" class="card-img-top project-img active" alt="Project 2 Alternate"  width="300" height="300">
-                           <!-- Add more images for Project 3 if needed -->
-                        </div>
-                        <div class="card-body" style="height: 200px;">
-                           <h5 class="card-title project-title" align="center">AIUB offered Course(C#)</h5>
-                              <div class="btn-container">
-                                 <p align="center">
-                                    <a href="https://github.com/Basharul2002/AIUB-Offered-Courses" class="btn btn-primary animate__animated animate__bounce">View Project</a>
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
+               <div class="card-body">
+                  <h5 class="card-title project-title text-center">Blood Donor (C#)</h5>
+                     <div class="btn-container text-center">
+                        <a href="https://github.com/Basharul2002/AIUB-Offered-Courses" class="btn btn-primary animate__animated animate__bounce">View Project</a>
                      </div>
-                  
-                  <!-- Project Card 2 -->
-                  <div class="col-md-4 mb-4">
-                     <div class="card border-0 shadow-sm project-card">
-                        <!-- Image Container -->
-                        <div class="image-container-project" id="project2-slideshow">
-                           <img src="./assets/project 2/Loading Page.png" class="card-img-top project-img active" alt="Project 2"  width="300" height="300">
-                           <img src="./assets/project 2/Customer Login Page.png" class="card-img-top project-img" alt="Project 2 Alternate"  width="300" height="300">
-                           <img src="./assets/project 2/Payment.png" class="card-img-top project-img active" alt="Project 2 Alternate"  width="300" height="300">
-                           <img src="./assets/project 2/Customer Forget Password.png" class="card-img-top project-img active" alt="Project 2 Alternate"  width="300" height="300">
-                           <!-- Add more images for Project 2 if needed -->
-                        </div>
-                        <div class="card-body" style="height: 200px;">
-                           <h5 class="card-title project-title" align="center">Bus Ticket Mannagement System(C#)</h5>
-                              <div class="btn-container">
-                                 <p align="center">
-                                    <a href="https://github.com/Basharul2002/VOVO" class="btn btn-primary animate__animated animate__bounce">View Project</a>
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  
-                  
-
-                  <!-- Project Card 1 -->
-                  <div class="col-md-4 mb-4">
-                     <div class="card border-0 shadow-sm project-card">
-                        <!-- Image Container -->
-                        <div class="image-container-project" id="project1-slideshow">
-                           <img src="./assets/project 1/Customer Home Page.png" class="card-img-top project-img active" alt="Project 1"  width="300" height="300">
-                           <img src="./assets/project 1/Car Details.png" class="card-img-top project-img" alt="Project 1 Alternate"  width="300" height="300">
-                           <img src="./assets/project 1/Admin Home Page.png" class="card-img-top project-img" alt="Project 1 Alternate"  width="300" height="300">
-                           <img src="./assets/project 1/Payment.png" class="card-img-top project-img" alt="Project 1 Alternate"  width="300" height="300">
-                           <!-- Add more images for Project 1 if needed -->
-                        </div>
-                        <div class="card-body" style="height: 200px;">
-                           <h5 class="card-title project-title" align="center">Car Selling (JAVA)</h5>
-                              <div class="btn-container">
-                                 <p align="center">
-                                    <a href="https://github.com/Basharul2002/Prestige-Motor-Sales" class="btn btn-primary animate__animated animate__bounce">View Project</a>
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>    
+                  </div>
                </div>
             </div>
-        </section>
+
+         <!-- Project Card 3 -->
+         <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
+               <!-- Image Container -->
+               <div class="image-container-project">
+                  <img src="./assets/project 3/project3.1.png" class="card-img-top project-img active" alt="Project 3 Image"  width="300" height="300">
+               </div>
+               <div class="card-body">
+                  <h5 class="card-title project-title text-center">AIUB Offered Course (C#)</h5>
+                     <div class="btn-container text-center">
+                        <a href="https://github.com/Basharul2002/AIUB-Offered-Courses" class="btn btn-primary animate__animated animate__bounce">View Project</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         
+         <!-- Project Card 2 -->
+         <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
+               <!-- Image Container -->
+               <div class="image-container-project">
+                  <img src="./assets/project 2/Loading Page.png" class="card-img-top project-img active" alt="Project 2 Image"  width="300" height="300">
+               </div>
+               <div class="card-body">
+                  <h5 class="card-title project-title text-center">Bus Ticket Management System (C#)</h5>
+                     <div class="btn-container text-center">
+                        <a href="https://github.com/Basharul2002/VOVO" class="btn btn-primary animate__animated animate__bounce">View Project</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         
+         <!-- Project Card 1 -->
+         <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
+               <!-- Image Container -->
+               <div class="image-container-project">
+                  <img src="./assets/project 1/Customer Home Page.png" class="card-img-top project-img active" alt="Project 1 Image"  width="300" height="300">
+               </div>
+               <div class="card-body">
+                  <h5 class="card-title project-title text-center">Car Selling (JAVA)</h5>
+                     <div class="btn-container text-center">
+                        <a href="https://github.com/Basharul2002/Prestige-Motor-Sales" class="btn btn-primary animate__animated animate__bounce">View Project</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 
 
          <!--Publication --> 
@@ -507,5 +502,35 @@
       });
 
       </script>
-   </body>
+
+      <!-- Add this script section at the bottom of your HTML file before the closing </body> tag -->
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+       // Function to highlight the active navigation link
+       function highlightActiveLink() {
+           const sections = document.querySelectorAll('section');
+           const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+           sections.forEach(section => {
+               const sectionTop = section.offsetTop - 100;
+               const sectionHeight = section.clientHeight;
+               const id = section.getAttribute('id');
+
+               if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                   navLinks.forEach(link => {
+                       link.style.color = ''; // Reset to default color
+                   });
+                   document.querySelector(`.navbar-nav .nav-link[href="#${id}"]`).style.color = 'blue'; // Set active link color
+               }
+           });
+       }
+
+       // Highlight navigation links based on scroll position
+       window.addEventListener('scroll', highlightActiveLink);
+
+       // Initial call to highlight the correct link on page load
+       highlightActiveLink();
+   });
+</script>
+</body>
 </html>
