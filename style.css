@@ -456,6 +456,7 @@ section {
     margin-bottom: 10px;
     line-height: 1.5;
     color: #3b3b3b;
+    flex-grow: 1; /* Allow text to grow to fill space */
 }
 
 .project-btn-container {
@@ -469,7 +470,7 @@ section {
 .project-btn-primary {
     background-color: #042C3E;
     border: none;
-    color: #333;
+    color: #fff; /* Ensure contrast with the background */
     padding: 8px 15px;
     border-radius: 15px;
     text-decoration: none;
@@ -479,6 +480,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 120px; /* Minimum width for the button */
 }
 
 .project-btn-primary img {
@@ -518,6 +520,34 @@ section {
     font-size: 0.875rem;
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+    .image-container-project {
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+
+    .card-title {
+        font-size: 1.2rem; /* Smaller font size for titles */
+    }
+
+    .card-text {
+        font-size: 0.875rem; /* Smaller font size for text */
+    }
+
+    .project-btn-primary {
+        font-size: 0.875rem; /* Smaller button font size */
+        padding: 6px 12px; /* Adjust button padding */
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width:45%; 
+    }
+}
+
+
 @media (max-width: 2025px) {
     .project-card {
         margin-bottom: 30px;
@@ -534,5 +564,21 @@ section {
     .btn-primary {
         font-size: 0.875rem;
         padding: 8px 16px;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width:45%; 
+    }
+    .project-btn-primary {
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .project-btn-container {
+        flex-direction: column; /* Stack buttons vertically if necessary */
     }
 }
