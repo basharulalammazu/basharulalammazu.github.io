@@ -461,14 +461,14 @@ section {
     font-size: 1.5rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: #fff;
+    color: #fffbfbe5;
 }
 
 .card-text {
     font-size: 1rem;
     margin-bottom: 10px;
     line-height: 1.5;
-    color: #3b3b3b;
+    color: #cfcfcf;
     flex-grow: 1; /* Allow text to grow to fill space */
 }
 
@@ -513,7 +513,7 @@ section {
     padding: 1px 10px;
     font-size: 0.875rem;
     margin-right: 5px;
-    color: #555;
+    color: #a19e9e;
 }
 
 .tags-container {
