@@ -440,7 +440,7 @@ section {
 .left-overlay {
     width: 30%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.7));
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -450,7 +450,7 @@ section {
 .right-overlay {
     width: 70%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
     flex-direction: column;
     justify-content: center;
     padding-top: 40px;
