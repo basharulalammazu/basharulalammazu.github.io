@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let currentSectionId = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             const id = section.getAttribute('id');
 
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             const id = section.getAttribute('id');
 
