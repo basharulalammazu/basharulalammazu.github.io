@@ -109,7 +109,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.project-filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
 
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Optional: Trigger "All" filter on page load
+    filterButtons[0].click();
+});
 
 // JavaScript for image swapping
 document.addEventListener("DOMContentLoaded", function () {

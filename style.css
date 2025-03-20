@@ -387,6 +387,107 @@ section {
     font-weight: 700;
 }
 
+
+
+
+/* Project Filter Button */
+.project-filter-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px; /* Pill-shaped buttons */
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #007bff 0%, #00ddeb 100%);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.4s ease;
+}
+
+/* Hover effect with a ripple animation */
+.project-filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+    background: linear-gradient(135deg, #0056b3 0%, #00b7d4 100%);
+}
+
+/* Add a subtle shine effect */
+.project-filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+.project-filter-btn:hover::before {
+    left: 100%;
+}
+
+/* Active state when clicked */
+.project-filter-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Different color variations for different filters */
+
+/* C++ button variation */
+.project-filter-btn[data-filter="cpp"] {
+    background: linear-gradient(135deg, #005670 0%, #00a4cc 100%);
+}
+
+.project-filter-btn[data-filter="cpp"]:hover {
+    background: linear-gradient(135deg, #003d52 0%, #0086a8 100%);
+}
+
+/* Python button variation */
+.project-filter-btn[data-filter="python"] {
+    background: linear-gradient(135deg, #306998 0%, #ffd43b 100%);
+}
+
+.project-filter-btn[data-filter="python"]:hover {
+    background: linear-gradient(135deg, #244f75 0%, #d9b731 100%);
+}
+
+/* PHP button variation */
+.project-filter-btn[data-filter="php"] {
+    background: linear-gradient(135deg, #4f5b93 0%, #8892bf 100%);
+}
+
+.project-filter-btn[data-filter="php"]:hover {
+    background: linear-gradient(135deg, #3d476f 0%, #6b759e 100%);
+}
+
+.project-filter-btn[data-filter="csharp"] {
+    background: linear-gradient(135deg, #6828b8 0%, #9b59d0 100%);
+}
+
+.project-filter-btn[data-filter="csharp"]:hover {
+    background: linear-gradient(135deg, #4a1e87 0%, #7d3fa8 100%);
+}
+
+.project-filter-btn[data-filter="java"] {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+}
+
+.project-filter-btn[data-filter="java"]:hover {
+    background: linear-gradient(135deg, #e04e4e 0%, #e0743c 100%);
+}
+
+
 .project-card {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
