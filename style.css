@@ -95,7 +95,7 @@ nav {
 }
 
 .navbar-nav .nav-link.active {
-    color: blue; /* Color for the active link (optional, since we set it inline) */
+    color: #cf8fef; /* Color for the active link (optional, since we set it inline) */
 }
 
 /* Hamburger Menu styles */
