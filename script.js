@@ -109,6 +109,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+
 // JavaScript for image swapping
 document.addEventListener("DOMContentLoaded", function () {
     // Function to handle slideshow for each project
