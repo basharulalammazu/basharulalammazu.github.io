@@ -25,34 +25,13 @@
       <!-- Link to your icon file -->
     <link rel="icon" type="image/png" href="assets/icon.png">
    </head>
-   <style>
-      /* Custom CSS for adjusting space between sections */
-         section {
-             padding-top: 100px; /* Adjust this value to leave space for the top navigation bar */
-             padding-bottom: 50px; /* Adjust this value to leave space for the footer */
-             margin-top: 50px; /* Compensate for the top navigation bar */
-             margin-bottom: -70px; /* Compensate for the footer */
-            display: none; /* Hide all sections by default */
-         }
-         
-         .section {
-             margin-bottom: 10px; /* Adjust this value as needed */
-             min-height: fit-content;
-         }
-
-         #home {
-             display: block; /* Display the home section by default */
-         }
-
-
-   </style>
    
 
    <body>
       <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-          <a class="navbar-brand" href="#">Basharul - Alam - Mazu</a>
+          <a class="navbar-brand" href="#home">Basharul - Alam - Mazu</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -87,23 +66,21 @@
             <div class="container">
                <img src="./assets/profile-pic.jpeg" class="rounded-image" alt="Basharul Alam Mazu profile picture" />
             </div>
-            <div class = "container">
+            <div class="container">
                <div class="section__text">
                   <h1 class="title">Hello, I'm Basharul - Alam - Mazu!👋</h1>
                   <p class="section__text__p1"> 
                      I'm a Computer Science and Engineering student, passionate about developing machine learning models 
-                     
                      for real-time decision-making and crafting insightful dashboards with tools like 
-                     
                      Tableau and Power BI.
                      <br> <br>
                      Please feel free to get in touch! 💬
                   </p>
                   <div id="socials-container">
-                      <img src="./assets/cv.png" alt="My CV" class="icon animate__animated animate__bounce" onclick="window.open('./assets/Portfolio.pdf')" />
-                      <img src="./assets/mail.png" alt="Email" class="icon animate__animated animate__bounce" onclick="location.href='mailto:basharulalam6@gmail.com'" />
-                      <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon animate__animated animate__bounce" onclick="location.href='https://www.linkedin.com/in/basharul-alam-mazu/'" />
-                      <img src="./assets/github.png" alt="My Github profile" class="icon animate__animated animate__bounce" onclick="location.href='https://github.com/basharulalammazu/'" />
+                     <img src="./assets/cv.png" alt="My CV" class="icon animate__animated animate__bounce" onclick="window.open('./assets/Portfolio.pdf')" />
+                     <img src="./assets/mail.png" alt="Email" class="icon animate__animated animate__bounce" onclick="location.href='mailto:basharulalam6@gmail.com'" />
+                     <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon animate__animated animate__bounce" onclick="location.href='https://www.linkedin.com/in/basharul-alam-mazu/'" />
+                     <img src="./assets/github.png" alt="My Github profile" class="icon animate__animated animate__bounce" onclick="location.href='https://github.com/basharulalammazu/'" />
                   </div>
                </div>
             </div>
@@ -369,25 +346,33 @@
 
 
                
-         <!-- Experience Section -->
-         <section id="experience" class="section mt-6">
+        <!-- Experience Section -->
+         <section id="experience" class="section experience-section">
             <div class="container">
-               <h1 class="title">Experience</h1>
-               <div class="row">
-                   <!--
-                  <div class="col-md-6">
-                     <h3>Position</h3>
-                     <p>Company Name - Duration</p>
+               <h1 class="title experience-title">Experience</h1>
+               <p class="section__text__p1 animate__animated animate__fadeInUp">
+                  I’m weaving my expertise through academic projects and personal ventures. Watch this space for more adventures!
+               </p>
+               <!--
+               <div class="timeline">
+                  <div class="timeline-item">
+                        <div class="timeline-content left">
+                           <h3 class="position-title">Senior Developer</h3>
+                           <p class="company-details">TechCorp - Jan 2022 - Present</p>
+                           <p class="experience-description">Led development of innovative web solutions</p>
+                        </div>
                   </div>
-                  <div class="col-md-6">
-                     <h3>Internship</h3>
-                     <p>Company Name - Duration</p>
+                  <div class="timeline-item">
+                        <div class="timeline-content right">
+                           <h3 class="position-title">Web Design Intern</h3>
+                           <p class="company-details">CreativeLabs - Jun 2021 - Dec 2021</p>
+                           <p class="experience-description">Assisted in creating responsive designs</p>
+                        </div>
                   </div>
-                     -->
                </div>
+            -->
             </div>
          </section>
-
 
 <!-- Project Section-->
 <section id="projects" class="section mt-6">
@@ -398,8 +383,7 @@
       </div>
 
       <!-- Filter Buttons -->
-      <!-- Filter Buttons -->
-      <div class="text-center mb-4">
+      <div class="text-center mb-4 animate__animated animate__fadeInUp">
          <button class="project-filter-btn" data-filter="all">All</button>
          <button class="project-filter-btn" data-filter="python">Python</button>
          <button class="project-filter-btn" data-filter="cpp">C++</button>
@@ -720,76 +704,48 @@
 
 
 
-         <!--Publication --> 
-         <section id="publication" class="section">
-            <div class="container-fluid">
-               <h2 class="text-center mb-4">Publication</h2>
-               <p></p>
+             <!-- Publication Section -->
+     <section id="publication" class="section publication-section">
+      <div class="container-fluid">
+         <h2 class="publication-title">Publications</h2>
+         <div class="publication-container">
+            <p class="section__text__p1 animate__animated animate__fadeInUp" align = "c">
+               Brewing some research magic—stay tuned for updates!
+            </p>
+            <!--
+            <div class="publication-item">
+                  <div class="publication-card">
+                     <h3 class="paper-title">Advancements in AI Research</h3>
+                     <p class="paper-details">Journal of Artificial Intelligence, Vol. 12, Issue 3, March 2024</p>
+                     <p class="paper-abstract">Explored novel approaches to machine learning algorithms...</p>
+                  </div>
             </div>
-         </section>
-      </main>
+            <div class="publication-item">
+                  <div class="publication-card">
+                     <h3 class="paper-title">Quantum Computing Applications</h3>
+                     <p class="paper-details">Tech Science Review, Vol. 8, Issue 1, January 2024</p>
+                     <p class="paper-abstract">Investigated practical implementations of quantum systems...</p>
+                  </div>
+            </div>
+         -->
+         </div>
+      </div>
+   </section>
+</main>
+
 
       
       <footer class="bg-light text-center text-lg-start">
-          <div class="container p-4">
-              <div class="d-flex justify-content-center">
-                  <p class="mb-0 mt-3">&copy; 2024 Basharul Alam Mazu. All Rights Reserved.</p>
-              </div>
-          </div>
-      </footer>
-
+         <div class="container p-4">
+             <div class="d-flex justify-content-center">
+                 <p class="mb-0 mt-3">© <span id="year"></span> Basharul Alam Mazu. All Rights Reserved.</p>
+             </div>
+         </div>
+     </footer>
 
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
       <script src="script.js"></script>
-      <script>
-          document.addEventListener("DOMContentLoaded", function() {
-          const sections = document.querySelectorAll('section');
-          const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-          
-          navLinks.forEach(link => {
-              link.addEventListener('click', () => {
-                  const targetId = link.getAttribute('href').substring(1);
-                  sections.forEach(section => {
-                      section.style.display = 'none';
-                      if (section.getAttribute('id') === targetId) {
-                          section.style.display = 'block';
-                      }
-                  });
-              });
-          });
-      });
-
-      </script>
-
-      <!-- Add this script section at the bottom of your HTML file before the closing </body> tag -->
-<script>
-   document.addEventListener("DOMContentLoaded", function () {
-       // Function to highlight the active navigation link
-       function highlightActiveLink() {
-           const sections = document.querySelectorAll('section');
-           const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-           sections.forEach(section => {
-               const sectionTop = section.offsetTop - 100;
-               const sectionHeight = section.clientHeight;
-               const id = section.getAttribute('id');
-
-               if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                   navLinks.forEach(link => {
-                       link.style.color = ''; // Reset to default color
-                   });
-                   document.querySelector(`.navbar-nav .nav-link[href="#${id}"]`).style.color = 'blue'; // Set active link color
-               }
-           });
-       }
-
-       // Highlight navigation links based on scroll position
-       window.addEventListener('scroll', highlightActiveLink);
-
-       // Initial call to highlight the correct link on page load
-       highlightActiveLink();
-   });
-</script>
-</body>
+     
+   </body>
 </html>

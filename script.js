@@ -1,168 +1,136 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
-
-    // Check if dark mode is enabled
-    const darkModeEnabled = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Function to toggle dark mode
-    function toggleDarkMode() {
-        if (darkModeEnabled) {
-            // Dark mode
-            navbarTogglerIcon.style.backgroundColor = "#333";
-        } else {
-            // Light mode
-            navbarTogglerIcon.style.backgroundColor = "#fff"; // Change to light mode background color
-        }
+document.addEventListener("DOMContentLoaded", function () {
+    // Preloader
+    window.addEventListener('load', () => {
+    document.getElementById('preloader').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+    }, 500);
+});
+   
+const body = document.body;
+const navbarTogglerIcon = document.querySelector('.navbar-toggler-icon');
+const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+   
+// Dark Mode Toggle
+function toggleDarkMode(e) {
+    body.classList.toggle('dark-mode', e.matches);
+    navbarTogglerIcon.style.backgroundColor = e.matches ? '#333' : '#fff';
+    if (e.matches) {
+        document.querySelector('nav').style.background = 'linear-gradient(135deg, #2d2d2d, #444)';
+        document.querySelector('footer').style.background = 'linear-gradient(135deg, rgb(45, 45, 45), rgb(68, 68, 68));';
+    } else {
+        document.querySelector('nav').style.background = 'linear-gradient(135deg, #ffffff, #e9ecef)';
+        document.querySelector('footer').style.background = 'linear-gradient(135deg, rgb(45, 45, 45), rgb(68, 68, 68))';
     }
-
-    // Call the function to initially set the color based on the mode
-    toggleDarkMode();
-
-    // Listen for changes in color scheme
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(toggleDarkMode);
-
-    // Function to highlight the active navigation link
-    function highlightActiveLink() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-        let currentSectionId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const id = section.getAttribute('id');
-
-            // Check if the current scroll position is within the section's range
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSectionId = id; // Update the current section ID
-            }
-        });
-
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href').substring(1); // Remove the #
-            if (href === currentSectionId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
-
-    // Highlight navigation links based on scroll position
-    window.addEventListener('scroll', highlightActiveLink);
-    highlightActiveLink(); // Initial call to set the active link based on current scroll position
-
-    // Smooth scrolling for navigation links
+}
+toggleDarkMode(darkModeMediaQuery);
+    darkModeMediaQuery.addListener(toggleDarkMode);
+   
+    // Smooth Scroll and Section Toggle
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
-            const targetId = this.getAttribute('href'); // Get target ID from href
-            const targetSection = document.querySelector(targetId); // Get target section
-
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.querySelector(`#${targetId}`);
             if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-
-                // Update URL without adding to history
-                history.pushState(null, null, targetId); // Change URL to targetId without reloading
-
-                // Collapse the navbar after clicking a link (if applicable)
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse) {
-                    navbarCollapse.classList.remove('show');
+                document.querySelectorAll('.section').forEach(section => {
+                    section.style.display = 'none';
+                    section.style.opacity = '0';
+                });
+                targetSection.style.display = 'block';
+                setTimeout(() => {
+                    targetSection.style.transition = 'opacity 0.5s ease';
+                    targetSection.style.opacity = '1';
+                }, 10);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                    history.pushState(null, null, `#${targetId}`);
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    document.querySelector('.navbar-toggler').click();
                 }
-            }
-        });
-    });
-
-    // Function to show active section on page load
-    function showActiveSection() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const id = section.getAttribute('id');
-
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
+                    document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
                 });
-                const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
+                this.classList.add('active');
             }
         });
-    }
-
-    // Show active section on page load
-    window.addEventListener('DOMContentLoaded', showActiveSection);
-
-    // Function to toggle active section
-    function showSection(sectionId) {
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.display = 'none';
-        });
-        document.getElementById(sectionId).style.display = 'block';
-    }
-});
-
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
+    });
+   
+    // Project Filter with Animation
     const filterButtons = document.querySelectorAll('.project-filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
-
+   
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
             const filter = button.getAttribute('data-filter');
-
             projectItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                
                 if (filter === 'all' || category === filter) {
                     item.style.display = 'block';
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 10);
                 } else {
-                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => item.style.display = 'none', 500);
                 }
             });
         });
     });
-
-    // Optional: Trigger "All" filter on page load
     filterButtons[0].click();
+   
+    // Back-to-Top Button
+    const backToTop = document.createElement('button');
+    backToTop.innerHTML = '↑';
+    backToTop.className = 'back-to-top';
+    document.body.appendChild(backToTop);
+    window.addEventListener('scroll', () => {
+        backToTop.style.opacity = window.scrollY > 300 ? '1' : '0';
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+   
+    // Inject Back-to-Top CSS
+    document.head.insertAdjacentHTML('beforeend', `
+        <style>
+            .back-to-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #042C3E,rgb(43, 43, 150));
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                font-size: 28px;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                z-index: 1000;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            .back-to-top:hover {
+                transform: scale(1.2) rotate(360deg);
+                background: linear-gradient(135deg,rgb(238, 168, 255), #9C4EAF);
+            }
+        </style>
+    `);
 });
 
-// JavaScript for image swapping
-document.addEventListener("DOMContentLoaded", function () {
-    // Function to handle slideshow for each project
-    function startSlideshow(containerId) {
-        const container = document.getElementById(containerId);
-        const images = container.querySelectorAll('.project-img');
-        let currentIndex = 0;
 
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.style.display = i === index ? 'block' : 'none';
-            });
-        }
 
-        function nextImage() {
-            const nextIndex = (currentIndex + 1) % images.length;
-            showImage(nextIndex);
-            currentIndex = nextIndex;
-        }
-
-        // Initially, show the first image
-        showImage(currentIndex);
-
-        // Change image every 3 seconds
-        setInterval(nextImage, 3000);
-    }
-
-    // Start slideshow for each project
-    startSlideshow('project1-slideshow');
-    startSlideshow('project2-slideshow');
-    startSlideshow('project3-slideshow');
-});
+// Get the current year
+const currentYear = new Date().getFullYear();
+// Insert the year into the span element
+document.getElementById("year").textContent = currentYear;
