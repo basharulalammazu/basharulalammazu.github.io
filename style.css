@@ -584,12 +584,12 @@ img-fluid {
 
 .project-filter-btn:hover {
     transform: translateY(-5px) scale(1.05) rotate(2deg);
-    background: linear-gradient(135deg, #0056b3, #4e4ee0);
+    background: linear-gradient(135deg, rgb(238, 168, 255), #9C4EAF);
     box-shadow: 0 8px 25px rgba(4, 44, 62, 0.6);
 }
 
 .project-filter-btn.active {
-    background: linear-gradient(135deg, #031f2d, #1e1e6b);
+    background: linear-gradient(135deg, rgb(238, 168, 255), #9C4EAF);
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(4, 44, 62, 0.8);
 }
