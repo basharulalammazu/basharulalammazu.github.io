@@ -14,10 +14,12 @@ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 // Dark Mode Toggle
 function toggleDarkMode(e) {
     body.classList.toggle('dark-mode', e.matches);
-    navbarTogglerIcon.style.backgroundColor = e.matches ? '#333' : '#fff';
+    navbarTogglerIcon.classList.toggle('light-mode', !e.matches);
+    navbarTogglerIcon.classList.toggle('dark-mode', e.matches);
+    
     if (e.matches) {
         document.querySelector('nav').style.background = 'linear-gradient(135deg, #2d2d2d, #444)';
-        document.querySelector('footer').style.background = 'linear-gradient(135deg, rgb(45, 45, 45), rgb(68, 68, 68));';
+        document.querySelector('footer').style.background = 'linear-gradient(135deg, rgb(45, 45, 45), rgb(68, 68, 68))';
     } else {
         document.querySelector('nav').style.background = 'linear-gradient(135deg, #ffffff, #e9ecef)';
         document.querySelector('footer').style.background = 'linear-gradient(135deg, rgb(45, 45, 45), rgb(68, 68, 68))';

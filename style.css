@@ -14,7 +14,7 @@ html {
 
 /* Paragraph styles */
 p {
-    color: #555;
+    color: silver;
 }
 
 /* Style headings */
@@ -53,9 +53,10 @@ nav {
 }
 
 .navbar-toggler-icon {
-    background-color: transparent !important; /* Set background color to transparent */
-    border-radius: 2px; /* Rounded shape */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
 }
+
 
 /* Selected button color */
 .navbar-toggler:focus,
@@ -79,16 +80,16 @@ nav {
     color: #007bff; /* Formal color on hover */
 }
 
-/* Light mode background color */
+
+/* Light mode specific */
 .navbar-toggler-icon.light-mode {
-    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Dark mode background color */
+/* Dark mode specific */
 .navbar-toggler-icon.dark-mode {
-    background-color: #000;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
 .navbar-nav .nav-link {
    /* color: #333; /* Default color for links */
     transition: color 0.3s ease; /* Smooth transition for color change */
@@ -269,35 +270,6 @@ section {
         padding: 6px;
     }
 }
-/* About section styles */
-.about-content {
-    justify-content: space-between;
-
-    display: flex
-;
-    align-items: center;
-    /* background: rgba(255, 255, 255, 0.8); */
-    padding: 2rem;
-    border-radius: 20px;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); */
-}
-
-.section-description {
-    text-align: justify;
-}
-
-.about-image {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -400,6 +372,114 @@ section {
 }
 
 
+
+/* About */
+/* Base styles (Mobile-First Approach) */
+.about-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically on small screens */
+    padding: 1rem; /* Reduced padding for mobile */
+    border-radius: 10px;
+}
+
+.section-description {
+    text-align: justify;
+    width: 100%;
+    font-size: 1rem; /* Base font size for mobile */
+    line-height: 1.5;
+}
+
+.about-image {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Space between text and image on mobile */
+}
+
+.about-image img {
+    max-width: 100%; /* Ensures image scales responsively */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Fluid Grid Adjustments */
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bootstrap overrides for consistency */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 576px) { /* Small devices (tablets) */
+    .about-content {
+        padding: 1.5rem;
+    }
+    .section-description {
+        font-size: 1.1rem;
+    }
+    .about-image {
+        margin-top: 0; /* Remove margin as layout adjusts */
+    }
+}
+
+@media (min-width: 768px) { /* Medium devices */
+    .about-content {
+        padding: 2rem;
+    }
+    .section-description {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 992px) { /* Large devices (desktops) */
+    .col-lg-8 {
+        flex: 0 0 66.666667%; /* ~70% width */
+        max-width: 66.666667%;
+    }
+    .col-lg-4 {
+        flex: 0 0 33.333333%; /* ~25% width with padding adjustment */
+        max-width: 33.333333%;
+    }
+    .about-content {
+        flex-direction: row; /* Side-by-side layout */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .about-image {
+        margin-top: 0;
+    }
+    .section-description {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1200px) { /* Extra large devices */
+    .section-description {
+        font-size: 1.3rem; /* Slightly larger text for readability */
+    }
+    .about-image img {
+        max-width: 75%;
+        margin-top: 40px;
+    }
+}
 
 
 /* Experience */
@@ -585,46 +665,45 @@ section {
     border-radius: 30px;
     border: none;
     color: #fff;
-    background: linear-gradient(135deg, #ff6f61, #ffcc5c);
-    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+    /* Updated colors to match project section gradient */
+    background: linear-gradient(135deg, #042C3E, #2b2b96); /* Dark blue from project button */
+    box-shadow: 0 5px 15px rgba(4, 44, 62, 0.4); /* Matching shadow */
     margin: 0.6rem;
     transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-filter-btn:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 111, 97, 0.6);
-    background: linear-gradient(135deg, #ff4d3d, #ffaa33);
+    /* Lighter variation of project button colors */
+    background: linear-gradient(135deg, #0056b3, #4e4ee0);
+    box-shadow: 0 8px 25px rgba(4, 44, 62, 0.6);
 }
 
 .project-filter-btn.active {
-    background: linear-gradient(135deg, #d94536, #cc8c2a);
+    /* Slightly darker version for active state */
+    background: linear-gradient(135deg, #031f2d, #1e1e6b);
+    box-shadow: 0 8px 25px rgba(4, 44, 62, 0.8);
 }
 
-/* Add a subtle shine effect */
-/* Project Section */
-.project-filter-btn {
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 30px;
-    border: none;
-    color: #fff;
-    background: linear-gradient(135deg, #ff6f61, #ffcc5c);
-    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
-    margin: 0.6rem;
-    transition: all 0.4s ease;
+
+.project-filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
 }
 
-.project-filter-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 111, 97, 0.6);
-    background: linear-gradient(135deg, #ff4d3d, #ffaa33);
-}
-
-.project-filter-btn.active {
-    background: linear-gradient(135deg, #d94536, #cc8c2a);
+.project-filter-btn:hover::before {
+    width: 200%;
+    height: 200%;
 }
 
 
@@ -644,6 +723,8 @@ section {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+
 
 .image-container-project {
     position: relative;
