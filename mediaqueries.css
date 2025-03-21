@@ -1,182 +1,292 @@
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-  .col-md-6 {
-    width: 50%;
+/* Small screens (up to 300px) */
+@media screen and (max-width: 300px) {
+  #about .col-md-6,
+  #project,
+  .col-md-5 {
+      width: 100%;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
+/* Extra small screens (up to 400px) */
+@media screen and (max-width: 400px) {
+  #about .col-md-6,
+  #project,
+  .col-md-5 {
+      width: 100%;
+  }
+  h1 {
+      margin-top: 10px;
+  }
+  #project,
+  .col-md-5 {
+      min-height: 200px;
+  }
+  .image-container-project {
+      min-height: 480px;
+  }
+}
+
+/* Very small screens (up to 480px) */
+@media screen and (max-width: 480px) {
+  #socials-container {
+      gap: 1rem;
+  }
+  #socials-container .icon {
+      width: 45px;
+      height: 45px;
+  }
+}
+
+/* Small screens (up to 500px) */
+@media screen and (max-width: 500px) {
+  #project,
+  .col-md-5 {
+      width: 100%;
+  }
+}
+
+/* Medium screens (up to 600px) */
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+      height: fit-content;
+  }
+  #profile {
+      height: 83vh;
+      margin-bottom: 0;
+  }
+  article {
+      font-size: 1rem;
+  }
+  footer nav {
+      height: fit-content;
+      margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+      flex-wrap: wrap;
+  }
+  .contact-info-container {
+      margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+      font-size: 1rem;
+  }
+  .experience-sub-title {
+      font-size: 1.25rem;
+  }
+  .logo {
+      font-size: 1.5rem;
+  }
+  .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+  }
+  .section__pic-container {
+      width: auto;
+      height: 46vw;
+      justify-content: center;
+  }
+  .section__text__p2 {
+      font-size: 1.25rem;
+  }
+  .title {
+      font-size: 2rem;
+  }
+  .text-container {
+      text-align: justify;
+  }
+  #project,
+  .col-md-5 {
+      width: 90%;
+  }
+}
+
+/* Tablet and below (up to 768px) */
+@media screen and (max-width: 768px) {
+  #socials-container {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+  }
+  #socials-container .icon {
+      width: 50px;
+      height: 50px;
+      padding: 8px;
+  }
+  .nav-links {
+      display: none;
   }
   #hamburger-nav {
-    display: flex;
+      display: flex;
+      align-items: center;
+  }
+  .menu-links {
+      position: relative;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+      width: auto;
+      max-height: none;
+  }
+  .menu-links a {
+      display: block;
+      text-align: left;
+      font-size: 1.5rem;
+      color: #333;
+      text-decoration: none;
+      padding: 10px;
+  }
+  .hamburger-icon.open span:first-child {
+      transform: rotate(45deg) translate(8px, 8px);
+  }
+  .hamburger-icon.open span:nth-child(2) {
+      opacity: 0;
+  }
+  .hamburger-icon.open span:last-child {
+      transform: rotate(-45deg) translate(8px, -8px);
+  }
+  .btn-primary {
+      padding: 10px 10px;
+      font-size: 14px;
+  }
+  .timeline:before {
+      left: 20px;
+  }
+  .timeline-item {
+      width: 100%;
+      left: 0 !important;
+  }
+  .timeline-content {
+      margin-left: 40px;
+  }
+  .left:after,
+  .right:after {
+      left: -28px;
+  }
+  .publication-section {
+      padding: 60px 0;
+  }
+  .publication-title {
+      font-size: 2.2em;
+      margin-bottom: 40px;
+  }
+  .publication-container {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+  }
+  .publication-card {
+      padding: 20px;
+  }
+}
+
+/* Desktop adjustments (576px and up) */
+@media screen and (min-width: 576px) {
+  .section-description {
+      font-size: 1.1rem;
+  }
+}
+
+/* Tablet adjustments (768px and up) */
+@media screen and (min-width: 768px) {
+  #project .col-md-5 {
+      width: 77%;
+  }
+}
+
+/* Large screens (up to 1200px) */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+      display: none;
+  }
+  #hamburger-nav {
+      display: flex;
   }
   #experience,
   .experience-details-container {
-    margin-top: 2rem;
+      margin-top: 2rem;
   }
   #profile,
   .section-container {
-    display: block;
+      display: block;
   }
   .arrow {
-    display: none;
+      display: none;
   }
   section,
   .section-container {
-    height: fit-content;
+      height: fit-content;
   }
   section {
-    margin: 0 5%;
+      margin: 0 5%;
   }
   .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
+      width: 275px;
+      height: 275px;
+      margin: 0 auto 2rem;
   }
   .about-containers {
-    margin-top: 0;
+      margin-top: 0;
   }
   #contact,
   #projects {
-    height: fit-content;
+      height: fit-content;
   }
   .col-md-5 {
-    width: 75%;
+      width: 75%;
   }
-
 }
 
-@media (min-width: 1000px) {
+/* Larger screens (992px and up) */
+@media screen and (min-width: 992px) {
+  .col-lg-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+  .col-lg-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+  .section-description {
+      font-size: 1.25rem;
+  }
+}
+
+/* Project-specific adjustment (1000px and up) */
+@media screen and (min-width: 1000px) {
   #project,
   .col-md-5 {
       width: 50%;
   }
 }
 
-@media screen and(min-width: 768px) {
-  #project
-  .col-md-5 {
-      flex: 0 0 auto;
-      width: 77%;
+/* Extra large screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+  .section-description {
+      font-size: 1.3rem;
+  }
+  .about-image img {
+      max-width: 75%;
+      margin-top: 40px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: fit-content;
-  }
+/* Very large screens (up to 1400px) */
+@media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+      height: 83vh;
+      margin-bottom: 6rem;
   }
-  article {
-    font-size: 1rem;
+  .about-containers {
+      flex-wrap: wrap;
   }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
+  #contact,
+  #projects {
+      height: fit-content;
   }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
-  }
-  .section__text__p2 {
-    font-size: 1.25rem;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .text-container {
-    text-align: justify;
-  }
-  #project,
-  .col-md-5 {
-      flex: 0 0 auto;
-      width: 90%;
-  }
-}
-
-
-/* Media query for screens with max width of 500px */
-@media screen and (max-width: 500px) {
-  #project,
-  .col-md-5 {
-      flex: 0 0 auto;
-      width: 100%;
-  }
-}
-
-
-
-@media screen and (max-width: 400px) {
-  #about
   .col-md-6 {
-    width: 100%;
-}
-  h1 {
-    margin-top: 10px;
-  }
-
-  #project,
-  .col-md-5 {
-      flex: 0 0 auto;
-      width: 100%;
-      min-height: 200px;
-      
-  }
-  .image-container-project{
-    min-height: 480px;
-  }
-
-
-}
-
-
-@media screen and (max-width: 300px) {
-  #about
-  .col-md-6 {
-    width: 100%;
-}
-  #project,
-  .col-md-5 {
-      flex: 0 0 auto;
-      width: 100%;
+      width: 50%;
   }
 }
