@@ -62,34 +62,44 @@ toggleDarkMode(darkModeMediaQuery);
     });
    
     // Project Filter with Animation
+   // Project Filter with Enhanced Animation
     const filterButtons = document.querySelectorAll('.project-filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
-   
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // Update active button state
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+
             const filter = button.getAttribute('data-filter');
-            projectItems.forEach(item => {
+
+            // Animate items
+            projectItems.forEach((item, index) => {
                 const category = item.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
+                const isVisible = filter === 'all' || category === filter;
+
+                if (isVisible) {
+                    // Show item with staggered animation
                     item.style.display = 'block';
-                    item.style.opacity = '0';
                     setTimeout(() => {
-                        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 10);
+                        item.classList.add('visible');
+                    }, index * 100); // Stagger by 100ms per item
                 } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => item.style.display = 'none', 500);
+                    // Hide item with smooth fade out
+                    item.classList.remove('visible');
+                    setTimeout(() => {
+                        if (!item.classList.contains('visible')) {
+                            item.style.display = 'none';
+                        }
+                    }, 500); // Match CSS transition duration
                 }
             });
         });
     });
+
+    // Trigger initial filter (All)
     filterButtons[0].click();
-   
     // Back-to-Top Button
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '↑';

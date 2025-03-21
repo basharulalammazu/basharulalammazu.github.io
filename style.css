@@ -226,48 +226,111 @@ section {
 .title {
     font-size: 2.5rem;
 }
+
+
+/* Social Buttons Container */
 #socials-container {
-    margin-top: 2rem;
-    display: flex; /* Use flexbox for clean alignment */
-    justify-content: center; /* Center the icons */
-    gap: 1.5rem; /* Consistent spacing between icons */
-    padding: 0.5rem 0; /* Add vertical padding for breathing room */
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Increased spacing for elegance */
+    padding: 1rem 0;
 }
 
+/* Base Social Icon Styles */
 #socials-container .icon {
-    width: 65px; /* Slightly larger for prominence */
-    height: 65px;
-    padding: 8px; /* Inner padding for a button-like feel */
-    background-color: #ffffff; /* White background for formality */
-    border: 2px solid #333; /* Subtle, formal border */
-    border-radius: 50%; /* Circular shape for elegance */
+    width: 70px; /* Slightly larger for prominence */
+    height: 70px;
+    padding: 10px; /* Balanced padding */
+    background: linear-gradient(135deg, #ffffff, #e9ecef); /* Subtle formal gradient */
+    border: 2px solid #042C3E; /* Dark blue from project theme */
+    border-radius: 50%; /* Circular shape */
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transitions for hover effects */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth quadratic easing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: relative; /* For pseudo-element */
+    overflow: hidden; /* Contain effects */
 }
 
-/* Hover effect for interactivity */
+/* Icon Image Styling */
+#socials-container .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect */
 #socials-container .icon:hover {
-    transform: translateY(-3px); /* Slight lift on hover */
-    border-color: #007bff; /* Blue border for a professional touch */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transform: scale(1.1) rotate(5deg); /* Subtle scale and rotation */
+    background: linear-gradient(135deg, #042C3E, #2b2b96); /* Dark blue gradient */
+    border-color: #ffffff; /* White border on hover */
+    box-shadow: 0 8px 20px rgba(4, 44, 62, 0.3); /* Deeper shadow */
 }
 
-/* Remove the bounce animation for a more formal look */
-#socials-container .icon.animate__animated.animate__bounce {
-    animation: none; /* Disable the bounce animation */
+/* Shine Effect on Hover */
+#socials-container .icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 1;
 }
+
+#socials-container .icon:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+/* Icon-specific hover colors (optional formality touch) */
+#socials-container .icon:nth-child(1):hover { /* CV */
+    background: linear-gradient(135deg, #042C3E, #1e1e6b);
+}
+#socials-container .icon:nth-child(2):hover { /* Email */
+    background: linear-gradient(135deg, #0056b3, #4e4ee0);
+}
+#socials-container .icon:nth-child(3):hover { /* LinkedIn */
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
+}
+#socials-container .icon:nth-child(4):hover { /* GitHub */
+    background: linear-gradient(135deg, #333333, #6e5494);
+}
+
+/* Remove bounce animation */
+#socials-container .icon.animate__animated.animate__bounce {
+    animation: none;
+}
+
 
 /* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     #socials-container {
-        gap: 1rem; /* Reduce spacing on smaller screens */
+        gap: 1.5rem;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
 
     #socials-container .icon {
-        width: 40px; /* Slightly smaller on mobile */
-        height: 40px;
-        padding: 6px;
+        width: 50px;
+        height: 50px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #socials-container {
+        gap: 1rem;
+    }
+
+    #socials-container .icon {
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -665,25 +728,23 @@ section {
     border-radius: 30px;
     border: none;
     color: #fff;
-    /* Updated colors to match project section gradient */
-    background: linear-gradient(135deg, #042C3E, #2b2b96); /* Dark blue from project button */
-    box-shadow: 0 5px 15px rgba(4, 44, 62, 0.4); /* Matching shadow */
+    background: linear-gradient(135deg, #042C3E, #2b2b96);
+    box-shadow: 0 5px 15px rgba(4, 44, 62, 0.4);
     margin: 0.6rem;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
 .project-filter-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    /* Lighter variation of project button colors */
+    transform: translateY(-5px) scale(1.05) rotate(2deg); /* Add subtle rotation */
     background: linear-gradient(135deg, #0056b3, #4e4ee0);
     box-shadow: 0 8px 25px rgba(4, 44, 62, 0.6);
 }
 
 .project-filter-btn.active {
-    /* Slightly darker version for active state */
     background: linear-gradient(135deg, #031f2d, #1e1e6b);
+    transform: scale(1.1); /* Slightly larger when active */
     box-shadow: 0 8px 25px rgba(4, 44, 62, 0.8);
 }
 
@@ -695,33 +756,38 @@ section {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.4s ease, height 0.4s ease;
 }
 
 .project-filter-btn:hover::before {
-    width: 200%;
-    height: 200%;
+    width: 250%;
+    height: 250%;
 }
 
+.project-item {
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px) scale(0.95); /* Initial state for animation */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth bezier curve */
+    will-change: transform, opacity; /* Optimize performance */
+}
 
+.project-item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Final state */
+}
+
+/* Enhance project card hover effect */
 .project-card {
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     border-radius: 10px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
     background: #ffffff;
     margin-bottom: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -735,17 +801,19 @@ section {
     min-height: 380px;
 }
 
+/* Enhance image transition */
 .image-container-project img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease-out;
 }
 
 .image-container-project img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(-1deg); /* Add slight counter-rotation */
 }
+
 
 .card-overlay {
     display: flex;
