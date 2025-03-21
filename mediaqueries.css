@@ -164,6 +164,15 @@
       padding: 10px 10px;
       font-size: 14px;
   }
+  .achievement-item {
+    flex-direction: column; /* Stack text and button on small screens */
+    align-items: flex-start;
+}
+
+.certificate-btn {
+    margin-left: 0;
+    margin-top: 10px; /* Space above button when stacked */
+}
   .image-container-project {
     height: 500px;
     max-height: 550px;

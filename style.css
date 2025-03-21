@@ -419,6 +419,67 @@ img-fluid {
     padding-right: 15px;
 }
 
+/* Achievements Section */
+.achievement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievement-item {
+    display: flex;
+    justify-content: space-between; /* Text on left, button on right */
+    align-items: center; /* Vertically center content */
+    margin-bottom: 15px; /* Space between items */
+    padding: 10px;
+    background: #f9f9f9; /* Light background for each item */
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.achievement-text {
+    flex-grow: 1; /* Takes up available space */
+    color: #333;
+}
+
+.achievement-text strong {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #042C3E; /* Dark color for emphasis */
+}
+
+.achievement-text br + span {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Certificate Button */
+.certificate-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #042C3E, #2b2b96); /* Matches project buttons */
+    border-radius: 15px;
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    min-width: 100px; /* Consistent with project buttons */
+    margin-left: 10px; /* Space from text */
+}
+
+.certificate-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #4e4ee0);
+    transform: scale(1.05);
+    color: #fff;
+}
+
+
+
+
 /* Experience */
 .experience-section {
     padding: 60px 0;
@@ -441,7 +502,7 @@ img-fluid {
     position: absolute;
     width: 60px;
     height: 3px;
-    background: #3498db;
+    background: #cf8fef;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -785,7 +846,7 @@ img-fluid {
     position: absolute;
     width: 80px;
     height: 4px;
-    background: #e74c3c;
+    background: #cf8fef;
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
