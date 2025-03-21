@@ -35,6 +35,18 @@
       width: 45px;
       height: 45px;
   }
+  .image-container-project {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    max-height: 500px;
+    min-height: 380px;
+}
+.about-image img {
+    max-width: 50%;
+    margin-top: 0px;
+}
 }
 
 /* Small screens (up to 500px) */
@@ -152,6 +164,10 @@
       padding: 10px 10px;
       font-size: 14px;
   }
+  .image-container-project {
+    height: 500px;
+    max-height: 550px;
+}
   .timeline:before {
       left: 20px;
   }
@@ -193,6 +209,10 @@
 @media screen and (min-width: 768px) {
   #project .col-md-5 {
       width: 77%;
+  }
+  .image-container-project {
+    height: 350px;
+    max-height: 350px;
   }
 }
 
@@ -246,13 +266,29 @@
       max-width: 66.666667%;
   }
   .col-lg-4 {
-      flex: 0 0 33.333333%;
-      max-width: 33.333333%;
+      flex: 0 0 50%;
+      max-width: 48%;
   }
+  .about-container {
+    display: grid;
+    grid-template-columns: 8fr 5fr; /* Mimics col-lg-8 and col-lg-5 (8/12 and 5/12) */
+    gap: 30px; /* Space between columns */
+    flex-direction: row; /* Ensure horizontal layout */
+}
+
+.about-text {
+    width: 100%; /* Full width within its grid cell */
+}
+
+.about-image-container {
+    width: 100%; /* Full width within its grid cell */
+}
   .section-description {
       font-size: 1.25rem;
   }
+
 }
+
 
 /* Project-specific adjustment (1000px and up) */
 @media screen and (min-width: 1000px) {
@@ -268,7 +304,7 @@
       font-size: 1.3rem;
   }
   .about-image img {
-      max-width: 75%;
+      max-width: 80%;
       margin-top: 40px;
   }
 }
