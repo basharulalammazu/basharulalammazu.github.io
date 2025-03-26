@@ -174,7 +174,7 @@
     margin-top: 10px; /* Space above button when stacked */
 }
   .image-container-project {
-    height: 500px;
+    height: 460px;
     max-height: 550px;
 }
   .timeline:before {
@@ -315,6 +315,9 @@
   .about-image img {
       max-width: 80%;
       margin-top: 40px;
+  }
+  h3{
+    margin-top: 0%;
   }
 }
 
