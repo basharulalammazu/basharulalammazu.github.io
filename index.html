@@ -1,93 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"></script>
-   <script>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"
+    ></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-H3DRBFQ36C');
-   </script>
-      
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Basharul Alam Mazu's Personal Website">
-   <meta name="keywords" content="Basharul Alam Mazu, Home. Portfolio, About, Education, Projects, Experience, Publication">
-   <meta name="author" content="Basharul Alam Mazu">
-   <title>Basharul - Alam - Mazu</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="mediaqueries.css">
-   <link rel="icon" type="image/png" href="assets/icon.png">
-</head>
-<body>
-   <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-         <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="experience.html">Experience</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="projects.html">Projects</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="publication.html">Publication</a>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </nav>
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-H3DRBFQ36C");
+    </script>
 
-   <main class="mt-6">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Basharul Alam Mazu's Personal Website" />
+    <meta
+      name="keywords"
+      content="Basharul Alam Mazu, Home. Portfolio, About, Education, Projects, Experience, Publication"
+    />
+    <meta name="author" content="Basharul Alam Mazu" />
+    <title>Basharul - Alam - Mazu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="publication.html">Publication</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <button
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                type="button"
+                aria-label="Toggle dark mode"
+                title="Toggle dark mode"
+              >
+                <span class="icon-sun" aria-hidden="true">☀️</span>
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mt-6">
       <!-- Home Section -->
       <section id="home" class="section">
-         <div class="container">
-            <img src="./assets/profile-pic.webp" class="rounded-image" alt="Basharul Alam Mazu profile picture" />
-         </div>
-         <div class="container">
-            <div class="section__text">
-               <h1 class="title">Hello, I'm Basharul - Alam - Mazu!👋</h1>
-               <p class="section__text__p1"> 
-                  I'm a Computer Science and Engineering student, passionate about developing machine learning models 
-                  for real-time decision-making and crafting insightful dashboards with tools like 
-                  Tableau and Power BI.
-                  <br> <br>
-                  Please feel free to get in touch! 💬
-               </p>
-               <div id="socials-container">
-                  <img src="./assets/cv.png" alt="My CV" class="icon animate__animated animate__bounce" onclick="window.open('./assets/resume.pdf')" />
-                  <img src="./assets/mail.png" alt="Email" class="icon animate__animated animate__bounce" onclick="location.href='mailto:basharulalam6@gmail.com'" />
-                  <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon animate__animated animate__bounce" onclick="location.href='https://www.linkedin.com/in/basharul-alam-mazu/'" />
-                  <img src="./assets/github.png" alt="My Github profile" class="icon animate__animated animate__bounce" onclick="location.href='https://github.com/basharulalammazu/'" />
-               </div>
+        <div class="container">
+          <img
+            src="./assets/profile-pic.webp"
+            class="rounded-image"
+            alt="Basharul Alam Mazu profile picture"
+          />
+        </div>
+        <div class="container">
+          <div class="section__text">
+            <h1 class="title">Hello, I'm Basharul - Alam - Mazu!👋</h1>
+            <p class="section__text__p1">
+              I'm a Computer Science and Engineering student, passionate about
+              developing machine learning models for real-time decision-making
+              and crafting insightful dashboards with tools like Tableau and
+              Power BI.
+              <br />
+              <br />
+              Please feel free to get in touch! 💬
+            </p>
+            <div id="socials-container">
+              <img
+                src="./assets/cv.png"
+                alt="My CV"
+                class="icon animate__animated animate__bounce"
+                onclick="window.open('./assets/resume.pdf')"
+              />
+              <img
+                src="./assets/mail.png"
+                alt="Email"
+                class="icon animate__animated animate__bounce"
+                onclick="location.href='mailto:basharulalam6@gmail.com'"
+              />
+              <img
+                src="./assets/linkedin.png"
+                alt="My LinkedIn profile"
+                class="icon animate__animated animate__bounce"
+                onclick="location.href='https://www.linkedin.com/in/basharul-alam-mazu/'"
+              />
+              <img
+                src="./assets/github.png"
+                alt="My Github profile"
+                class="icon animate__animated animate__bounce"
+                onclick="location.href='https://github.com/basharulalammazu/'"
+              />
             </div>
-         </div>
+          </div>
+        </div>
       </section>
-   </main>
-   
-   <footer class="bg-light text-center text-lg-start">
-      <div class="container p-4">
-         <div class="d-flex justify-content-center">
-            <p class="mb-0 mt-3">© <span id="year"></span> Basharul - Alam - Mazu. All Rights Reserved.</p>
-         </div>
-      </div>
-   </footer>
+    </main>
 
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-   <script src="script.js"></script>
-</body>
+    <footer class="bg-light text-center text-lg-start">
+      <div class="container p-4">
+        <div class="d-flex justify-content-center">
+          <p class="mb-0 mt-3">
+            © <span id="year"></span> Basharul - Alam - Mazu. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

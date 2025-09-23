@@ -1,445 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"></script>
-   <script>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"
+    ></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-H3DRBFQ36C');
-   </script>
-      
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Basharul Alam Mazu's Personal Website">
-   <meta name="keywords" content="Basharul Alam Mazu, Home. Portfolio, About, Education, Projects, Experience, Publication">
-   <meta name="author" content="Basharul Alam Mazu">
-   <title>Basharul - Alam - Mazu</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="mediaqueries.css">
-   <link rel="icon" type="image/png" href="assets/icon.png">
-</head>
-<body>
-   <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-         <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="experience.html">Experience</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="projects.html">Projects</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="publication.html">Publication</a>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </nav>
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-H3DRBFQ36C");
+    </script>
 
-   <main class="mt-6">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Basharul Alam Mazu's Personal Website" />
+    <meta
+      name="keywords"
+      content="Basharul Alam Mazu, Home. Portfolio, About, Education, Projects, Experience, Publication"
+    />
+    <meta name="author" content="Basharul Alam Mazu" />
+    <title>Basharul - Alam - Mazu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="publication.html">Publication</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <button
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                type="button"
+                aria-label="Toggle dark mode"
+                title="Toggle dark mode"
+              >
+                <span class="icon-sun" aria-hidden="true">☀️</span>
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mt-6">
       <!-- Project Section -->
       <section id="projects" class="section mt-6">
-         <div class="container">
-            <div class="text-center mb-5">
-               <p class="section__text__p1">Browse My</p>
-               <h1 class="title">Projects</h1>
+        <div class="container">
+          <div class="text-center mb-5">
+            <p class="section__text__p1">Browse My</p>
+            <h1 class="title">Projects</h1>
+          </div>
+          <div class="text-center mb-4 animate__animated animate__fadeInUp">
+            <button class="project-filter-btn" data-filter="all">All</button>
+            <button class="project-filter-btn" data-filter="python">
+              Python
+            </button>
+            <button class="project-filter-btn" data-filter="r">R</button>
+            <button class="project-filter-btn" data-filter="cpp">C++</button>
+            <button class="project-filter-btn" data-filter="csharp">C#</button>
+            <button class="project-filter-btn" data-filter="java">Java</button>
+            <button class="project-filter-btn" data-filter="php">PHP</button>
+          </div>
+          <div class="row justify-content-center">
+            <!-- Project 12 -->
+            <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="r">
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project12.webp"
+                    class="card-img-top project-img active"
+                    alt="QuantumHealthPulse Preprocessing"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        QuantumHealthPulse Preprocessing
+                      </h5>
+                      <p class="card-text">
+                        A robust R-based data preprocessing pipeline for heart
+                        disease prediction. Includes cleaning, transformation,
+                        normalization, outlier detection, and dataset balancing
+                        for machine learning readiness.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#r</span>
+                        <span class="tag">#data-preprocessing</span>
+                        <span class="tag">#healthcare</span>
+                        <span class="tag">#heart-disease</span>
+                        <span class="tag">#data-cleaning</span>
+                        <span class="tag">#normalization</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/HeartHealth-DataPreprocessing-R"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="text-center mb-4 animate__animated animate__fadeInUp">
-               <button class="project-filter-btn" data-filter="all">All</button>
-               <button class="project-filter-btn" data-filter="python">Python</button>
-               <button class="project-filter-btn" data-filter="r">R</button>
-               <button class="project-filter-btn" data-filter="cpp">C++</button>
-               <button class="project-filter-btn" data-filter="csharp">C#</button>
-               <button class="project-filter-btn" data-filter="java">Java</button>
-               <button class="project-filter-btn" data-filter="php">PHP</button>
+
+            <!-- Project 11 -->
+            <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="r">
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project11.webp"
+                    class="card-img-top project-img active"
+                    alt="Aljazeera News Analysis"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        Aljazeera News Analysis
+                      </h5>
+                      <p class="card-text">
+                        A R project that performs NLP-based topic modeling and
+                        sentiment analysis on Aljazeera news data using LDA and
+                        VADER for real-time insight extraction.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#r</span>
+                        <span class="tag">#nlp</span>
+                        <span class="tag">#lda</span>
+                        <span class="tag">#news-analysis</span>
+                        <span class="tag">#topic-modeling</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Aljazeera-News-Analysis"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="row justify-content-center">
 
-               <!-- Project 12 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="r">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project12.webp" class="card-img-top project-img active" alt="QuantumHealthPulse Preprocessing">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">QuantumHealthPulse Preprocessing</h5>
-                              <p class="card-text">
-                                 A robust R-based data preprocessing pipeline for heart disease prediction. Includes cleaning, transformation, normalization, outlier detection, and dataset balancing for machine learning readiness.
-                              </p>
-                              <div class="tags-container">
-                                 <span class="tag">#r</span>
-                                 <span class="tag">#data-preprocessing</span>
-                                 <span class="tag">#healthcare</span>
-                                 <span class="tag">#heart-disease</span>
-                                 <span class="tag">#data-cleaning</span>
-                                 <span class="tag">#normalization</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/HeartHealth-DataPreprocessing-R" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
+            <!-- Project 10 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="cpp"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project10.webp"
+                    class="card-img-top project-img active"
+                    alt="SkyQuest-Arcade-OpenGL"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        SkyQuest Arcade-OpenGL
+                      </h5>
+                      <p class="card-text">
+                        A 2D arcade game in C++ with OpenGL GLUT, featuring
+                        dynamic gameplay and three challenging levels.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#c++</span>
+                        <span class="tag">#opengl</span>
+                        <span class="tag">#glut</span>
+                        <span class="tag">#game-development</span>
+                        <span class="tag">#arcade</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/SkyQuest-Arcade-OpenGL"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
                   </div>
-               </div>
-
-               <!-- Project 11 -->
-                <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="r">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project11.webp" class="card-img-top project-img active" alt="Aljazeera News Analysis">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Aljazeera News Analysis</h5>
-                              <p class="card-text">
-                                 A R project that performs NLP-based topic modeling and sentiment analysis on Aljazeera news data using LDA and VADER for real-time insight extraction.
-                              </p>
-                              <div class="tags-container">
-                                 <span class="tag">#r</span>
-                                 <span class="tag">#nlp</span>
-                                 <span class="tag">#lda</span>
-                                 <span class="tag">#news-analysis</span>
-                                 <span class="tag">#topic-modeling</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Aljazeera-News-Analysis" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-
-               <!-- Project 10 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="cpp">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project10.webp" class="card-img-top project-img active" alt="SkyQuest-Arcade-OpenGL">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">SkyQuest Arcade-OpenGL</h5>
-                              <p class="card-text">
-                                 A 2D arcade game in C++ with OpenGL GLUT, featuring dynamic gameplay and three challenging levels.                                 </p>
-                              <div class="tags-container">
-                                 <span class="tag">#c++</span>
-                                 <span class="tag">#opengl</span>
-                                 <span class="tag">#glut</span>
-                                 <span class="tag">#game-development</span>
-                                 <span class="tag">#arcade</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/SkyQuest-Arcade-OpenGL" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-
-               <!-- Project 9 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="php">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project9.webp" class="card-img-top project-img active" alt="Green Tea Coffee Shop">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Green Tea Coffee Shop</h5>
-                              <p class="card-text">
-                                 Green Tea Coffee Shop is a responsive e-commerce website with a sleek design, seamless shopping, and efficient admin management.
-                              </p>
-                              <div class="tags-container">
-                                 <span class="tag">#html5</span>
-                                 <span class="tag">#css3</span>
-                                 <span class="tag">#javascript</span>
-                                 <span class="tag">#php</span>
-                                 <span class="tag">#mysql</span>
-                                 <span class="tag">#ecommerce</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Green-Tea-Coffee-Shop" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 8 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="python">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project8.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Loan Eligibility Prediction</h5>
-                              <p class="card-text">Machine learning predicts loan eligibility using decision tree, Naive Bayes, handling missing values efficiently</p>
-                              <div class="tags-container">
-                                 <span class="tag">#python</span>
-                                 <span class="tag">#maching-learning</span>
-                                 <span class="tag">#data-science</span>
-                                 <span class="tag">#loan-eligibility</span>
-                                 <span class="tag">#prediction</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Loan-Eligibility-Prediction" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 7 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="python">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project7.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Movie Recommendation System</h5>
-                              <p class="card-text">Uses TF-IDF and Cosine Similarity to suggest films based on genres, keywords, and favorites.</p>
-                              <div class="tags-container">
-                                 <span class="tag">#python</span>
-                                 <span class="tag">#nlp</span>
-                                 <span class="tag">#movie-recommendation</span>
-                                 <span class="tag">#recommendation-system</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Movie-Recomedation-System" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 6 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="python">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project6.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Tic Tac Toe</h5>
-                              <p class="card-text">Classic game with player vs. AI, easy registration, difficulty levels, and statistics tracking</p>
-                              <div class="tags-container">
-                                 <span class="tag">#game</span>
-                                 <span class="tag">#python</span>
-                                 <span class="tag">#tic-tac-toe</span>
-                                 <span class="tag">#two-player</span>
-                                 <span class="tag">#ai-opponent</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Tic-Tac-Toe" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 5 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="csharp">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project5.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Mobile Retail Shop</h5>
-                              <p class="card-text">Manages product display, inventory, shopping, cart, and shop owner registration for seamless user experience.</p>
-                              <div class="tags-container">
-                                 <span class="tag">#csharp</span>
-                                 <span class="tag">#dotnet</span>
-                                 <span class="tag">#sql</span>
-                                 <span class="tag">#mobile-retail-shop</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Mobile-Retail-Shop" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 4 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="csharp">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project4.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Blood Donar</h5>
-                              <p class="card-text">Blood Donor is an app for finding blood donors and managing user info, featuring registration, a searchable donor list, and password recovery</p>
-                              <div class="tags-container">
-                                 <span class="tag">#csharp</span>
-                                 <span class="tag">#dontnet</span>
-                                 <span class="tag">#sql</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Blood-Donar" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 3 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="csharp">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project3.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">AIUB Course Suggestion System</h5>
-                              <p class="card-text">The AIUB Course Suggestion System recommends next-semester courses based on completed courses, featuring user input and downloadable software.</p>
-                              <div class="tags-container">
-                                 <span class="tag">#csharp</span>
-                                 <span class="tag">#donet</span>
-                                 <span class="tag">#blood-donation</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/AIUB-Offered-Courses" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 2 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="csharp">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project2.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">VOVO</h5>
-                              <p class="card-text">This C# and SQL-based .NET app manages a bus transportation system, featuring customer registration, verification, and admin functionalities</p>
-                              <div class="tags-container">
-                                 <span class="tag">#csharp</span>
-                                 <span class="tag">#dontnet</span>
-                                 <span class="tag">#sql</span>
-                                 <span class="tag">#bus-management</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/VOVO" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 1 -->
-               <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="java">
-                  <div class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp">
-                     <div class="image-container-project">
-                        <img src="./assets/project1.webp" class="card-img-top project-img active" alt="Project Image">
-                        <div class="card-overlay">
-                           <div class="left-overlay"></div>
-                           <div class="right-overlay">
-                              <h5 class="card-title project-title">Prestige Motor Sales</h5>
-                              <p class="card-text">Prestige Motor Sales is a Java Windows app for managing car inventory, featuring admin and customer management with data stored in text files.</p>
-                              <div class="tags-container">
-                                 <span class="tag">#java</span>
-                                 <span class="tag">#car-sales</span>
-                                 <span class="tag">#inventory-management</span>
-                              </div>
-                              <div class="project-btn-container">
-                                 <a href="https://github.com/basharulalammazu/Prestige-Motor-Sales" class="project-btn project-btn-primary">
-                                    <img src="./assets/github.png" alt="GitHub">
-                                    GitHub
-                                 </a>
-                              </div>
-                              <div class="badge">OPEN SOURCE</div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Project 11 -->
-              
+                </div>
+              </div>
             </div>
-         </div>
+
+            <!-- Project 9 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="php"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project9.webp"
+                    class="card-img-top project-img active"
+                    alt="Green Tea Coffee Shop"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        Green Tea Coffee Shop
+                      </h5>
+                      <p class="card-text">
+                        Green Tea Coffee Shop is a responsive e-commerce website
+                        with a sleek design, seamless shopping, and efficient
+                        admin management.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#html5</span>
+                        <span class="tag">#css3</span>
+                        <span class="tag">#javascript</span>
+                        <span class="tag">#php</span>
+                        <span class="tag">#mysql</span>
+                        <span class="tag">#ecommerce</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Green-Tea-Coffee-Shop"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 8 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="python"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project8.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        Loan Eligibility Prediction
+                      </h5>
+                      <p class="card-text">
+                        Machine learning predicts loan eligibility using
+                        decision tree, Naive Bayes, handling missing values
+                        efficiently
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#python</span>
+                        <span class="tag">#maching-learning</span>
+                        <span class="tag">#data-science</span>
+                        <span class="tag">#loan-eligibility</span>
+                        <span class="tag">#prediction</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Loan-Eligibility-Prediction"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 7 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="python"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project7.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        Movie Recommendation System
+                      </h5>
+                      <p class="card-text">
+                        Uses TF-IDF and Cosine Similarity to suggest films based
+                        on genres, keywords, and favorites.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#python</span>
+                        <span class="tag">#nlp</span>
+                        <span class="tag">#movie-recommendation</span>
+                        <span class="tag">#recommendation-system</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Movie-Recomedation-System"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 6 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="python"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project6.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">Tic Tac Toe</h5>
+                      <p class="card-text">
+                        Classic game with player vs. AI, easy registration,
+                        difficulty levels, and statistics tracking
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#game</span>
+                        <span class="tag">#python</span>
+                        <span class="tag">#tic-tac-toe</span>
+                        <span class="tag">#two-player</span>
+                        <span class="tag">#ai-opponent</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Tic-Tac-Toe"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 5 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="csharp"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project5.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        Mobile Retail Shop
+                      </h5>
+                      <p class="card-text">
+                        Manages product display, inventory, shopping, cart, and
+                        shop owner registration for seamless user experience.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#csharp</span>
+                        <span class="tag">#dotnet</span>
+                        <span class="tag">#sql</span>
+                        <span class="tag">#mobile-retail-shop</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Mobile-Retail-Shop"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 4 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="csharp"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project4.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">Blood Donar</h5>
+                      <p class="card-text">
+                        Blood Donor is an app for finding blood donors and
+                        managing user info, featuring registration, a searchable
+                        donor list, and password recovery
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#csharp</span>
+                        <span class="tag">#dontnet</span>
+                        <span class="tag">#sql</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Blood-Donar"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="csharp"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project3.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        AIUB Course Suggestion System
+                      </h5>
+                      <p class="card-text">
+                        The AIUB Course Suggestion System recommends
+                        next-semester courses based on completed courses,
+                        featuring user input and downloadable software.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#csharp</span>
+                        <span class="tag">#donet</span>
+                        <span class="tag">#blood-donation</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/AIUB-Offered-Courses"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="csharp"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project2.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">VOVO</h5>
+                      <p class="card-text">
+                        This C# and SQL-based .NET app manages a bus
+                        transportation system, featuring customer registration,
+                        verification, and admin functionalities
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#csharp</span>
+                        <span class="tag">#dontnet</span>
+                        <span class="tag">#sql</span>
+                        <span class="tag">#bus-management</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/VOVO"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 1 -->
+            <div
+              class="col-md-5 col-lg-4 mb-4 project-item"
+              data-category="java"
+            >
+              <div
+                class="card border-0 shadow-lg project-card animate__animated animate__fadeInUp"
+              >
+                <div class="image-container-project">
+                  <img
+                    src="./assets/project1.webp"
+                    class="card-img-top project-img active"
+                    alt="Project Image"
+                  />
+                  <div class="card-overlay">
+                    <div class="left-overlay"></div>
+                    <div class="right-overlay">
+                      <h5 class="card-title project-title">
+                        Prestige Motor Sales
+                      </h5>
+                      <p class="card-text">
+                        Prestige Motor Sales is a Java Windows app for managing
+                        car inventory, featuring admin and customer management
+                        with data stored in text files.
+                      </p>
+                      <div class="tags-container">
+                        <span class="tag">#java</span>
+                        <span class="tag">#car-sales</span>
+                        <span class="tag">#inventory-management</span>
+                      </div>
+                      <div class="project-btn-container">
+                        <a
+                          href="https://github.com/basharulalammazu/Prestige-Motor-Sales"
+                          class="project-btn project-btn-primary"
+                        >
+                          <img src="./assets/github.png" alt="GitHub" />
+                          GitHub
+                        </a>
+                      </div>
+                      <div class="badge">OPEN SOURCE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 11 -->
+          </div>
+        </div>
       </section>
-   </main>
-   
-   <footer class="bg-light text-center text-lg-start">
-      <div class="container p-4">
-         <div class="d-flex justify-content-center">
-            <p class="mb-0 mt-3">© <span id="year"></span> Basharul - Alam - Mazu. All Rights Reserved.</p>
-         </div>
-      </div>
-   </footer>
+    </main>
 
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-   <script src="script.js"></script>
-</body>
+    <footer class="bg-light text-center text-lg-start">
+      <div class="container p-4">
+        <div class="d-flex justify-content-center">
+          <p class="mb-0 mt-3">
+            © <span id="year"></span> Basharul - Alam - Mazu. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
