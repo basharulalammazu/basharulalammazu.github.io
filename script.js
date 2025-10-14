@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Project Filter and Meta (auto-detected on projects.html)
   if (document.querySelector(".project-item")) {
     const projectItems = document.querySelectorAll(".project-item");
-    const filterSummary = document.getElementById("filter-summary");
 
     // Ensure project images are lazy-loaded for performance
     document.querySelectorAll(".image-container-project img").forEach((img) => {
@@ -210,15 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 500);
         }
       });
-      if (filterSummary) {
-        const visibleCount = Array.from(projectItems).filter(
-          (it) => it.style.display !== "none"
-        ).length;
-        const label = filter === "all" ? "All" : mapCategoryLabel(filter);
-        filterSummary.textContent = `Showing ${visibleCount} ${label} project${
-          visibleCount !== 1 ? "s" : ""
-        }`;
-      }
     };
 
     // Wire up buttons
