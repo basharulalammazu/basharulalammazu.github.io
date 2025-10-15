@@ -23,6 +23,12 @@
       content="Basharul Alam Mazu, Home. Portfolio, About, Education, Projects, Experience, Publication"
     />
     <meta name="author" content="Basharul Alam Mazu" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/about_me.webp"
+      type="image/webp"
+    />
     <title>Basharul - Alam - Mazu</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -137,7 +143,10 @@
                 src="./assets/about_me.webp"
                 class="img-fluid shadow-lg hero-image"
                 alt="Photo of Basharul Alam Mazu"
-                loading="lazy"
+                width="300"
+                height="400"
+                decoding="async"
+                fetchpriority="high"
               />
             </div>
           </div>
