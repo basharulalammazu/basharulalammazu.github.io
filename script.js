@@ -42,6 +42,22 @@ document.addEventListener("DOMContentLoaded", function () {
       navbarTogglerIcon.classList.toggle("light-mode", !isDark);
       navbarTogglerIcon.classList.toggle("dark-mode", isDark);
     }
+    // Update social icons for theme
+    const socialIcons = document.querySelectorAll("#socials-container img");
+    socialIcons.forEach((img) => {
+      const alt = img.alt.toLowerCase();
+      if (alt.includes("cv")) {
+        img.src = isDark ? "./assets/cv_dark.png" : "./assets/cv.png";
+      } else if (alt.includes("email") || alt.includes("mail")) {
+        img.src = isDark ? "./assets/mail_dark.png" : "./assets/mail.png";
+      } else if (alt.includes("linkedin")) {
+        img.src = isDark
+          ? "./assets/linkedin_dark.png"
+          : "./assets/linkedin.png";
+      } else if (alt.includes("github")) {
+        img.src = isDark ? "./assets/github_dark.png" : "./assets/github.png";
+      }
+    });
   }
 
   function initTheme() {
