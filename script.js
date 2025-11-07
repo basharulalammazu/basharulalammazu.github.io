@@ -149,6 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
         csharp: "C#",
         java: "Java",
         php: "PHP",
+        go: "Go",
+        javascript: "JavaScript",
+        js: "JavaScript",
       };
       return map[lc] || lc.charAt(0).toUpperCase() + lc.slice(1);
     };
