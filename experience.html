@@ -31,6 +31,28 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="icon" type="image/png" href="assets/icon.png" />
+    <style>
+      .experience-icon {
+        font-size: 1.5rem;
+      }
+      .experience-skills {
+        margin-top: 0.5rem;
+      }
+      .timeline-content {
+        background: var(--bs-light);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.25s, box-shadow 0.25s;
+      }
+      body.dark-mode .timeline-content {
+        background: #1f1f1f;
+      }
+      .timeline-content:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -105,47 +127,38 @@
           </p>
 
           <!-- Timeline Section -->
-          <!--
-          <p class="section__text__p1">
-            Highlights from roles, projects, and campus leadership. Replace the
-            placeholders below with your details.
-          </p>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-content left">
-                <h3 class="position-title">Research Assistant (ML)</h3>
-                <p class="company-details">
-                  University Lab • Jan 2025 – Present
-                </p>
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <span class="experience-icon" aria-hidden="true">👨‍🏫</span>
+                  <h3 class="position-title">Private Tutor</h3>
+                </div>
+                <p class="company-details">2019–Present</p>
                 <p class="experience-description">
-                  Assist with data preparation, model training, and results
-                  reporting. Focus areas: tabular ML, model interpretability,
-                  and basic computer vision.
+                  Provide personalized tutoring in Mathematics, ICT (Classes 9–12), and English and Science (Classes 6–9). Focus on conceptual understanding, problem-solving, and academic improvement through interactive teaching methods and individualized learning support.
+                </p>
+                <p class="experience-skills">
+                  <strong>Skills Gained:</strong> Communication, Mentorship, Educational Planning, Adaptability
                 </p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-content right">
-                <h3 class="position-title">Freelance Developer</h3>
-                <p class="company-details">Remote • 2023 – 2024</p>
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <span class="experience-icon" aria-hidden="true">🤝</span>
+                  <h3 class="position-title">Volunteer, Flood Relief Assistance – Feni</h3>
+                </div>
+                <p class="company-details">Aug 2024</p>
                 <p class="experience-description">
-                  Delivered small web apps and dashboards. Implemented
-                  responsive UIs, authentication, and basic analytics.
+                  Participated in community-driven relief operations for flood-affected areas in Feni. Assisted in distributing essential supplies, coordinating local support efforts, and helping affected families rebuild their daily lives.
                 </p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-content left">
-                <h3 class="position-title">Student Team Lead</h3>
-                <p class="company-details">AI Club • 2022 – 2023</p>
-                <p class="experience-description">
-                  Organized study groups, ran workshops, and mentored peers on
-                  Python, data handling, and ML fundamentals.
+                <p class="experience-skills">
+                  <strong>Skills Gained:</strong> Teamwork, Leadership, Community Service, Crisis Management
                 </p>
               </div>
             </div>
           </div>
-          -->
         </div>
       </section>
     </main>
