@@ -27,6 +27,126 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="icon" type="image/png" href="assets/icon.png" />
+    <style>
+      /* Scoped styling for education logos */
+      .edu-institution {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .edu-logo {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
+      body.dark-mode .edu-logo {
+        background: #111317;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Education hero section */
+      .education-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 0 0 20px 20px;
+        margin-bottom: 2rem;
+      }
+      .education-hero .title {
+        color: white;
+      }
+      .education-hero .lead {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Redesigned education cards */
+      .edu-card.redesigned {
+        background: var(--bs-body-bg);
+        border: 1px solid var(--bs-border-color);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .edu-card.redesigned:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      body.dark-mode .edu-card.redesigned {
+        background: #1a1d23;
+        border-color: #2d3748;
+      }
+      body.dark-mode .edu-card.redesigned:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .edu-card-header {
+        margin-bottom: 1rem;
+      }
+      .edu-avatar {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bs-primary);
+        color: white;
+        border-radius: 50%;
+      }
+      .edu-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--bs-body-color);
+      }
+      .edu-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .edu-badge.running {
+        background: #e6f7ff;
+        color: #1890ff;
+      }
+      .edu-badge.year {
+        background: #f6ffed;
+        color: #52c41a;
+      }
+      body.dark-mode .edu-badge.running {
+        background: rgba(24, 144, 255, 0.2);
+        color: #40a9ff;
+      }
+      body.dark-mode .edu-badge.year {
+        background: rgba(82, 196, 26, 0.2);
+        color: #73d13d;
+      }
+      .edu-institution span {
+        font-weight: 500;
+        color: var(--bs-body-color);
+      }
+      .edu-tags {
+        list-style: none;
+        padding: 0;
+      }
+      .edu-tag {
+        background: var(--bs-light);
+        color: var(--bs-dark);
+        padding: 0.375rem 0.75rem;
+        border-radius: 16px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border: 1px solid var(--bs-border-color);
+      }
+      body.dark-mode .edu-tag {
+        background: #2d3748;
+        color: #e2e8f0;
+        border-color: #4a5568;
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -53,9 +173,6 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="experience.html">Experience</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="projects.html">Projects</a>
             </li>
             <li class="nav-item">
@@ -63,14 +180,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="education.html">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="achievements.html">Achievements</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="interests_skills.html"
-                >Interests & Skills</a
-              >
             </li>
             <li class="nav-item d-flex align-items-center">
               <button
@@ -90,17 +199,24 @@
     </nav>
 
     <main class="mt-6">
-      <section class="section pt-5 pb-4">
+      <section class="section pt-5 pb-4 education-hero">
         <div class="container">
-          <h1 class="title mb-4">Education</h1>
+          <h1 class="title mb-3">Education</h1>
+          <p class="lead text-muted mb-5">
+            My academic journey in Computer Science and Engineering, building a strong foundation in technology and innovation.
+          </p>
+        </div>
+      </section>
+      <section class="section pt-4 pb-5">
+        <div class="container">
           <ul class="timeline-edu list-unstyled">
             <li>
               <div class="edu-point"></div>
-              <div class="edu-card">
+              <div class="edu-card redesigned">
                 <div
                   class="edu-card-header d-flex align-items-center justify-content-between"
                 >
-                  <div class="d-flex align-items-center gap-2">
+                  <div class="d-flex align-items-center gap-3">
                     <div class="edu-avatar" aria-hidden="true">🎓</div>
                     <h3 class="edu-title mb-0">
                       BSc, Computer Science & Engineering
@@ -110,10 +226,19 @@
                     <span class="edu-badge running">Running</span>
                   </div>
                 </div>
-                <div class="edu-institution">
-                  American International University Bangladesh
+                <div class="edu-institution mt-3">
+                  <img
+                    class="edu-logo"
+                    src="assets/edu/university.webp"
+                    alt="AIUB logo"
+                    loading="lazy"
+                    decoding="async"
+                    width="48"
+                    height="48"
+                  />
+                  <span>American International University Bangladesh</span>
                 </div>
-                <ul class="edu-tags d-flex flex-wrap gap-2 mt-2 mb-0">
+                <ul class="edu-tags d-flex flex-wrap gap-2 mt-3 mb-0">
                   <li class="edu-tag">Data Structures</li>
                   <li class="edu-tag">Algorithms</li>
                   <li class="edu-tag">ML Basics</li>
@@ -122,11 +247,11 @@
             </li>
             <li>
               <div class="edu-point"></div>
-              <div class="edu-card">
+              <div class="edu-card redesigned">
                 <div
                   class="edu-card-header d-flex align-items-center justify-content-between"
                 >
-                  <div class="d-flex align-items-center gap-2">
+                  <div class="d-flex align-items-center gap-3">
                     <div class="edu-avatar" aria-hidden="true">🏫</div>
                     <h3 class="edu-title mb-0">HSC, Science</h3>
                   </div>
@@ -134,8 +259,19 @@
                     <span class="edu-badge year">2021</span>
                   </div>
                 </div>
-                <div class="edu-institution">Ideal College</div>
-                <ul class="edu-tags d-flex flex-wrap gap-2 mt-2 mb-0">
+                <div class="edu-institution mt-3">
+                  <img
+                    class="edu-logo"
+                    src="assets/edu/college.png"
+                    alt="Ideal College logo"
+                    loading="lazy"
+                    decoding="async"
+                    width="48"
+                    height="48"
+                  />
+                  <span>Ideal College</span>
+                </div>
+                <ul class="edu-tags d-flex flex-wrap gap-2 mt-3 mb-0">
                   <li class="edu-tag">Physics</li>
                   <li class="edu-tag">Chemistry</li>
                   <li class="edu-tag">Mathematics</li>
@@ -144,11 +280,11 @@
             </li>
             <li>
               <div class="edu-point"></div>
-              <div class="edu-card">
+              <div class="edu-card redesigned">
                 <div
                   class="edu-card-header d-flex align-items-center justify-content-between"
                 >
-                  <div class="d-flex align-items-center gap-2">
+                  <div class="d-flex align-items-center gap-3">
                     <div class="edu-avatar" aria-hidden="true">🏫</div>
                     <h3 class="edu-title mb-0">SSC, Science</h3>
                   </div>
@@ -156,10 +292,19 @@
                     <span class="edu-badge year">2019</span>
                   </div>
                 </div>
-                <div class="edu-institution">
-                  Motijheel Model School & College
+                <div class="edu-institution mt-3">
+                  <img
+                    class="edu-logo"
+                    src="assets/edu/school.jpg"
+                    alt="Motijheel Model School & College logo"
+                    loading="lazy"
+                    decoding="async"
+                    width="48"
+                    height="48"
+                  />
+                  <span>Motijheel Model School & College</span>
                 </div>
-                <ul class="edu-tags d-flex flex-wrap gap-2 mt-2 mb-0">
+                <ul class="edu-tags d-flex flex-wrap gap-2 mt-3 mb-0">
                   <li class="edu-tag">General Science</li>
                   <li class="edu-tag">Debate Club</li>
                 </ul>
