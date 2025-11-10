@@ -91,7 +91,7 @@
       </div>
     </nav>
 
-    <main class="mt-6">
+  <main class="mt-6 about-offset">
       <section id="about" class="section about-hero py-5 redesigned-hero">
         <div class="container">
           <div
@@ -100,28 +100,44 @@
             <div class="col-lg-7">
               <h1 class="title mb-3">About Me</h1>
               <p class="lead about-intro">
-                I am currently pursuing a degree in Computer Science and
-                Engineering, interested to learn more about machine learning and
-                data science. While I am still a student, I am passionate about
-                applying my knowledge and skills to real-world projects and
-                challenges. In my academic journey, I have excelled in courses
-                related to algorithms, data science, and machine learning. I am
-                excited about researching the connection between computer
+                I am currently pursuing a degree in
+                <span class="highlight">Computer Science and Engineering</span>,
+                interested to learn more about
+                <span class="highlight">machine learning and data science</span>.
+                While I am still a student, I am passionate about applying my
+                knowledge and skills to real-world projects and challenges. In
+                my academic journey, I have excelled in courses related to
+                <span class="highlight">algorithms, data science, and machine learning</span>.
+                I am excited about researching the connection between computer
                 science and data analytics, and I'm especially interested in
-                using machine learning methods to extract valuable information
-                from data. Outside of academia, I am actively engaged to improve
-                my technical skills. I am proficient in programming languages
-                such as Python, Java, and C++, and I have a solid understanding
-                of machine learning concepts, including deep learning and
-                natural language processing (NLP). I am excited about the
-                prospect of applying my skills to solve complex problems and
-                contribute to innovative projects. Whether it's forecasting
-                product demand or optimizing inventory levels, I can't wait to
-                use my experience to further progress. Feel free to reach out
+                using machine learning methods to
+                extract valuable information from data. Outside of academia, I
+                am actively engaged to improve my technical skills. I am
+                proficient in programming languages such as
+                <span class="highlight">Python, Java, and C++</span>, and I have
+                a solid understanding of machine learning concepts, including
+                <span class="highlight">deep learning and natural language processing (NLP)</span>.
+                I am excited about the prospect of applying my skills to solve
+                complex problems and contribute to innovative projects. Whether
+                it's forecasting product demand or optimizing inventory levels,
+                I can't wait to use my experience to further progress. Feel free to reach out
                 for a more detailed discussion or if you would like to explore
-                potential collaborations. Let's connect and create something
-                amazing together!
+                potential collaborations. <span class="highlight">Let's connect and create something amazing together!</span>
               </p>
+
+              <style>
+                /* Inline highlight styles for the about paragraph (small, scoped) */
+                .highlight {
+                  font-size: 1.06em;
+                  font-style: italic;
+                  color: var(--bs-primary, #cf8fef);
+                  font-weight: 600;
+                }
+                body.dark-mode .highlight {
+                  color: #cf8fef;
+                }
+              </style>
+
               <div class="quick-metrics d-flex flex-wrap gap-3 mt-4">
                 <div class="metric-box">
                   <span class="metric-icon" aria-hidden="true">🌐</span>
@@ -148,11 +164,11 @@
             <div class="col-lg-5 text-center">
               <div class="hero-image-wrapper">
                 <img
-                  src="./assets/about_me.webp"
+                  src="./assets/classroom.png"
                   class="img-fluid shadow-lg hero-image"
                   alt="Photo of Basharul Alam Mazu"
-                  width="300"
-                  height="400"
+                  width="360"
+                  height="480"
                   decoding="async"
                   fetchpriority="high"
                 />
@@ -165,6 +181,19 @@
       <!-- Interests & Skills -->
 
       <style>
+        /* Page-specific offset to account for fixed navbar height */
+        .about-offset {
+          padding-top: 80px; /* adjust if your navbar is taller/shorter */
+        }
+
+        /* Dark mode: make text legible in Interests / Skills / Toolbox on About page */
+        body.dark-mode .about-offset {
+          color: #fff;
+        }
+        body.dark-mode .about-offset .text-muted {
+          color: rgba(255, 255, 255, 0.75) !important;
+        }
+
         /* Scoped redesign styles */
         .redesigned-hero {
           background: linear-gradient(135deg, var(--bs-light) 0%, #f8f9fa 100%);
@@ -197,8 +226,19 @@
         .hero-image-wrapper {
           position: relative;
         }
+        /* Slightly larger responsive hero image */
         .hero-image {
           border-radius: 1rem;
+          width: 100%;
+          max-width: 360px; /* larger default than before */
+          height: auto;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        /* Increase slightly on large screens */
+        @media (min-width: 992px) {
+          .hero-image {
+            max-width: 420px;
+          }
         }
         .experience-card,
         .achievement-card {
