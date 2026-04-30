@@ -1,308 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-H3DRBFQ36C");
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Education of Basharul Alam Mazu" />
-    <meta name="keywords" content="Basharul Alam Mazu, Education, CSE" />
-    <meta name="author" content="Basharul Alam Mazu" />
-    <title>Education — Basharul Alam Mazu</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="icon" type="image/png" href="assets/icon.png" />
-    <style>
-      /* Responsive side-by-side layout for education cards
-         Images are placed in a fixed-width media column and keep their
-         intrinsic aspect ratio via width:100% + height:auto.
-         Even items are reversed to place the image on the right for
-         visual variety. On small screens the layout stacks vertically. */
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H3DRBFQ36C');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Education of Basharul Alam Mazu" />
+  <meta name="author" content="Basharul Alam Mazu" />
+  <title>Education - Basharul Alam Mazu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <style>
+    /* Alternate layout for even items */
+    @media (min-width: 768px) {
+      .timeline-edu li:nth-child(even) .edu-card.redesigned { flex-direction: row-reverse; }
+    }
+  </style>
+</head>
+<body>
 
-      .edu-card.redesigned {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-        padding: 1rem;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.02) 0%,
-          rgba(255, 255, 255, 0.01) 100%
-        );
-        border-radius: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-      }
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="publication.html">Publications</a></li>
+          <li class="nav-item d-flex align-items-center">
+            <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
+              <span class="icon-sun" aria-hidden="true">☀️</span>
+              <span class="icon-moon" aria-hidden="true">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      /* Small screens: stack content and allow media to expand when stacked */
-      @media (max-width: 767px) {
-        .edu-card.redesigned {
-          flex-direction: column;
-        }
-        .edu-media {
-          flex: 0 0 auto;
-          max-width: 100%;
-        }
-        .edu-logo {
-          max-height: 320px;
-        }
-      }
+  <main class="mt-6">
+    <section class="section pt-5 pb-3 education-hero">
+      <div class="container text-center">
+        <span class="section-label">🎓 Academic Journey</span>
+        <h1 class="title mt-2 mb-0">Education</h1>
+      </div>
+    </section>
 
-      /* Alternate side for even timeline items */
-      .timeline-edu li:nth-child(even) .edu-card.redesigned {
-        flex-direction: row-reverse;
-      }
-
-      @media (max-width: 767px) {
-        .timeline-edu li:nth-child(even) .edu-card.redesigned {
-          flex-direction: column;
-        }
-      }
-
-      .edu-media {
-        flex: 0 0 200px;
-        max-width: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .edu-logo {
-        width: 100%;
-        height: auto; /* preserve aspect ratio */
-        max-height: 220px;
-        object-fit: contain;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        display: block;
-      }
-
-      .edu-logo:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-      }
-
-      body.dark-mode .edu-logo {
-        background: #444444;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-      }
-
-      .edu-content {
-        flex: 1 1 auto;
-        min-width: 0; /* allow ellipsis/truncation if needed */
-      }
-
-      .edu-institution-name {
-        display: block;
-        margin: 0 0 0.5rem 0;
-        font-weight: 700;
-        font-size: 1.12rem;
-        color: var(--bs-body-color);
-        line-height: 1.2;
-        text-shadow: 0 1px 0 rgba(0,0,0,0.02);
-      }
-
-      /* Ensure high contrast in dark mode: use white and a subtle shadow */
-      body.dark-mode .edu-institution-name {
-        color: #ffffff;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.45);
-      }
-      /* Center the page title inside the hero section */
-      .education-hero .title {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <section class="section pt-4 pb-5">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="education.html">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="experience.html">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="publication.html">Publications</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <button
-                id="theme-toggle"
-                class="theme-toggle-btn"
-                type="button"
-                aria-label="Toggle dark mode"
-                title="Toggle dark mode"
-              >
-                <span class="icon-sun" aria-hidden="true">☀️</span>
-                <span class="icon-moon" aria-hidden="true">🌙</span>
-              </button>
-            </li>
-          </ul>
-        </div>
+        <ul class="timeline-edu list-unstyled">
+
+          <!-- AIUB -->
+          <li>
+            <div class="edu-point"></div>
+            <div class="edu-card redesigned">
+              <div class="edu-media">
+                <img class="edu-logo" src="assets/edu/uni.jpg" alt="AIUB logo" loading="lazy" decoding="async" />
+              </div>
+              <div class="edu-content">
+                <span class="edu-institution-name">American International University Bangladesh (AIUB)</span>
+                <div class="d-flex align-items-center justify-content-between gap-2 mt-1 mb-2 flex-wrap">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="edu-avatar" aria-hidden="true">🎓</div>
+                    <h3 class="edu-title mb-0">BSc, Computer Science &amp; Engineering</h3>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <span class="edu-badge running">Running</span>
+                  </div>
+                </div>
+                <p class="edu-desc">Pursuing a full-time degree with focus on algorithms, data science, machine learning, and software engineering. Active research interest in medical imaging and AI-based solutions.</p>
+                <ul class="edu-tags list-unstyled d-flex flex-wrap gap-2 mt-2 mb-0">
+                  <li class="edu-tag">Data Structures</li>
+                  <li class="edu-tag">Algorithms</li>
+                  <li class="edu-tag">Machine Learning</li>
+                  <li class="edu-tag">Deep Learning</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- Ideal College -->
+          <li>
+            <div class="edu-point"></div>
+            <div class="edu-card redesigned">
+              <div class="edu-media">
+                <img class="edu-logo" src="assets/edu/college.png" alt="Ideal College logo" loading="lazy" decoding="async" />
+              </div>
+              <div class="edu-content">
+                <span class="edu-institution-name">Ideal College</span>
+                <div class="d-flex align-items-center justify-content-between gap-2 mt-1 mb-2 flex-wrap">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="edu-avatar" aria-hidden="true">🏫</div>
+                    <h3 class="edu-title mb-0">HSC, Science</h3>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <span class="edu-badge year">2021</span>
+                  </div>
+                </div>
+                <p class="edu-desc">Completed Higher Secondary with a focus on core science subjects. Engaged in advanced lab work and problem-solving exercises, and served as Organizing Secretary of the Debating Club.</p>
+                <ul class="edu-tags list-unstyled d-flex flex-wrap gap-2 mt-2 mb-0">
+                  <li class="edu-tag">Physics</li>
+                  <li class="edu-tag">Chemistry</li>
+                  <li class="edu-tag">Mathematics</li>
+                  <li class="edu-tag">Debate Club</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- Motijheel Model -->
+          <li>
+            <div class="edu-point"></div>
+            <div class="edu-card redesigned">
+              <div class="edu-media">
+                <img class="edu-logo" src="assets/edu/school1.jpg" alt="Motijheel Model School logo" loading="lazy" decoding="async" />
+              </div>
+              <div class="edu-content">
+                <span class="edu-institution-name">Motijheel Model School &amp; College</span>
+                <div class="d-flex align-items-center justify-content-between gap-2 mt-1 mb-2 flex-wrap">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="edu-avatar" aria-hidden="true">🏫</div>
+                    <h3 class="edu-title mb-0">SSC, Science</h3>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <span class="edu-badge year">2019</span>
+                  </div>
+                </div>
+                <p class="edu-desc">Completed Secondary School with strong marks in science. Active in extracurriculars including the debate club (General Secretary), Science Club volunteer, and community events.</p>
+                <ul class="edu-tags list-unstyled d-flex flex-wrap gap-2 mt-2 mb-0">
+                  <li class="edu-tag">General Science</li>
+                  <li class="edu-tag">Debate Club</li>
+                  <li class="edu-tag">Science Club</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        </ul>
       </div>
-    </nav>
+    </section>
+  </main>
 
-    <main class="mt-6">
-      <section class="section pt-5 pb-4 education-hero">
-        <div class="container">
-          <h1 class="title mb-3">Education</h1>
-        </div>
-      </section>
-      <section class="section pt-4 pb-5">
-        <div class="container">
-          <ul class="timeline-edu list-unstyled">
-            <li>
-              <div class="edu-point"></div>
-              <div class="edu-card redesigned">
-                <div class="edu-media">
-                  <img
-                    class="edu-logo"
-                    src="assets/edu/uni.jpg"
-                    alt="AIUB logo"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="edu-content">
-                  <span class="edu-institution-name">American International University Bangladesh</span>
-                  <div class="edu-card-header d-flex align-items-center justify-content-between mt-0">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="edu-avatar" aria-hidden="true">🎓</div>
-                      <h3 class="edu-title mb-0">BSc, Computer Science & Engineering</h3>
-                    </div>
-                    <div class="edu-badges d-flex gap-2">
-                      <span class="edu-badge running">Running</span>
-                    </div>
-                  </div>
-                  <ul class="edu-tags d-flex flex-wrap gap-2 mt-3 mb-0">
-                    <li class="edu-tag">Data Structures</li>
-                    <li class="edu-tag">Algorithms</li>
-                    <li class="edu-tag">ML Basics</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-point"></div>
-              <div class="edu-card redesigned">
-                <div class="edu-media">
-                  <img
-                    class="edu-logo"
-                    src="assets/edu/college.png"
-                    alt="Ideal College logo"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="edu-content">
-                  <span class="edu-institution-name">Ideal College</span>
-                  <div class="edu-card-header d-flex align-items-center justify-content-between mt-0">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="edu-avatar" aria-hidden="true">🏫</div>
-                      <h3 class="edu-title mb-0">HSC, Science</h3>
-                    </div>
-                    <div class="edu-badges d-flex gap-2">
-                      <span class="edu-badge year">2021</span>
-                    </div>
-                  </div>
-                  <p class="edu-desc mt-2 mb-1">Completed Higher Secondary with a focus on core science subjects. Engaged in advanced lab work and problem-solving exercises that prepared me for university-level Computer Science.</p>
-                  <ul class="edu-tags d-flex flex-wrap gap-2 mt-3 mb-0">
-                    <li class="edu-tag">Physics</li>
-                    <li class="edu-tag">Chemistry</li>
-                    <li class="edu-tag">Mathematics</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-point"></div>
-              <div class="edu-card redesigned">
-                <div class="edu-media">
-                  <img
-                    class="edu-logo"
-                    src="assets/edu/school1.jpg"
-                    alt="Motijheel Model School & College logo"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="edu-content">
-                  <span class="edu-institution-name">Motijheel Model School & College</span>
-                  <div class="edu-card-header d-flex align-items-center justify-content-between mt-0">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="edu-avatar" aria-hidden="true">🏫</div>
-                      <h3 class="edu-title mb-0">SSC, Science</h3>
-                    </div>
-                    <div class="edu-badges d-flex gap-2">
-                      <span class="edu-badge year">2019</span>
-                    </div>
-                  </div>
-                  <p class="edu-desc mt-2 mb-1">Finished Secondary School with strong marks in science and humanities. Active in extracurriculars including the debate club and community events.</p>
-                  <ul class="edu-tags d-flex flex-wrap gap-2 mt-3 mb-0">
-                    <li class="edu-tag">General Science</li>
-                    <li class="edu-tag">Debate Club</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
+  <footer class="bg-light text-center">
+    <div class="container p-4">
+      <p class="mb-0">© <span id="year"></span> Basharul Alam Mazu. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    <footer class="bg-light text-center text-lg-start">
-      <div class="container p-4">
-        <div class="d-flex justify-content-center">
-          <p class="mb-0 mt-3">
-            © <span id="year"></span> Basharul - Alam - Mazu. All Rights
-            Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

@@ -1,340 +1,154 @@
-/* Small screens (up to 300px) */
-@media screen and (max-width: 300px) {
-  #about .col-md-6,
-  #project,
-  .col-md-5 {
-      width: 100%;
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+
+/* ── Navbar collapse ── */
+@media screen and (max-width: 991.98px) {
+  .navbar-collapse {
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-top: 0.5rem;
   }
+  body.dark-mode .navbar-collapse {
+    background: var(--color-surface, #1f2437);
+  }
+  .navbar-nav .nav-link { padding: 0.6rem 0.75rem !important; }
+  .theme-toggle-btn { margin-left: 0.5rem; }
 }
 
-/* Extra small screens (up to 400px) */
-@media screen and (max-width: 400px) {
-  #about .col-md-6,
-  #project,
-  .col-md-5 {
-      width: 100%;
-  }
-  h1 {
-      margin-top: 10px;
-  }
-  #project,
-  .col-md-5 {
-      min-height: 200px;
-  }
-  .image-container-project {
-      min-height: 480px;
-  }
-}
-
-/* Very small screens (up to 480px) */
-@media screen and (max-width: 480px) {
-  #socials-container {
-      gap: 1rem;
-  }
-  #socials-container .icon {
-      width: 45px;
-      height: 45px;
-  }
-  .image-container-project {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    max-height: 500px;
-    min-height: 380px;
-}
-.about-image img {
-    max-width: 50%;
-    margin-top: 0px;
-}
-}
-
-/* Small screens (up to 500px) */
-@media screen and (max-width: 500px) {
-  #project,
-  .col-md-5 {
-      width: 100%;
-  }
-}
-
-/* Medium screens (up to 600px) */
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-      height: fit-content;
-  }
-  #profile {
-      height: 83vh;
-      margin-bottom: 0;
-  }
-  article {
-      font-size: 1rem;
-  }
-  footer nav {
-      height: fit-content;
-      margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-      flex-wrap: wrap;
-  }
-  .contact-info-container {
-      margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-      font-size: 1rem;
-  }
-  .experience-sub-title {
-      font-size: 1.25rem;
-  }
-  .logo {
-      font-size: 1.5rem;
-  }
-  .nav-links {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
-  }
-  .section__pic-container {
-      width: auto;
-      height: 46vw;
-      justify-content: center;
-  }
-  .section__text__p2 {
-      font-size: 1.25rem;
-  }
-  .title {
-      font-size: 2rem;
-  }
-  .text-container {
-      text-align: justify;
-  }
-  #project,
-  .col-md-5 {
-      width: 90%;
-  }
-}
-
-/* Tablet and below (up to 768px) */
+/* ── Timeline → single column on mobile ── */
 @media screen and (max-width: 768px) {
-  #socials-container {
-      gap: 1.5rem;
-      flex-wrap: wrap;
-  }
-  #socials-container .icon {
-      width: 50px;
-      height: 50px;
-      padding: 8px;
-  }
-  .nav-links {
-      display: none;
-  }
-  #hamburger-nav {
-      display: flex;
-      align-items: center;
-  }
-  .menu-links {
-      position: relative;
-      top: 0;
-      right: 0;
-      background-color: transparent;
-      width: auto;
-      max-height: none;
-  }
-  .menu-links a {
-      display: block;
-      text-align: left;
-      font-size: 1.5rem;
-      color: #333;
-      text-decoration: none;
-      padding: 10px;
-  }
-  .hamburger-icon.open span:first-child {
-      transform: rotate(45deg) translate(8px, 8px);
-  }
-  .hamburger-icon.open span:nth-child(2) {
-      opacity: 0;
-  }
-  .hamburger-icon.open span:last-child {
-      transform: rotate(-45deg) translate(8px, -8px);
-  }
-  .btn-primary {
-      padding: 10px 10px;
-      font-size: 14px;
-  }
-  .achievement-item {
-    flex-direction: column; /* Stack text and button on small screens */
-    align-items: flex-start;
+  .timeline::before { left: 14px; }
+  .timeline-item { width: 100%; left: 0 !important; padding-left: 2.75rem; padding-right: 0; }
+  .timeline-item:nth-child(odd) { padding-right: 0; }
+  .timeline-content { margin-left: 0; }
+  .left::after, .right::after { left: -28px; right: auto; }
+
+  /* Education timeline */
+  .timeline-edu::before { left: 0.6rem; }
+  .edu-card.redesigned { flex-direction: column !important; }
+  .edu-media { flex: none; max-width: 100%; width: 100%; }
+  .edu-logo { max-height: 160px; width: auto; margin-inline: auto; }
+  
+  /* Alternate items back to column on mobile */
+  .timeline-edu li:nth-child(even) .edu-card.redesigned { flex-direction: column !important; }
+
+  /* Socials */
+  #socials-container { gap: 0.9rem; }
+  #socials-container .icon { width: 50px; height: 50px; padding: 10px; }
+
+  /* Achievement item stacking */
+  .achievement-item { flex-direction: column; align-items: flex-start; }
+  .certificate-btn { margin-left: 0; margin-top: 0.5rem; }
+
+  /* Project images */
+  .image-container-project { height: 420px; max-height: 480px; }
+
+  /* Publication */
+  .publication-section { padding: 3rem 0; }
+  .publication-container { grid-template-columns: 1fr; padding: 0 1rem; }
+  .publication-card { padding: 1.5rem; }
+
+  /* Quick metrics wrap */
+  .quick-metrics { gap: 0.6rem; }
+  .metric-box { min-width: 0; }
 }
 
-.certificate-btn {
-    margin-left: 0;
-    margin-top: 10px; /* Space above button when stacked */
-}
-  .image-container-project {
-    height: 460px;
-    max-height: 550px;
-}
-  .timeline:before {
-      left: 20px;
-  }
-  .timeline-item {
-      width: 100%;
-      left: 0 !important;
-  }
-  .timeline-content {
-      margin-left: 40px;
-  }
-  .left:after,
-  .right:after {
-      left: -28px;
-  }
-  .publication-section {
-      padding: 60px 0;
-  }
-  .publication-title {
-      font-size: 2.2em;
-      margin-bottom: 40px;
-  }
-  .publication-container {
-      grid-template-columns: 1fr;
-      padding: 0 20px;
-  }
-  .publication-card {
-      padding: 20px;
-  }
+/* ── Very small screens ── */
+@media screen and (max-width: 480px) {
+  :root { --space-2xl: 3.5rem; --space-xl: 2rem; }
+
+  .title { font-size: 1.8rem; }
+
+  #socials-container .icon { width: 46px; height: 46px; padding: 9px; }
+
+  .image-container-project { height: 380px; min-height: 320px; }
+
+  .hero-image { max-width: 100%; }
+
+  .skill-name { flex: 0 0 100px; }
+  .skill-list.two-col { grid-template-columns: 1fr; }
+
+  .btn-primary { padding: 0.6rem 1rem; font-size: 0.85rem; }
+  .project-filter-btn { padding: 0.45rem 0.9rem; font-size: 0.82rem; margin: 0.25rem; }
+
+  .timeline-edu li { padding-left: 2rem; }
 }
 
-/* Desktop adjustments (576px and up) */
-@media screen and (min-width: 576px) {
-  .section-description {
-      font-size: 1.1rem;
-  }
+/* ── Tablet adjustments ── */
+@media screen and (min-width: 769px) and (max-width: 991.98px) {
+  .image-container-project { height: 400px; max-height: 420px; }
+  .publication-container { grid-template-columns: 1fr; }
 }
 
-/* Tablet adjustments (768px and up) */
+/* ── Desktop image sizes ── */
 @media screen and (min-width: 768px) {
-  #project .col-md-5 {
-      width: 77%;
-  }
-  .image-container-project {
-    height: 350px;
-    max-height: 350px;
-  }
+  #project .col-md-5 { width: 77%; }
+  .image-container-project { height: 340px; max-height: 360px; }
 }
 
-/* Large screens (up to 1200px) */
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-      display: none;
-  }
-  #hamburger-nav {
-      display: flex;
-  }
-  #experience,
-  .experience-details-container {
-      margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-      display: block;
-  }
-  .arrow {
-      display: none;
-  }
-  section,
-  .section-container {
-      height: fit-content;
-  }
-  section {
-      margin: 0 5%;
-  }
-  .section__pic-container {
-      width: 275px;
-      height: 275px;
-      margin: 0 auto 2rem;
-  }
-  .about-containers {
-      margin-top: 0;
-  }
-  #contact,
-  #projects {
-      height: fit-content;
-  }
-  .col-md-5 {
-      width: 90%;
-  }
-}
-
-/* Larger screens (992px and up) */
 @media screen and (min-width: 992px) {
-  .col-lg-8 {
-      flex: 0 0 66.666667%;
-      max-width: 66.666667%;
-  }
-  .col-lg-4 {
-      flex: 0 0 50%;
-      max-width: 48%;
-  }
-  .about-container {
-    display: grid;
-    grid-template-columns: 8fr 5fr; /* Mimics col-lg-8 and col-lg-5 (8/12 and 5/12) */
-    gap: 30px; /* Space between columns */
-    flex-direction: row; /* Ensure horizontal layout */
+  .image-container-project { height: 380px; max-height: 400px; }
+  .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
 }
 
-.about-text {
-    width: 100%; /* Full width within its grid cell */
-}
-
-.about-image-container {
-    width: 100%; /* Full width within its grid cell */
-}
-  .section-description {
-      font-size: 1.25rem;
-  }
-
-}
-
-
-/* Project-specific adjustment (1000px and up) */
-@media screen and (min-width: 1000px) {
-  #project,
-  .col-md-5 {
-      width: 50%;
-  }
-}
-
-/* Extra large screens (1200px and up) */
 @media screen and (min-width: 1200px) {
-  .section-description {
-      font-size: 1.3rem;
-  }
-  .about-image img {
-      max-width: 80%;
-      margin-top: 40px;
-  }
-  h3{
-    margin-top: 0%;
-  }
+  .about-image img { max-width: 80%; }
 }
 
-/* Very large screens (up to 1400px) */
+/* ── Metric boxes responsive ── */
+@media screen and (max-width: 575.98px) {
+  .metric-box { padding: 0.55rem 0.8rem; }
+  .metric-number { font-size: 1.1rem; }
+  .metric-label { font-size: 0.72rem; }
+}
+
+/* ── Column utilities ── */
+@media screen and (max-width: 500px) {
+  .col-md-5 { width: 100%; }
+}
+
 @media screen and (max-width: 1400px) {
-  #profile {
-      height: 83vh;
-      margin-bottom: 6rem;
-  }
-  .about-containers {
-      flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-      height: fit-content;
-  }
-  .col-md-6 {
-      width: 50%;
-  }
+  .col-md-6 { width: 50%; }
+}
+
+/* ── About hero responsive ── */
+@media screen and (max-width: 991.98px) {
+  .hero-image { max-width: 300px; }
+}
+
+@media screen and (max-width: 575.98px) {
+  .hero-image { max-width: 100%; border-radius: 16px; }
+  .about-offset { padding-top: 72px; }
+}
+
+/* ── Education card media column ── */
+@media screen and (max-width: 600px) {
+  .title { font-size: 2rem; }
+  .experience-title, .publication-title { font-size: 1.8rem; }
+  .nav-links { flex-direction: column; gap: 0.5rem; }
+}
+
+/* ── Back to top ── */
+@media screen and (max-width: 480px) {
+  .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 42px; height: 42px; font-size: 18px; }
+}
+
+/* ── Soft skill pill: 2 col on small ── */
+@media screen and (max-width: 400px) {
+  .soft-skill-list.row-cols-2 { --bs-columns: 1; }
+}
+
+/* ── Edu media sizing ── */
+@media screen and (min-width: 768px) {
+  .edu-media { flex: 0 0 180px; max-width: 200px; }
+}
+
+/* ── Navigation fix for very narrow ── */
+@media screen and (max-width: 300px) {
+  .navbar-brand { font-size: 0.95rem; }
 }
