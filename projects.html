@@ -31,57 +31,33 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="icon" type="image/png" href="assets/icon.png" />
-    <style>
-      /* Dark mode background override */
-      body.dark-mode {
-        background: #333633;
-      }
-    </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarMain"
+          aria-controls="navbarMain"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="education.html">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="experience.html">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="publication.html">Publications</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="publication.html">Publications</a></li>
             <li class="nav-item d-flex align-items-center">
-              <button
-                id="theme-toggle"
-                class="theme-toggle-btn"
-                type="button"
-                aria-label="Toggle dark mode"
-                title="Toggle dark mode"
-              >
+              <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
                 <span class="icon-sun" aria-hidden="true">☀️</span>
                 <span class="icon-moon" aria-hidden="true">🌙</span>
               </button>
@@ -110,19 +86,17 @@
             <button class="project-filter-btn" data-filter="java">Java</button>
             <button class="project-filter-btn" data-filter="php">PHP</button>
           </div>
-          <!--
           <div class="text-center mb-3">
             <span id="filter-summary" class="filter-summary"
               >Showing all projects</span
             >
           </div>
-          -->
           <div class="row justify-content-center">
-            <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="csharp">
+            <div class="col-md-5 col-lg-4 mb-4 project-item" data-category="r">
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project13.webp"
+                    src="./assets/projects/project13.webp"
                     class="card-img-top project-img active"
                     alt="TaskSyncPro Project"
                   />
@@ -148,7 +122,7 @@
                       target="_blank"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -161,7 +135,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project12.webp"
+                    src="./assets/projects/project12.webp"
                     class="card-img-top project-img active"
                     alt="QuantumHealthPulse Preprocessing"
                   />
@@ -190,7 +164,7 @@
                       href="https://github.com/basharulalammazu/HeartHealth-DataPreprocessing-R"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -204,7 +178,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project11.webp"
+                    src="./assets/projects/project11.webp"
                     class="card-img-top project-img active"
                     alt="Aljazeera News Analysis"
                   />
@@ -231,7 +205,7 @@
                       href="https://github.com/basharulalammazu/Aljazeera-News-Analysis"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -248,7 +222,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project10.webp"
+                    src="./assets/projects/project10.webp"
                     class="card-img-top project-img active"
                     alt="SkyQuest-Arcade-OpenGL"
                   />
@@ -274,7 +248,7 @@
                       href="https://github.com/basharulalammazu/SkyQuest-Arcade-OpenGL"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -291,7 +265,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project9.webp"
+                    src="./assets/projects/project9.webp"
                     class="card-img-top project-img active"
                     alt="Green Tea Coffee Shop"
                   />
@@ -319,7 +293,7 @@
                       href="https://github.com/basharulalammazu/Green-Tea-Coffee-Shop"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -335,7 +309,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project8.webp"
+                    src="./assets/projects/project8.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -362,7 +336,7 @@
                       href="https://github.com/basharulalammazu/Loan-Eligibility-Prediction"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -378,7 +352,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project7.webp"
+                    src="./assets/projects/project7.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -403,7 +377,7 @@
                       href="https://github.com/basharulalammazu/Movie-Recomedation-System"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -419,7 +393,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project6.webp"
+                    src="./assets/projects/project6.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -445,7 +419,7 @@
                       href="https://github.com/basharulalammazu/Tic-Tac-Toe"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -461,7 +435,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project5.webp"
+                    src="./assets/projects/project5.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -486,7 +460,7 @@
                       href="https://github.com/basharulalammazu/Mobile-Retail-Shop"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -502,7 +476,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project4.webp"
+                    src="./assets/projects/project4.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -527,7 +501,7 @@
                       href="https://github.com/basharulalammazu/Blood-Donar"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -543,7 +517,7 @@
               <div class="card border-0 shadow-lg project-card">
                 <div class="image-container-project">
                   <img
-                    src="./assets/project3.webp"
+                    src="./assets/projects/project3.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -568,7 +542,7 @@
                       href="https://github.com/basharulalammazu/AIUB-Offered-Courses"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -586,7 +560,7 @@
               >
                 <div class="image-container-project">
                   <img
-                    src="./assets/project2.webp"
+                    src="./assets/projects/project2.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -612,7 +586,7 @@
                       href="https://github.com/basharulalammazu/VOVO"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -630,7 +604,7 @@
               >
                 <div class="image-container-project">
                   <img
-                    src="./assets/project1.webp"
+                    src="./assets/projects/project1.webp"
                     class="card-img-top project-img active"
                     alt="Project Image"
                   />
@@ -655,7 +629,7 @@
                       href="https://github.com/basharulalammazu/Prestige-Motor-Sales"
                       class="project-btn project-btn-primary"
                     >
-                      <img src="./assets/github.png" alt="GitHub" />
+                      <img src="./assets/github_dark.png" alt="GitHub" />
                       GitHub
                     </a>
                   </div>
@@ -669,14 +643,9 @@
       </section>
     </main>
 
-    <footer class="bg-light text-center text-lg-start">
+    <footer class="bg-light text-center">
       <div class="container p-4">
-        <div class="d-flex justify-content-center">
-          <p class="mb-0 mt-3">
-            © <span id="year"></span> Basharul - Alam - Mazu. All Rights
-            Reserved.
-          </p>
-        </div>
+        <p class="mb-0">© <span id="year"></span> Basharul Alam Mazu. All Rights Reserved.</p>
       </div>
     </footer>
 

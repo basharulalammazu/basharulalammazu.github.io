@@ -17,6 +17,9 @@
   }
   .navbar-nav .nav-link { padding: 0.6rem 0.75rem !important; }
   .theme-toggle-btn { margin-left: 0.5rem; }
+   .col-md-6 {
+        width: 100%;
+    }
 }
 
 /* ── Timeline → single column on mobile ── */
@@ -55,6 +58,16 @@
   /* Quick metrics wrap */
   .quick-metrics { gap: 0.6rem; }
   .metric-box { min-width: 0; }
+
+  /* Skills column order on mobile */
+  .skills-row {
+    flex-direction: column;
+  }
+  .col-md-6 {
+        width: 100%;
+    }
+  .skills-row > .col-md-6:first-child { order: 1; }
+  .skills-row > .col-md-6:last-child { order: 2; }
 }
 
 /* ── Very small screens ── */
@@ -96,6 +109,24 @@
   .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
 }
 
+/* ── Desktop: Soft Skills two-column grid ── */
+@media screen and (min-width: 992px) {
+  .soft-skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .soft-skill-list > li { list-style: none; }
+
+  .soft-skill-list .soft-pill {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .about-image img { max-width: 80%; }
 }
@@ -113,7 +144,7 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .col-md-6 { width: 50%; }
+  .col-md-6 { width: 100%; }
 }
 
 /* ── About hero responsive ── */
@@ -138,9 +169,26 @@
   .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 42px; height: 42px; font-size: 18px; }
 }
 
-/* ── Soft skill pill: 2 col on small ── */
-@media screen and (max-width: 400px) {
-  .soft-skill-list.row-cols-2 { --bs-columns: 1; }
+/* ── Soft skill pill: keep 2 columns on small screens ── */
+@media screen and (max-width: 480px) {
+  /* keep two columns even on narrow phones */
+  .soft-skill-list.row-cols-2 { --bs-columns: 2; }
+
+  /* provide a stable grid layout for soft-skill pills */
+  .soft-skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    align-items: start;
+  }
+
+  .soft-skill-list > li { list-style: none; }
+
+  .soft-skill-list .soft-pill {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
 }
 
 /* ── Edu media sizing ── */
