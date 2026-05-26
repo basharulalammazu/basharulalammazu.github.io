@@ -1,235 +1,404 @@
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.classList.add("js-enabled");
+/* ══════════════════════════════════════
+   PORTFOLIO SCRIPT — Professional Edition
+══════════════════════════════════════ */
 
-  const body = document.body;
-  const THEME_KEY = "preferred-theme";
-  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+(function () {
+  'use strict';
 
-  // ── Theme helpers ──────────────────────────────────────────────────────────
-  function getStoredTheme() {
-    try { return localStorage.getItem(THEME_KEY); } catch { return null; }
-  }
-  function storeTheme(theme) {
-    try { localStorage.setItem(THEME_KEY, theme); } catch { /* ignore */ }
-  }
-
-  function applyTheme(theme) {
-    const isDark = theme === "dark";
-    body.classList.toggle("dark-mode", isDark);
-
-    // Social icon swap
-    const socialIcons = document.querySelectorAll("#socials-container img");
-    socialIcons.forEach((img) => {
-      const alt = img.alt.toLowerCase();
-      if (alt.includes("cv"))       img.src = isDark ? "./assets/cv_dark.png"       : "./assets/cv.png";
-      else if (alt.includes("mail"))     img.src = isDark ? "./assets/mail_dark.png"     : "./assets/mail.png";
-      else if (alt.includes("linkedin")) img.src = isDark ? "./assets/linkedin_dark.png" : "./assets/linkedin.png";
-      else if (alt.includes("github"))   img.src = isDark ? "./assets/github_dark.png"   : "./assets/github.png";
-    });
-  }
-
-  function initTheme() {
-    const stored = getStoredTheme();
-    applyTheme(stored || (darkModeMediaQuery.matches ? "dark" : "light"));
-  }
-
-  darkModeMediaQuery.addEventListener
-    ? darkModeMediaQuery.addEventListener("change", (e) => {
-        if (!getStoredTheme()) applyTheme(e.matches ? "dark" : "light");
-      })
-    : darkModeMediaQuery.addListener((e) => {
-        if (!getStoredTheme()) applyTheme(e.matches ? "dark" : "light");
-      });
-
-  initTheme();
-
-  // ── Theme toggle button ────────────────────────────────────────────────────
-  function wireToggle() {
-    const btn = document.getElementById("theme-toggle");
-    if (!btn || btn._wired) return;
-    btn._wired = true;
-    btn.addEventListener("click", () => {
-      const newTheme = body.classList.contains("dark-mode") ? "light" : "dark";
-      applyTheme(newTheme);
-      storeTheme(newTheme);
-    });
-  }
-  wireToggle();
-  // Safety: also observe in case button is deferred
-  new MutationObserver(wireToggle).observe(body, { childList: true, subtree: true });
-
-  // ── Active nav link ────────────────────────────────────────────────────────
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (href === currentPage) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.classList.remove("active");
-      link.removeAttribute("aria-current");
-    }
-  });
-
-  // ── Navbar scroll shadow ───────────────────────────────────────────────────
-  const navbar = document.querySelector("nav.navbar");
-  if (navbar) {
-    window.addEventListener("scroll", () => {
-      navbar.style.boxShadow = window.scrollY > 20
-        ? "0 4px 24px rgba(0,0,0,0.12)"
-        : "";
-    }, { passive: true });
-  }
-
-  // ── Project filter & meta ──────────────────────────────────────────────────
-  if (document.querySelector(".project-item")) {
-    const projectItems = document.querySelectorAll(".project-item");
-
-    document.querySelectorAll(".image-container-project img").forEach((img) => {
-      if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
-      img.setAttribute("decoding", "async");
-    });
-
-    const categoryLabel = (cat) => {
-      if (!cat) return "Other";
-      const map = { python:"Python", r:"R", cpp:"C++", csharp:"C#", java:"Java",
-                    php:"PHP", go:"Go", javascript:"JavaScript", js:"JavaScript" };
-      const lc = cat.toLowerCase();
-      return map[lc] || lc.charAt(0).toUpperCase() + lc.slice(1);
-    };
-
-    // Auto-generate meta pill
-    projectItems.forEach((item) => {
-      const cat = item.getAttribute("data-category");
-      const rightOverlay = item.querySelector(".right-overlay");
-      const titleEl = item.querySelector(".project-title");
-      if (rightOverlay && titleEl) {
-        let meta = rightOverlay.querySelector(".project-meta");
-        if (!meta) {
-          meta = document.createElement("div");
-          meta.className = "project-meta";
-          titleEl.insertAdjacentElement("afterend", meta);
-        }
-        meta.innerHTML = `<span class="meta-pill">${categoryLabel(cat)}</span>`;
-      }
-    });
-
-    // Build filter buttons
-    const categories = [...new Set(
-      [...projectItems].map((it) => it.getAttribute("data-category")).filter(Boolean)
-    )];
-    const filterBar = document.querySelector("#projects .text-center.mb-4") ||
-      (document.querySelector(".project-filter-btn") &&
-       document.querySelector(".project-filter-btn").parentElement);
-    let filterButtons = [];
-    if (filterBar) {
-      filterBar.innerHTML = "";
-      const allBtn = document.createElement("button");
-      allBtn.className = "project-filter-btn";
-      allBtn.setAttribute("data-filter", "all");
-      allBtn.textContent = "All";
-      filterBar.appendChild(allBtn);
-      categories.sort((a, b) => categoryLabel(a).localeCompare(categoryLabel(b))).forEach((cat) => {
-        const btn = document.createElement("button");
-        btn.className = "project-filter-btn";
-        btn.setAttribute("data-filter", cat);
-        btn.textContent = categoryLabel(cat);
-        filterBar.appendChild(btn);
-      });
-      filterButtons = [...filterBar.querySelectorAll(".project-filter-btn")];
-    }
-
-    const applyFilter = (filter) => {
-      projectItems.forEach((item, i) => {
-        const isVisible = filter === "all" || item.getAttribute("data-category") === filter;
-        if (isVisible) {
-          item.style.display = "block";
-          setTimeout(() => item.classList.add("visible"), i * 80);
-        } else {
-          item.classList.remove("visible");
-          setTimeout(() => { if (!item.classList.contains("visible")) item.style.display = "none"; }, 400);
-        }
-      });
-    };
-
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        filterButtons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        applyFilter(btn.getAttribute("data-filter"));
-      });
-    });
-    if (filterButtons.length) filterButtons[0].click();
-    else applyFilter("all");
-  }
-
-  // ── Back to top ────────────────────────────────────────────────────────────
-  const btt = document.createElement("button");
-  btt.innerHTML = "↑";
-  btt.className = "back-to-top";
-  btt.setAttribute("aria-label", "Back to top");
-  btt.title = "Back to top";
-  document.body.appendChild(btt);
-  window.addEventListener("scroll", () => {
-    btt.style.opacity = window.scrollY > 300 ? "1" : "0";
-    btt.style.pointerEvents = window.scrollY > 300 ? "auto" : "none";
-  }, { passive: true });
-  btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-  // ── Footer year ───────────────────────────────────────────────────────────
-  const yearEl = document.getElementById("year");
+  /* ── Year ── */
+  var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ── IntersectionObserver for scroll animations ─────────────────────────────
-  const ioSupported = "IntersectionObserver" in window;
-  if (ioSupported) {
-    const toObserve = [
-      ...document.querySelectorAll(".metric-box"),
-      ...document.querySelectorAll(".tag-pill"),
-      ...document.querySelectorAll(".timeline-edu .edu-card"),
-      ...document.querySelectorAll(".publication-card"),
-      ...document.querySelectorAll(".timeline .timeline-content"),
-      ...document.querySelectorAll(".project-card"),
-      ...document.querySelectorAll(".achievement-item"),
-    ];
+  /* ── Reading Progress Bar ── */
+  var progressBar = document.getElementById('progress-bar');
+  function updateProgress() {
+    if (!progressBar) return;
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
 
-    const countedOnce = new WeakSet();
-    function runCountUp(box) {
-      if (countedOnce.has(box)) return;
-      const numEl = box.querySelector(".metric-number");
-      if (!numEl) return;
-      const raw = numEl.textContent.trim();
-      const hasPlus = raw.endsWith("+");
-      const target = parseInt(raw.replace(/\D/g, ""), 10) || 0;
-      const duration = 900;
-      const start = performance.now();
-      const format = (v) => hasPlus ? `${v}+` : `${v}`;
-      function tick(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        numEl.textContent = format(Math.round(target * eased));
-        if (t < 1) requestAnimationFrame(tick);
+  /* ── Dark Mode ── */
+  var themeBtn = document.getElementById('themeToggle');
+  var themeLabel = document.getElementById('themeLabel');
+  var saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeLabel) themeLabel.textContent = 'Light';
+  }
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var isDark = document.body.classList.toggle('dark-mode');
+      if (themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+
+  /* ── Hamburger ── */
+  var ham = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (ham && navLinks) {
+    ham.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      ham.classList.toggle('open', open);
+      ham.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!navLinks.contains(e.target) && !ham.contains(e.target)) {
+        navLinks.classList.remove('open');
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
       }
-      requestAnimationFrame(tick);
-      countedOnce.add(box);
-    }
+    });
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+  /* ── Active Nav Link on Scroll ── */
+  var sections = document.querySelectorAll('section[id]');
+  var navAs = document.querySelectorAll('.nav-links a');
+  function onScroll() {
+    var pos = window.scrollY + 120;
+    sections.forEach(function (s) {
+      if (pos >= s.offsetTop && pos < s.offsetTop + s.offsetHeight) {
+        navAs.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + s.id);
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Scroll Reveal ── */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          if (entry.target.classList.contains("metric-box")) runCountUp(entry.target);
-        } else {
-          entry.target.classList.remove("in-view");
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "-5% 0px -10% 0px", threshold: 0.06 });
-
-    toObserve.forEach((el) => observer.observe(el));
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
   } else {
-    // Fallback
-    document.querySelectorAll(
-      ".metric-box,.tag-pill,.timeline-edu .edu-card,.publication-card,.timeline .timeline-content,.project-card,.achievement-item"
-    ).forEach((el) => el.classList.add("in-view"));
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
   }
-});
+
+  /* ── Skill Bars — animate on scroll ── */
+  var skillBars = document.querySelectorAll('.skill-bar');
+  if ('IntersectionObserver' in window) {
+    var barObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    skillBars.forEach(function (bar) {
+      // Set CSS var from the inline width
+      var inner = bar.querySelector('span');
+      if (inner) {
+        var w = inner.getAttribute('data-width') || inner.style.getPropertyValue('--w') || inner.style.width;
+        if (w) {
+          bar.style.setProperty('--w', w);
+          inner.style.width = '0'; // reset for animation
+          inner.removeAttribute('style');
+        }
+      }
+      barObserver.observe(bar);
+    });
+  } else {
+    skillBars.forEach(function (bar) { bar.classList.add('animated'); });
+  }
+
+  /* ── Animated Counter ── */
+  function animateCounter(el) {
+    var target = parseFloat(el.textContent);
+    var suffix = el.textContent.replace(target, '');
+    var start = 0;
+    var duration = 1400;
+    var startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(start + (target - start) * ease) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var metricNums = document.querySelectorAll('.metric-number');
+  if ('IntersectionObserver' in window) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    metricNums.forEach(function (el) { counterObserver.observe(el); });
+  }
+
+  /* ── Typing Effect ── */
+  var roles = ['ML Engineer', 'Deep Learning Researcher', 'Backend Developer', 'AI Enthusiast', 'CSE Student'];
+  var roleEl = document.getElementById('typed-role');
+  var cursorEl = document.querySelector('.cursor');
+  if (roleEl) {
+    var roleIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+    var typingDelay = 110;
+    var deletingDelay = 60;
+    var pauseDelay = 1800;
+    function type() {
+      var current = roles[roleIndex];
+      if (isDeleting) {
+        roleEl.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        roleEl.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      var delay = isDeleting ? deletingDelay : typingDelay;
+      if (!isDeleting && charIndex === current.length) {
+        delay = pauseDelay;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        delay = 400;
+      }
+      setTimeout(type, delay);
+    }
+    setTimeout(type, 800);
+  }
+
+  /* ── Project Filter ── */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projectItems = document.querySelectorAll('.project-card');
+  var summary = document.getElementById('filterSummary');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = this.dataset.filter;
+      filterBtns.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
+      var count = 0;
+      projectItems.forEach(function (item) {
+        var show = filter === 'all' || item.dataset.category === filter;
+        if (show) {
+          item.classList.remove('hidden');
+          item.style.animation = 'none';
+          requestAnimationFrame(function () {
+            item.style.animation = '';
+          });
+          count++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+      if (summary) {
+        summary.textContent = filter === 'all'
+          ? 'Showing all ' + count + ' projects'
+          : 'Showing ' + count + ' ' + filter.toUpperCase() + ' project' + (count === 1 ? '' : 's');
+      }
+    });
+  });
+
+  /* ── Experience Data ── */
+  function formatMonth(value) {
+    if (!value) return '';
+    var parts = value.split('-');
+    var year = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10) - 1;
+    return new Date(year, month).toLocaleString('en-US', { month: 'short', year: 'numeric' });
+  }
+  function getExperienceDuration(startValue, endValue) {
+    if (!startValue) return '';
+    var startParts = startValue.split('-');
+    var endParts = (endValue || '').split('-');
+    var start = new Date(parseInt(startParts[0], 10), parseInt(startParts[1], 10) - 1);
+    var end = endValue ? new Date(parseInt(endParts[0], 10), parseInt(endParts[1], 10) - 1) : new Date();
+    var months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    if (months < 1) months = 1;
+    var years = Math.floor(months / 12);
+    var rem = months % 12;
+    var label = '· ';
+    if (years) label += years + ' yr' + (years > 1 ? 's' : '');
+    if (years && rem) label += ' ';
+    if (rem) label += rem + ' mo' + (rem > 1 ? 's' : '');
+    return label;
+  }
+  function getStatusBadge(status) {
+    var n = String(status || '').trim().toLowerCase();
+    if (!n) return '';
+    if (n === 'active')
+      return '<span class="exp-badge-active"><span class="exp-badge-dot"></span> Active</span>';
+    if (n === 'completed' || n === 'complete' || n === 'finished')
+      return '<span class="exp-badge-completed"><span class="exp-badge-dot"></span> Completed</span>';
+    return '<span class="exp-badge-muted">' + status + '</span>';
+  }
+  function renderExperience(entries) {
+    var list = document.getElementById('experienceList');
+    if (!list) return;
+    if (!entries || !entries.length) {
+      list.innerHTML = '<p class="section-sub">No experience data available.</p>';
+      return;
+    }
+    list.innerHTML = entries.map(function (e) {
+      var isActive = String(e.status || '').toLowerCase() === 'active';
+      var duration = getExperienceDuration(e.startDate, isActive ? null : e.endDate);
+      var dateRange = [formatMonth(e.startDate), isActive ? 'Present' : formatMonth(e.endDate)].filter(Boolean).join(' – ');
+      var projects = (e.projects || []).map(function (p) {
+        return '<div class="exp-project"><div class="exp-project-dot"></div><div>' +
+          '<div class="exp-project-title">' + p.title + '</div>' +
+          '<div class="exp-project-desc">' + p.description + '</div>' +
+          '</div></div>';
+      }).join('');
+      var skills = (e.skills || []).map(function (s) {
+        return '<span class="exp-skill">' + s + '</span>';
+      }).join('');
+      return '<article class="exp-card reveal">' +
+        '<div class="exp-header">' +
+        '<img src="' + e.logo + '" alt="' + e.company + ' logo" class="exp-logo-img" loading="lazy" width="54" height="54" />' +
+        '<div class="exp-info">' +
+        '<div class="exp-title-row"><h3 class="exp-job-title">' + e.title + '</h3>' + getStatusBadge(e.status) + '</div>' +
+        '<div class="exp-company-row"><strong>' + e.company + '</strong>' +
+        (e.employmentType || e.engagementType ? ' · ' + [e.employmentType, e.engagementType].filter(Boolean).join(' · ') : '') + '</div>' +
+        '<div class="exp-meta-row">' +
+        '<span class="exp-meta-chip">📅 ' + dateRange + ' ' + duration + '</span>' +
+        (e.location || e.workMode ? '<span class="exp-meta-chip">📍 ' + [e.location, e.workMode].filter(Boolean).join(' · ') + '</span>' : '') +
+        '</div></div></div>' +
+        '<p class="exp-desc">' + e.description + '</p>' +
+        (projects ? '<div class="exp-projects-panel"><div class="exp-projects-header">🗂 Key Projects</div>' + projects + '</div>' : '') +
+        (skills ? '<div class="exp-skills-row"><span class="exp-skills-label">Stack:</span>' + skills + '</div>' : '') +
+        '</article>';
+    }).join('');
+
+    // Trigger reveal for dynamically added cards
+    var newCards = list.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      newCards.forEach(function (el) { obs.observe(el); });
+    } else {
+      newCards.forEach(function (el) { el.classList.add('visible'); });
+    }
+  }
+
+  fetch('assets/data/experience.json', { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('Failed to load experience data');
+      return r.json();
+    })
+    .then(function (data) {
+      renderExperience(Array.isArray(data) ? data : data.experience);
+    })
+    .catch(function (err) {
+      // Fallback: Try XMLHttpRequest for file:// protocol
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'assets/data/experience.json', true);
+      xhr.onload = function () {
+        if (xhr.status === 0 || xhr.status === 200) {
+          try {
+            var data = JSON.parse(xhr.responseText);
+            renderExperience(Array.isArray(data) ? data : data.experience);
+          } catch (e) {
+            showExperienceFallback();
+          }
+        } else {
+          showExperienceFallback();
+        }
+      };
+      xhr.onerror = function () {
+        showExperienceFallback();
+      };
+      xhr.send();
+    });
+
+  function showExperienceFallback() {
+    var fallback = document.getElementById('experienceList');
+    if (fallback) {
+      fallback.innerHTML = '<p class="section-sub">⚠️ Experience data loading issue. Please ensure you are running this site via an HTTP server (not file:// protocol). Try: <code style="background: var(--border); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">python -m http.server 8000</code> or use VS Code Live Server extension.</p>';
+    }
+  }
+
+  /* ── Tooltip for interest chips ── */
+  var chips = document.querySelectorAll('[data-tooltip]');
+  chips.forEach(function (chip) {
+    chip.setAttribute('title', chip.dataset.tooltip || '');
+  });
+
+  /* ── Smooth hover tilt on project cards ── */
+  var projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+      var y = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
+      card.style.transform = 'translateY(-5px) rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = '';
+    });
+  });
+
+  /* ── Subtle floating particles ── */
+  var particleContainer = document.getElementById('particles');
+  if (particleContainer) {
+    for (var i = 0; i < 12; i++) {
+      (function (idx) {
+        var p = document.createElement('div');
+        p.className = 'particle';
+        var size = 2 + Math.random() * 4;
+        p.style.cssText = [
+          'left:' + (5 + Math.random() * 90) + '%',
+          'width:' + size + 'px',
+          'height:' + size + 'px',
+          'animation-duration:' + (8 + Math.random() * 14) + 's',
+          'animation-delay:' + (Math.random() * -20) + 's',
+          'opacity:0'
+        ].join(';');
+        particleContainer.appendChild(p);
+      })(i);
+    }
+  }
+
+  /* ── Copy email on click ── */
+  var emailLinks = document.querySelectorAll('[data-copy-email]');
+  emailLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var email = this.dataset.copyEmail;
+      if (navigator.clipboard && email) {
+        e.preventDefault();
+        navigator.clipboard.writeText(email).then(function () {
+          var orig = link.textContent;
+          link.textContent = '✓ Copied!';
+          setTimeout(function () { link.textContent = orig; }, 1800);
+        }).catch(function () {
+          window.location.href = 'mailto:' + email;
+        });
+      }
+    });
+  });
+
+})();

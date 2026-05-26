@@ -1,126 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3DRBFQ36C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-H3DRBFQ36C');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H3DRBFQ36C');</script>
+
+  <!-- Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Basharul Alam Mazu - CSE student, ML engineer & researcher." />
-  <meta name="keywords" content="Basharul Alam Mazu, Portfolio, Machine Learning, CSE, AI" />
-  <meta name="author" content="Basharul Alam Mazu" />
-  <meta property="og:title" content="Basharul Alam Mazu - Portfolio" />
-  <meta property="og:description" content="CSE student focused on ML, data science, and practical, interpretable solutions." />
+  <meta name="description" content="Basharul - Alam - Mazu | CSE student, ML engineer & researcher at AIUB. Specializing in machine learning, deep learning, medical imaging, and AI-based solutions." />
+  <meta name="keywords" content="Basharul - Alam - Mazu, Portfolio, Machine Learning, Deep Learning, CSE, AI, AIUB, Brain Tumor, Medical Imaging, Python, TensorFlow, Django" />
+  <meta name="author" content="Basharul - Alam - Mazu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Basharul - Alam - Mazu | ML Engineer & CSE Student" />
+  <meta property="og:description" content="CSE student focused on ML, deep learning, medical imaging, and practical AI solutions. Software Engineer Intern at DMA." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://basharulalammazu.github.io/" />
-  <meta property="og:image" content="https://basharulalammazu.github.io/assets/profile-pic.webp" />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="assets/profile-pic.webp" />
+  <meta property="og:site_name" content="Basharul - Alam - Mazu Portfolio" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://basharulalammazu.github.io/" />
+  <meta name="twitter:title" content="Basharul - Alam - Mazu | ML Engineer & CSE Student" />
+  <meta name="twitter:description" content="CSE student building intelligent systems with ML, deep learning & AI." />
+  <meta name="twitter:image" content="assets/profile-pic.webp" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Basharul - Alam - Mazu",
+    "url":"/",
+    "image":"assets/profile-pic.webp",
+    "jobTitle":"Software Engineer Intern & CSE Student",
+    "worksFor":{"@type":"Organization","name":"Datasoft Manufacturing & Assembly Inc."},
+    "alumniOf":{"@type":"EducationalOrganization","name":"American International University Bangladesh"},
+    "email":"basharulalam6@gmail.com",
+    "sameAs":["https://www.linkedin.com/in/basharulalammazu/","https://github.com/basharulalammazu/"],
+    "knowsAbout":["Machine Learning","Deep Learning","Python","TensorFlow","Django","Medical Imaging","Data Science"]
+  }
+  </script>
+
+  <title>Basharul - Alam - Mazu | ML Engineer & CSE Student | Portfolio</title>
+
+  <!-- Fonts: Syne (display) + Manrope (body) + JetBrains Mono (code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="assets/profile-pic.webp" type="image/webp" />
-  <title>Basharul - Alam - Mazu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
-  <link rel="icon" type="image/png" href="assets/icon.png" />
 </head>
 <body>
 
-  <!-- ── Navigation ── -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Basharul - Alam - Mazu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarMain" aria-controls="navbarMain"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<!-- Reading Progress Bar -->
+<div id="progress-bar" aria-hidden="true"></div>
+
+<!-- Particles Canvas -->
+<div id="particles" aria-hidden="true"></div>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#home" aria-label="Basharul - Alam - Mazu | Portfolio home">Basharul - Alam - Mazu</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links-wrap" id="navLinks">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span id="themeLabel">Dark</span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarMain">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="publication.html">Publications</a></li>
-          <li class="nav-item d-flex align-items-center">
-            <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
-              <span class="icon-sun" aria-hidden="true">☀️</span>
-              <span class="icon-moon" aria-hidden="true">🌙</span>
-            </button>
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- ── Hero ── -->
-  <main class="mt-6">
-    <section id="home" class="section">
-      <div class="container">
-        <img src="./assets/about_me.webp" class="rounded-image" alt="Basharul Alam Mazu" width="140" height="140" decoding="async" />
+<main>
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home" aria-labelledby="hero-heading">
+  <div class="container">
 
-        <div class="section__text">
-          <!-- Badge -->
-          <div class="d-flex justify-content-center mb-3">
-            <span class="section-label">
-              <span>⚡</span> Open to opportunities
-            </span>
+    <!-- Avatar with animated ring -->
+    <div class="hero-avatar-wrap reveal">
+      <img src="assets/about_me.webp"
+           class="hero-avatar"
+           alt="Basharul - Alam - Mazu profile photo"
+           width="140" height="140"
+           loading="eager" fetchpriority="high"
+           onerror="this.src='https://ui-avatars.com/api/?name=Basharul+Alam+Mazu&size=140&background=042c3e&color=fff&bold=true'" />
+    </div>
+
+    <!-- Status badge -->
+     <!--
+    <div class="hero-badge reveal reveal-delay-1">
+      <span class="hero-badge-dot"></span>
+      Open to opportunities
+    </div>
+    -->
+    <!-- Headline -->
+    <h1 class="hero-title reveal reveal-delay-2" id="hero-heading">
+      Hi, I'm <span class="hero-title-accent">Basharul</span><br> - Alam - Mazu
+    </h1>
+
+    <!-- Typing role line -->
+    <p class="hero-role-line reveal reveal-delay-3">
+      &gt;&nbsp;<span id="typed-role"></span><span class="cursor"></span>
+    </p>
+
+    <!-- Description -->
+    <p class="hero-desc reveal reveal-delay-3">
+      I'm a Computer Science &amp; Engineering student with a passion for building intelligent systems
+      using <strong>machine learning and AI</strong>, especially for real-time decision-making and
+      impactful solutions. I transform data into meaningful insights through
+      <strong>data analysis and visualization</strong>, with hands-on experience in
+      <strong>Python, C#, Java, Django</strong>, and <strong>TensorFlow</strong>.
+    </p>
+
+    <!-- CTA links -->
+    <div class="hero-links reveal reveal-delay-4" role="list">
+      <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer"
+         class="hero-icon-link primary" aria-label="View resume PDF" role="listitem">
+        <img src="assets/icons/cv_dark.png" alt="" aria-hidden="true" width="17" height="17" />
+        Resume
+      </a>
+      <a href="mailto:basharulalam6@gmail.com" class="hero-icon-link" aria-label="Email Basharul" role="listitem">
+        <img src="assets/icons/mail.png" alt="" aria-hidden="true" width="17" height="17" class="icon-light" />
+        <img src="assets/icons/mail_dark.png" alt="" aria-hidden="true" width="17" height="17" class="icon-dark" />
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/basharulalammazu/" target="_blank" rel="noopener noreferrer"
+         class="hero-icon-link" aria-label="LinkedIn profile" role="listitem">
+        <img src="assets/icons/linkedin.png" alt="" aria-hidden="true" width="17" height="17" class="icon-light" />
+        <img src="assets/icons/linkedin_dark.png" alt="" aria-hidden="true" width="17" height="17" class="icon-dark" />
+        LinkedIn
+      </a>
+      <a href="https://github.com/basharulalammazu/" target="_blank" rel="noopener noreferrer"
+         class="hero-icon-link" aria-label="GitHub profile" role="listitem">
+        <img src="assets/icons/github.png" alt="" aria-hidden="true" width="17" height="17" class="icon-light" />
+        <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" width="17" height="17" class="icon-dark" />
+        GitHub
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator reveal reveal-delay-4" aria-hidden="true">
+      <span>SCROLL</span>
+      <svg width="14" height="18" viewBox="0 0 14 18" fill="none">
+        <path d="M7 1v16M1 11l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-frame">
+          <img src="assets/classroom.png"
+               class="about-img"
+               alt="Basharul - Alam - Mazu"
+               width="380" height="480"
+               loading="lazy" decoding="async"
+               onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label reveal">👤 Who I Am</span>
+        <h2 class="section-title reveal" id="about-heading">About Me</h2>
+        <p class="reveal">
+          I am pursuing a degree in <span class="highlight">Computer Science and Engineering</span>
+          with a strong passion for <span class="highlight">machine learning, deep learning, and data science</span>.
+          Throughout my academic journey I built a solid foundation in
+          <span class="highlight">algorithms, data structures, and AI-driven problem solving</span>,
+          actively applying these in real-world projects.
+        </p>
+        <p class="reveal">
+          I am particularly enthusiastic about leveraging ML models to extract meaningful insights
+          and build intelligent systems. Beyond academics, I am proficient in
+          <span class="highlight">Python, Java, C#, and C++</span> with hands-on experience in
+          <span class="highlight">TensorFlow, Scikit-learn, Django, and .NET</span>.
+          From AI-based solutions to scalable applications, I enjoy transforming ideas into
+          impactful technology. <span class="highlight">Let's connect and build together!</span>
+        </p>
+
+        <!-- Stats -->
+        <div class="metrics" role="list" aria-label="Quick stats">
+          <div class="metric-box reveal" role="listitem">
+            <span class="metric-icon" aria-hidden="true">🌐</span>
+            <div class="metric-number">6+</div>
+            <div class="metric-label">Languages</div>
           </div>
-
-          <h1 class="title mb-3">Hello, I'm Basharul<br> - Alam - Mazu! 👋</h1>
-          <p class="section__text__p1 mb-0">
-            I'm a Computer Science &amp; Engineering student with a strong passion for
-            building intelligent systems using <strong>machine learning and AI</strong>,
-            especially for real-time decision-making and impactful solutions.
-            I enjoy transforming data into meaningful insights through
-            <strong>data analysis and visualization</strong>, and applying these skills in real-world projects.
-            <br /><br />
-            With hands-on experience in <strong>Python, C#, Java, and C++</strong>, along with
-            <strong>Django, .NET, and TensorFlow</strong>, I love exploring the intersection
-            of software engineering and intelligent systems.
-            <br /><br />
-            Feel free to get in touch! 💬
-          </p>
-
-          <!-- Socials -->
-          <div id="socials-container">
-            <a href="./assets/resume.pdf" class="icon" target="_blank" rel="noopener noreferrer"
-               aria-label="Open my resume (PDF)" title="View Resume">
-              <img src="./assets/cv.png" alt="CV" />
-            </a>
-            <a href="mailto:basharulalam6@gmail.com" class="icon"
-               aria-label="Email me" title="Email Me">
-              <img src="./assets/mail.png" alt="Email" />
-            </a>
-            <a href="https://www.linkedin.com/in/basharulalammazu/" class="icon"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="LinkedIn profile" title="LinkedIn">
-              <img src="./assets/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://github.com/basharulalammazu/" class="icon"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="GitHub profile" title="GitHub">
-              <img src="./assets/github.png" alt="GitHub" />
-            </a>
+          <div class="metric-box reveal reveal-delay-1" role="listitem">
+            <span class="metric-icon" aria-hidden="true">🚀</span>
+            <div class="metric-number">13+</div>
+            <div class="metric-label">Projects</div>
+          </div>
+          <div class="metric-box reveal reveal-delay-2" role="listitem">
+            <span class="metric-icon" aria-hidden="true">🏆</span>
+            <div class="metric-number">5+</div>
+            <div class="metric-label">Certificates</div>
+          </div>
+          <div class="metric-box reveal reveal-delay-3" role="listitem">
+            <span class="metric-icon" aria-hidden="true">⏳</span>
+            <div class="metric-number">3+</div>
+            <div class="metric-label">Years Coding</div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="bg-light text-center">
-    <div class="container p-4">
-      <p class="mb-0">© <span id="year"></span> Basharul Alam Mazu. All Rights Reserved.</p>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
+    <hr class="divider" />
+
+    <!-- Interests -->
+    <span class="section-label reveal">🎯 Focus Areas</span>
+    <h2 class="section-title reveal">Interests</h2>
+    <p class="section-sub reveal">Domains I'm actively exploring and building in.</p>
+    <div class="interests-grid reveal" role="list">
+      <span class="interest-chip" role="listitem" data-tooltip="Transformers, RAG, prompt engineering">🤖 Large Language Models</span>
+      <span class="interest-chip" role="listitem" data-tooltip="Model transparency & interpretability">🧪 Explainable AI</span>
+      <span class="interest-chip" role="listitem" data-tooltip="Classical ML algorithms & pipelines">📊 Machine Learning</span>
+      <span class="interest-chip" role="listitem" data-tooltip="Neural networks & representation learning">🧠 Deep Learning</span>
+      <span class="interest-chip" role="listitem" data-tooltip="AI in radiology & diagnostics">🩻 Medical Imaging</span>
+      <span class="interest-chip" role="listitem" data-tooltip="ETL, orchestration & scalable data flows">🛠️ Data Pipelines</span>
+      <span class="interest-chip" role="listitem" data-tooltip="IoT & real-time systems">📡 IoT Systems</span>
+      <span class="interest-chip" role="listitem" data-tooltip="Backend API development">⚙️ Backend Engineering</span>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Skills -->
+    <span class="section-label reveal">💡 Capabilities</span>
+    <h2 class="section-title reveal">Skills</h2>
+    <p class="section-sub reveal">Technical depth and collaborative strengths.</p>
+    <div class="skills-grid reveal">
+      <div class="skill-block">
+        <h3 class="skill-heading">Technical Skills</h3>
+        <ul style="list-style:none;padding:0">
+          <li class="skill-row">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><span data-width="80%" style="--w:80%;width:80%"></span></div>
+            <span class="skill-pct">80%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">C / C++</span>
+            <div class="skill-bar"><span data-width="85%" style="--w:85%;width:85%"></span></div>
+            <span class="skill-pct">85%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">C#</span>
+            <div class="skill-bar"><span data-width="90%" style="--w:90%;width:90%"></span></div>
+            <span class="skill-pct">90%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar"><span data-width="60%" style="--w:60%;width:60%"></span></div>
+            <span class="skill-pct">60%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">HTML / CSS</span>
+            <div class="skill-bar"><span data-width="75%" style="--w:75%;width:75%"></span></div>
+            <span class="skill-pct">75%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar"><span data-width="55%" style="--w:55%;width:55%"></span></div>
+            <span class="skill-pct">55%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">TensorFlow / Keras</span>
+            <div class="skill-bar"><span data-width="45%" style="--w:45%;width:45%"></span></div>
+            <span class="skill-pct">45%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">Pandas / NumPy</span>
+            <div class="skill-bar"><span data-width="80%" style="--w:80%;width:80%"></span></div>
+            <span class="skill-pct">80%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">Django</span>
+            <div class="skill-bar"><span data-width="70%" style="--w:70%;width:70%"></span></div>
+            <span class="skill-pct">70%</span>
+          </li>
+          <li class="skill-row">
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar"><span data-width="72%" style="--w:72%;width:72%"></span></div>
+            <span class="skill-pct">72%</span>
+          </li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3 class="skill-heading">Soft Skills</h3>
+        <div class="soft-pills">
+          <span class="soft-pill">Communication</span>
+          <span class="soft-pill">Teamwork</span>
+          <span class="soft-pill">Problem Solving</span>
+          <span class="soft-pill">Adaptability</span>
+          <span class="soft-pill">Reliability</span>
+          <span class="soft-pill">Organization</span>
+          <span class="soft-pill">Time Management</span>
+          <span class="soft-pill">Attention to Detail</span>
+          <span class="soft-pill">Mentorship</span>
+          <span class="soft-pill">Stress Management</span>
+          <span class="soft-pill">Critical Thinking</span>
+          <span class="soft-pill">Fast Learner</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Toolbox -->
+    <span class="section-label reveal">🔧 Stack</span>
+    <h2 class="section-title reveal">Toolbox</h2>
+    <p class="section-sub reveal">Languages, frameworks &amp; libraries I use regularly.</p>
+    <div class="toolbox-grid reveal" role="list">
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🐍</span><span>Python</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">⚙️</span><span>C / C++</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">☕</span><span>Java</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">#️⃣</span><span>C#</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🌐</span><span>HTML</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🎨</span><span>CSS</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🧩</span><span>JavaScript</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🔶</span><span>TensorFlow</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🧬</span><span>Keras</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🐼</span><span>Pandas</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🔢</span><span>NumPy</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">📈</span><span>Matplotlib</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🌊</span><span>Seaborn</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🦄</span><span>Django</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🔧</span><span>Git</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🐱</span><span>GitHub</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">📡</span><span>MQTT</span></div>
+      <div class="tool-tile" role="listitem"><span class="tool-icon">🗄️</span><span>SQL</span></div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Achievements -->
+    <span class="section-label reveal">🏅 Recognition</span>
+    <h2 class="section-title reveal">Accomplishments &amp; Involvement</h2>
+    <p class="section-sub reveal">Recognitions and roles that highlight my journey.</p>
+    <div class="achieve-grid">
+      <div class="achieve-card reveal">
+        <div class="achieve-icon">📜</div>
+        <div class="achieve-title">Course Certificates</div>
+        <ul class="mini-list">
+          <li><strong>Intro to Artificial Intelligence</strong><br /><span class="mini-meta">Simplilearn</span></li>
+          <li><strong>Introduction to SQL</strong><br /><span class="mini-meta">Simplilearn</span></li>
+        </ul>
+        <a href="https://simpli-web.app.link/e/ICAj2RHFaOb" target="_blank" rel="noopener noreferrer" class="btn-sm-link">AI Certificate ↗</a>
+        <a href="https://simpli-web.app.link/e/ABfQUECiVRb" target="_blank" rel="noopener noreferrer" class="btn-sm-link">SQL Certificate ↗</a>
+      </div>
+      <div class="achieve-card reveal reveal-delay-1">
+        <div class="achieve-icon">🎭</div>
+        <div class="achieve-title">Clubs &amp; Roles</div>
+        <ul class="mini-list">
+          <li><strong>Organizing Secretary</strong><br /><span class="mini-meta">Ideal College Debating Club (2021–22)</span></li>
+          <li><strong>General Secretary</strong><br /><span class="mini-meta">Motijheel Model Debating Society (2019–21)</span></li>
+          <li><strong>Volunteer</strong><br /><span class="mini-meta">Motijheel Model Science Club (2017–18)</span></li>
+        </ul>
+      </div>
+      <div class="achieve-card reveal reveal-delay-2">
+        <div class="achieve-icon">🏅</div>
+        <div class="achieve-title">Achievements</div>
+        <ul class="mini-list">
+          <li>
+            <strong>Excellent Performance Award</strong><br />
+            <span class="mini-meta">Science Poster Contest | Spring 2022–23, AIUB</span>
+          </li>
+        </ul>
+        <a href="assets/certificate/poster_contest_2022_23.pdf" target="_blank" rel="noopener noreferrer" class="btn-sm-link">Certificate ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ EDUCATION ═══════════════ -->
+<section id="education" aria-labelledby="edu-heading">
+  <div class="container">
+    <span class="section-label reveal">🎓 Academic Journey</span>
+    <h2 class="section-title reveal" id="edu-heading">Education</h2>
+    <p class="section-sub reveal">Institutions that shaped my technical foundation.</p>
+
+    <div class="edu-timeline">
+
+      <!-- AIUB -->
+      <div class="edu-item reveal">
+        <div class="edu-card">
+          <img class="edu-logo" src="assets/edu/uni.jpg" alt="AIUB logo" loading="lazy" decoding="async" width="58" height="58" />
+          <div class="edu-content">
+            <div class="edu-inst">American International University Bangladesh (AIUB)</div>
+            <div class="edu-meta">
+              <h3 class="edu-degree">BSc, Computer Science &amp; Engineering</h3>
+              <span class="edu-badge running">Running</span>
+            </div>
+            <p class="edu-desc">Pursuing a full-time degree with focus on algorithms, data science, machine learning, and software engineering. Active research interest in medical imaging and AI-based solutions. Achieved Excellent Performance in Science Poster Contest Spring 2022–23.</p>
+            <ul class="edu-tags">
+              <li class="edu-tag">Data Structures</li>
+              <li class="edu-tag">Algorithms</li>
+              <li class="edu-tag">Machine Learning</li>
+              <li class="edu-tag">Deep Learning</li>
+              <li class="edu-tag">AI Research</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ideal College -->
+      <div class="edu-item reveal">
+        <div class="edu-card">
+          <img class="edu-logo" src="assets/edu/college.png" alt="Ideal College logo" loading="lazy" decoding="async" width="58" height="58" />
+          <div class="edu-content">
+            <div class="edu-inst">Ideal College</div>
+            <div class="edu-meta">
+              <h3 class="edu-degree">HSC, Science</h3>
+              <span class="edu-badge year">2021</span>
+            </div>
+            <p class="edu-desc">Completed Higher Secondary with a focus on core science subjects. Engaged in advanced lab work and problem-solving exercises; served as Organizing Secretary of the College Debating Club.</p>
+            <ul class="edu-tags">
+              <li class="edu-tag">Physics</li>
+              <li class="edu-tag">Chemistry</li>
+              <li class="edu-tag">Mathematics</li>
+              <li class="edu-tag">Debate Club</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motijheel -->
+      <div class="edu-item reveal">
+        <div class="edu-card">
+          <img class="edu-logo" src="assets/edu/school1.jpg" alt="Motijheel Model School logo" loading="lazy" decoding="async" width="58" height="58" />
+          <div class="edu-content">
+            <div class="edu-inst">Motijheel Model School &amp; College</div>
+            <div class="edu-meta">
+              <h3 class="edu-degree">SSC, Science</h3>
+              <span class="edu-badge year">2019</span>
+            </div>
+            <p class="edu-desc">Completed Secondary School with strong marks in science. Active in extracurriculars including the Debate Club (General Secretary), Science Club volunteer, and community events.</p>
+            <ul class="edu-tags">
+              <li class="edu-tag">General Science</li>
+              <li class="edu-tag">Debate Club</li>
+              <li class="edu-tag">Science Club</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<section id="projects" aria-labelledby="proj-heading">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-label reveal">🚀 Work</span>
+      <h2 class="section-title reveal" id="proj-heading">Projects</h2>
+      <p class="section-sub reveal">A curated selection of builds across ML, systems, and software engineering.</p>
+    </div>
+
+    <div class="filter-row reveal" role="group" aria-label="Filter projects by language">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
+      <button class="filter-btn" data-filter="r" aria-pressed="false">R</button>
+      <button class="filter-btn" data-filter="cpp" aria-pressed="false">C++</button>
+      <button class="filter-btn" data-filter="csharp" aria-pressed="false">C#</button>
+      <button class="filter-btn" data-filter="java" aria-pressed="false">Java</button>
+      <button class="filter-btn" data-filter="php" aria-pressed="false">PHP</button>
+    </div>
+    <span class="filter-summary" id="filterSummary" aria-live="polite">Showing all 13 projects</span>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card reveal" data-category="csharp">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project13.webp" alt="TaskSyncPro Project" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Enterprise</span>
+        <div class="project-body">
+          <div class="project-lang">C#</div>
+          <h3 class="project-name">TaskSyncPro</h3>
+          <p class="project-desc">Enterprise task management system with role-based access control, 3-tier architecture, and efficient workflow tracking for teams.</p>
+          <div class="project-tags"><span class="project-tag">#enterprise</span><span class="project-tag">#3-tier</span><span class="project-tag">#rbac</span><span class="project-tag">#dotnet</span></div>
+          <a href="https://github.com/basharulalammazu/TaskSyncPro" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="r">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project12.webp" alt="QuantumHealthPulse Preprocessing" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">R</div>
+          <h3 class="project-name">QuantumHealthPulse Preprocessing</h3>
+          <p class="project-desc">Robust R-based data preprocessing pipeline for heart disease prediction-cleaning, transformation, normalization, outlier detection, and dataset balancing.</p>
+          <div class="project-tags"><span class="project-tag">#r</span><span class="project-tag">#data-preprocessing</span><span class="project-tag">#healthcare</span></div>
+          <a href="https://github.com/basharulalammazu/HeartHealth-DataPreprocessing-R" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="r">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project11.webp" alt="Aljazeera News Analysis" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">R</div>
+          <h3 class="project-name">Aljazeera News Analysis</h3>
+          <p class="project-desc">NLP-based topic modeling and sentiment analysis on Aljazeera news data using LDA and VADER for real-time insight extraction.</p>
+          <div class="project-tags"><span class="project-tag">#nlp</span><span class="project-tag">#lda</span><span class="project-tag">#topic-modeling</span></div>
+          <a href="https://github.com/basharulalammazu/Aljazeera-News-Analysis" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="cpp">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project10.webp" alt="SkyQuest Arcade OpenGL" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">C++</div>
+          <h3 class="project-name">SkyQuest Arcade-OpenGL</h3>
+          <p class="project-desc">2D arcade game in C++ with OpenGL GLUT, featuring dynamic gameplay mechanics and three progressively challenging levels.</p>
+          <div class="project-tags"><span class="project-tag">#opengl</span><span class="project-tag">#glut</span><span class="project-tag">#game-dev</span></div>
+          <a href="https://github.com/basharulalammazu/SkyQuest-Arcade-OpenGL" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="php">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project9.webp" alt="Green Tea Coffee Shop" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">PHP</div>
+          <h3 class="project-name">Green Tea Coffee Shop</h3>
+          <p class="project-desc">Responsive e-commerce website with sleek design, seamless shopping cart flow, and efficient admin product management panel.</p>
+          <div class="project-tags"><span class="project-tag">#php</span><span class="project-tag">#mysql</span><span class="project-tag">#ecommerce</span></div>
+          <a href="https://github.com/basharulalammazu/Green-Tea-Coffee-Shop" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project8.webp" alt="Loan Eligibility Prediction" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python</div>
+          <h3 class="project-name">Loan Eligibility Prediction</h3>
+          <p class="project-desc">ML-powered system predicting loan eligibility using Decision Tree and Naive Bayes classifiers with robust missing-value handling.</p>
+          <div class="project-tags"><span class="project-tag">#ml</span><span class="project-tag">#scikit-learn</span><span class="project-tag">#prediction</span></div>
+          <a href="https://github.com/basharulalammazu/Loan-Eligibility-Prediction" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project7.webp" alt="Movie Recommendation System" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python</div>
+          <h3 class="project-name">Movie Recommendation System</h3>
+          <p class="project-desc">Uses TF-IDF and Cosine Similarity to suggest films based on genres, keywords, cast, and user favorite history.</p>
+          <div class="project-tags"><span class="project-tag">#nlp</span><span class="project-tag">#tf-idf</span><span class="project-tag">#recommender</span></div>
+          <a href="https://github.com/basharulalammazu/Movie-Recomedation-System" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project6.webp" alt="Tic Tac Toe" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python</div>
+          <h3 class="project-name">Tic Tac Toe | AI Opponent</h3>
+          <p class="project-desc">Classic game featuring player vs. AI with adjustable difficulty levels, registration system, and win/loss statistics tracking.</p>
+          <div class="project-tags"><span class="project-tag">#ai-opponent</span><span class="project-tag">#minimax</span><span class="project-tag">#game</span></div>
+          <a href="https://github.com/basharulalammazu/Tic-Tac-Toe" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="csharp">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project5.webp" alt="Mobile Retail Shop" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">C#</div>
+          <h3 class="project-name">Mobile Retail Shop</h3>
+          <p class="project-desc">Manages product display, inventory, shopping cart, and shop owner registration for a seamless retail user experience.</p>
+          <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#sql</span></div>
+          <a href="https://github.com/basharulalammazu/Mobile-Retail-Shop" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="csharp">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project4.webp" alt="Blood Donor App" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">C#</div>
+          <h3 class="project-name">Blood Donor</h3>
+          <p class="project-desc">App for finding blood donors and managing user info-featuring registration, a searchable donor list, and password recovery.</p>
+          <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#healthcare</span></div>
+          <a href="https://github.com/basharulalammazu/Blood-Donar" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="csharp">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project3.webp" alt="AIUB Course Suggestion System" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">C#</div>
+          <h3 class="project-name">AIUB Course Suggestion System</h3>
+          <p class="project-desc">Recommends next-semester courses based on completed coursework, with student input interface and downloadable output.</p>
+          <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#academic</span></div>
+          <a href="https://github.com/basharulalammazu/AIUB-Offered-Courses" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="csharp">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project2.webp" alt="VOVO Bus Management" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">C#</div>
+          <h3 class="project-name">VOVO</h3>
+          <p class="project-desc">C# / SQL .NET app managing a bus transportation system-customer registration, verification, booking, and admin panel.</p>
+          <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#transport</span></div>
+          <a href="https://github.com/basharulalammazu/VOVO" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="java">
+        <div class="project-img-wrap">
+          <img src="assets/projects/project1.webp" alt="Prestige Motor Sales" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge">Open Source</span>
+        <div class="project-body">
+          <div class="project-lang">Java</div>
+          <h3 class="project-name">Prestige Motor Sales</h3>
+          <p class="project-desc">Java Windows app for managing car inventory with admin and customer management roles; data stored in text-file persistence.</p>
+          <div class="project-tags"><span class="project-tag">#java</span><span class="project-tag">#inventory</span><span class="project-tag">#desktop-app</span></div>
+          <a href="https://github.com/basharulalammazu/Prestige-Motor-Sales" target="_blank" rel="noopener noreferrer" class="project-btn">
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+          </a>
+        </div>
+      </article>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+<section id="experience" aria-labelledby="exp-heading">
+  <div class="container">
+    <span class="section-label reveal">💼 Work History</span>
+    <h2 class="section-title reveal" id="exp-heading">Experience</h2>
+    <p class="section-sub reveal">A record of my professional journey and contributions.</p>
+    <div id="experienceList" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ PUBLICATIONS ═══════════════ -->
+<section id="publications" aria-labelledby="pub-heading">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-label reveal">📄 Research</span>
+      <h2 class="section-title reveal" id="pub-heading">Publications</h2>
+      <p class="section-sub reveal">Academic work contributing to the field of medical AI.</p>
+    </div>
+
+    <div class="pub-card reveal">
+      <div class="pub-icon">🧠</div>
+      <div class="pub-result-badge">
+        <span>✦</span> 95.33% Validation Accuracy
+      </div>
+      <h3 class="pub-title">
+        Transfer Learning-Based Fusion of MobileNetV2 and EfficientNetB0<br>
+        for Multi-Class Brain Tumor Diagnosis
+      </h3>
+      <p class="pub-meta">Bachelor Thesis &nbsp;·&nbsp; American International University Bangladesh &nbsp;·&nbsp; 2026</p>
+      <p class="pub-abstract">
+        This research proposes a deep learning-based fusion model integrating MobileNetV2 and EfficientNetB0
+        for multi-class brain tumor diagnosis using MRI images. The model leverages MobileNetV2's lightweight
+        efficiency and EfficientNetB0's representational strength to achieve robust feature extraction while
+        maintaining computational feasibility. The fusion approach achieved
+        <strong class="pub-accent">95.33% validation accuracy</strong>
+        with precision, recall, and F1-score of 96%, demonstrating strong performance for real-world clinical applications.
+      </p>
+      <ul class="pub-tags">
+        <li class="pub-tag">Deep Learning</li>
+        <li class="pub-tag">Transfer Learning</li>
+        <li class="pub-tag">MobileNetV2</li>
+        <li class="pub-tag">EfficientNetB0</li>
+        <li class="pub-tag">Medical Imaging</li>
+        <li class="pub-tag">Brain Tumor Classification</li>
+        <li class="pub-tag">MRI Analysis</li>
+      </ul>
+      <p class="pub-status">✦ Completed &nbsp;·&nbsp; Under Review for Journal Submission</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <span class="section-label reveal">📬 Get in Touch</span>
+    <h2 class="section-title reveal" id="contact-heading">Contact Me</h2>
+
+    <div class="contact-card reveal">
+      <p class="contact-tagline">
+        I'm open to internships, research collaborations, and full-time opportunities.<br>
+        Feel free to reach out. I usually respond within 24 hours.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:basharulalam6@gmail.com"
+           class="contact-link primary-link"
+           aria-label="Send email to Basharul">
+          <img src="assets/icons/mail_dark.png" alt="" aria-hidden="true" width="19" height="19" />
+          basharulalam6@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/basharulalammazu/" target="_blank" rel="noopener noreferrer"
+           class="contact-link" aria-label="View LinkedIn profile">
+          <img src="assets/icons/linkedin.png" alt="" aria-hidden="true" width="19" height="19" class="icon-light" />
+          <img src="assets/icons/linkedin_dark.png" alt="" aria-hidden="true" width="19" height="19" class="icon-dark" />
+          LinkedIn
+        </a>
+        <a href="https://github.com/basharulalammazu/" target="_blank" rel="noopener noreferrer"
+           class="contact-link" aria-label="View GitHub profile">
+          <img src="assets/icons/github.png" alt="" aria-hidden="true" width="19" height="19" class="icon-light" />
+          <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" width="19" height="19" class="icon-dark" />
+          GitHub
+        </a>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer"
+           class="contact-link" aria-label="Download resume">
+          <img src="assets/icons/cv.png" alt="" aria-hidden="true" width="19" height="19" class="icon-light" />
+          <img src="assets/icons/cv_dark.png" alt="" aria-hidden="true" width="19" height="19" class="icon-dark" />
+          Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Basharul - Alam - Mazu</span>
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+      ↑ Back to top
+    </button>
+    <p>© <span id="year"></span> Basharul - Alam - Mazu. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

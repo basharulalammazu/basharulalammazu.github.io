@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Software Engineer Intern",
+    "company": "Datasoft Manufacturing & Assembly Inc. (DMA)",
+    "logo": "assets/company/DMA.gif",
+    "status": "Completed", 
+    "employmentType": "Full-time",
+    "engagementType": "Internship",
+    "location": "Dhaka, Bangladesh",
+    "workMode": "On-site",
+    "startDate": "2026-02",
+    "endDate": "2026-05",
+    "description": "Contribute to the development of intelligent enterprise systems using Django and Python. Work on AI/ML-based solutions, backend API development, and IoT data integration. Involved in building real-time data processing systems for manufacturing and agricultural monitoring, ensuring scalable architecture and efficient performance.",
+    "projects": [
+      {
+        "title": "Smart Dustbin Management System",
+        "description": "Intelligent waste monitoring with real-time tracking and data analytics."
+      },
+      {
+        "title": "Cow Weight & Identification System",
+        "description": "AI-based livestock identification and weight estimation using ML techniques."
+      },
+      {
+        "title": "MoreFish",
+        "description": "Sensor-based aquaculture monitoring with ML for water quality prediction (NH4 estimation)."
+      }
+    ],
+    "skills": [
+      "Python",
+      "Django",
+      "Machine Learning",
+      "Deep Learning",
+      "IoT Systems",
+      "API Development",
+      "MQTT",
+      "Celery",
+      "SQL",
+      "Agile"
+    ]
+  }
+]
