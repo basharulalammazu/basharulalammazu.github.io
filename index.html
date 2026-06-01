@@ -462,6 +462,9 @@
   </div>
 </section>
 
+
+
+
 <!-- ═══════════════ PROJECTS ═══════════════ -->
 <section id="projects" aria-labelledby="proj-heading">
   <div class="container">
@@ -479,14 +482,100 @@
       <button class="filter-btn" data-filter="csharp" aria-pressed="false">C#</button>
       <button class="filter-btn" data-filter="java" aria-pressed="false">Java</button>
       <button class="filter-btn" data-filter="php" aria-pressed="false">PHP</button>
+      <button class="filter-btn" data-filter="industry" aria-pressed="false">🔒 Industry</button>
     </div>
-    <span class="filter-summary" id="filterSummary" aria-live="polite">Showing all 13 projects</span>
+    <span class="filter-summary" id="filterSummary" aria-live="polite">Showing all 17 projects</span>
 
     <div class="projects-grid" id="projectsGrid">
+      <article class="project-card reveal" data-category="industry python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/17_cow_weight.webp" alt="Cow Weight Estimation" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge" style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#e0c97f;">🔒 Closed Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python · PyTorch · Computer Vision</div>
+          <h3 class="project-name">Cow Weight Estimator</h3>
+          <p class="project-desc">Non-invasive AI system for estimating cattle body weight from images using deep learning regression models. Eliminates physical weighing stress, supporting scalable herd management and precision livestock farming through automated visual weight assessment.</p>
+          <div class="project-tags">
+            <span class="project-tag">#regression</span>
+            <span class="project-tag">#computer-vision</span>
+            <span class="project-tag">#livestock</span>
+            <span class="project-tag">#deep-learning</span>
+          </div>
+          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/cow_weight.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+            📄 Case Study
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="industry python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/16_smart_dustbin.webp" alt="Smart Dustbin | AI Dustbin Monitoring" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge" style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#e0c97f;">🔒 Closed Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python · PyTorch · Django</div>
+          <h3 class="project-name">Smart Dustbin</h3>
+          <p class="project-desc">Enterprise AI-powered dustbin fill-level monitoring system for 12+ railway stations. Built the EfficientNetV2 ML model, curated a 5,000+ image dataset, and engineered the full Django + Celery backend. Achieves 94% inference accuracy with 65ms latency.</p>
+          <div class="project-tags">
+            <span class="project-tag">#computer-vision</span>
+            <span class="project-tag">#efficientnetv2</span>
+            <span class="project-tag">#celery</span>
+            <span class="project-tag">#django</span>
+            <span class="project-tag">#iot</span>
+          </div>
+          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/dustbin_fill_level_monitoring.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+            📄 Case Study
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="industry python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/15_cow_muzzle.webp" alt="Cow Biometrics | Livestock Identification" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge" style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#e0c97f;">🔒 Closed Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python · PyTorch · YOLOv8</div>
+          <h3 class="project-name">Cow Biometrics</h3>
+          <p class="project-desc">AI-powered cattle identification system using muzzle biometrics. Integrated YOLOv8 for 98.7% detection accuracy and trained EfficientNetV2 classifier achieving 92.5% identification accuracy across 150+ unique animals with sub-50ms inference.</p>
+          <div class="project-tags">
+            <span class="project-tag">#biometrics</span>
+            <span class="project-tag">#yolov8</span>
+            <span class="project-tag">#transfer-learning</span>
+            <span class="project-tag">#livestock</span>
+          </div>
+          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/cow_biomatrics.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+            📄 Case Study
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="industry python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/14_more_fish.webp" alt="MoreFish | Aquaculture Monitoring" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge" style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#e0c97f;">🔒 Closed Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python · Django · MQTT · PyTorch</div>
+          <h3 class="project-name">MoreFish</h3>
+          <p class="project-desc">AI-powered aquaculture monitoring platform for real-time water quality tracking. Engineered MQTT IoT ingestion pipeline, ML inference for dissolved oxygen and ammonium prediction (scikit-learn + PyTorch), and Celery-based background processing with FCM push alerts.</p>
+          <div class="project-tags">
+            <span class="project-tag">#iot</span>
+            <span class="project-tag">#mqtt</span>
+            <span class="project-tag">#ml-inference</span>
+            <span class="project-tag">#aquaculture</span>
+            <span class="project-tag">#celery</span>
+          </div>
+          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/more_fish.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+            📄 Case Study
+          </a>
+        </div>
+      </article>
 
       <article class="project-card reveal" data-category="csharp">
         <div class="project-img-wrap">
-          <img src="assets/projects/project13.webp" alt="TaskSyncPro Project" loading="lazy" decoding="async" />
+          <img src="assets/projects/13_task_sync_pro.webp" alt="TaskSyncPro Project" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Enterprise</span>
         <div class="project-body">
@@ -503,7 +592,7 @@
 
       <article class="project-card reveal" data-category="r">
         <div class="project-img-wrap">
-          <img src="assets/projects/project12.webp" alt="QuantumHealthPulse Preprocessing" loading="lazy" decoding="async" />
+          <img src="assets/projects/12_quantum_health_pulse_preprocessing.webp" alt="QuantumHealthPulse Preprocessing" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -520,7 +609,7 @@
 
       <article class="project-card reveal" data-category="r">
         <div class="project-img-wrap">
-          <img src="assets/projects/project11.webp" alt="Aljazeera News Analysis" loading="lazy" decoding="async" />
+          <img src="assets/projects/11_aljazeera_news_analysis.webp" alt="Aljazeera News Analysis" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -537,7 +626,7 @@
 
       <article class="project-card reveal" data-category="cpp">
         <div class="project-img-wrap">
-          <img src="assets/projects/project10.webp" alt="SkyQuest Arcade OpenGL" loading="lazy" decoding="async" />
+          <img src="assets/projects/10_skyquest_arcade_opengl.webp" alt="SkyQuest Arcade OpenGL" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -554,7 +643,7 @@
 
       <article class="project-card reveal" data-category="php">
         <div class="project-img-wrap">
-          <img src="assets/projects/project9.webp" alt="Green Tea Coffee Shop" loading="lazy" decoding="async" />
+          <img src="assets/projects/9_green_tea_coffee_shop.webp" alt="Green Tea Coffee Shop" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -571,7 +660,7 @@
 
       <article class="project-card reveal" data-category="python">
         <div class="project-img-wrap">
-          <img src="assets/projects/project8.webp" alt="Loan Eligibility Prediction" loading="lazy" decoding="async" />
+          <img src="assets/projects/8_loan_eligibility_prediction.webp" alt="Loan Eligibility Prediction" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -588,7 +677,7 @@
 
       <article class="project-card reveal" data-category="python">
         <div class="project-img-wrap">
-          <img src="assets/projects/project7.webp" alt="Movie Recommendation System" loading="lazy" decoding="async" />
+          <img src="assets/projects/7_movie_recommendation_system.webp" alt="Movie Recommendation System" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -605,7 +694,7 @@
 
       <article class="project-card reveal" data-category="python">
         <div class="project-img-wrap">
-          <img src="assets/projects/project6.webp" alt="Tic Tac Toe" loading="lazy" decoding="async" />
+          <img src="assets/projects/6_tic_tac_toe.webp" alt="Tic Tac Toe" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -622,7 +711,7 @@
 
       <article class="project-card reveal" data-category="csharp">
         <div class="project-img-wrap">
-          <img src="assets/projects/project5.webp" alt="Mobile Retail Shop" loading="lazy" decoding="async" />
+          <img src="assets/projects/5_mobile_retail_shop.webp" alt="Mobile Retail Shop" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -639,7 +728,7 @@
 
       <article class="project-card reveal" data-category="csharp">
         <div class="project-img-wrap">
-          <img src="assets/projects/project4.webp" alt="Blood Donor App" loading="lazy" decoding="async" />
+          <img src="assets/projects/4_blood_donor_app.webp" alt="Blood Donor App" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -656,7 +745,7 @@
 
       <article class="project-card reveal" data-category="csharp">
         <div class="project-img-wrap">
-          <img src="assets/projects/project3.webp" alt="AIUB Course Suggestion System" loading="lazy" decoding="async" />
+          <img src="assets/projects/3_aiub_course_suggestion_system.webp" alt="AIUB Course Suggestion System" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -673,7 +762,7 @@
 
       <article class="project-card reveal" data-category="csharp">
         <div class="project-img-wrap">
-          <img src="assets/projects/project2.webp" alt="VOVO Bus Management" loading="lazy" decoding="async" />
+          <img src="assets/projects/2_vovo_bus_management_system.webp" alt="VOVO Bus Management" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -690,7 +779,7 @@
 
       <article class="project-card reveal" data-category="java">
         <div class="project-img-wrap">
-          <img src="assets/projects/project1.webp" alt="Prestige Motor Sales" loading="lazy" decoding="async" />
+          <img src="assets/projects/1_prestige_motor_sales.webp" alt="Prestige Motor Sales" loading="lazy" decoding="async" />
         </div>
         <span class="project-card-badge">Open Source</span>
         <div class="project-body">
@@ -705,8 +794,7 @@
         </div>
       </article>
 
-    </div><!-- /projects-grid -->
-  </div>
+    </div></div>
 </section>
 
 <!-- ═══════════════ EXPERIENCE ═══════════════ -->

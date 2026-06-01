@@ -437,3 +437,156 @@
 
 
 })();
+
+
+
+
+
+
+
+  /* ═══════════════════════════════════════════
+
+     CLOSED-SOURCE INDUSTRY DOCS — Modal Viewer
+
+  ═══════════════════════════════════════════ */
+
+  (function () {
+
+    var modal       = document.getElementById('docModal');
+
+    var backdrop    = document.getElementById('docModalBackdrop');
+
+    var closeBtn    = document.getElementById('docModalClose');
+
+    var modalTitle  = document.getElementById('docModalTitle');
+
+    var loadingEl   = document.getElementById('docLoading');
+
+    var contentEl   = document.getElementById('docContent');
+
+    if (!modal) return;
+
+
+
+    function openModal(docPath, cardTitle) {
+
+      modal.hidden = false;
+
+      document.body.style.overflow = 'hidden';
+
+      modal.classList.add('is-open');
+
+      modalTitle.textContent = cardTitle || 'Documentation';
+
+      loadingEl.style.display = 'flex';
+
+      contentEl.style.display = 'none';
+
+      contentEl.innerHTML = '';
+
+
+
+      fetch(docPath)
+
+        .then(function (r) {
+
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+
+          return r.text();
+
+        })
+
+        .then(function (md) {
+
+          loadingEl.style.display = 'none';
+
+          contentEl.style.display = 'block';
+
+          if (typeof marked !== 'undefined') {
+
+            contentEl.innerHTML = marked.parse(md);
+
+          } else {
+
+            // fallback: plain pre
+
+            var pre = document.createElement('pre');
+
+            pre.style.whiteSpace = 'pre-wrap';
+
+            pre.textContent = md;
+
+            contentEl.appendChild(pre);
+
+          }
+
+          // Syntax-highlight code blocks (simple class add for CSS)
+
+          contentEl.querySelectorAll('pre code').forEach(function (block) {
+
+            block.classList.add('industry-code-block');
+
+          });
+
+        })
+
+        .catch(function (err) {
+
+          loadingEl.style.display = 'none';
+
+          contentEl.style.display = 'block';
+
+          contentEl.innerHTML = '<p style="color:var(--muted);padding:2rem;text-align:center">⚠️ Could not load documentation.<br><small>' + err.message + '</small></p>';
+
+        });
+
+    }
+
+
+
+    function closeModal() {
+
+      modal.classList.remove('is-open');
+
+      document.body.style.overflow = '';
+
+      setTimeout(function () { modal.hidden = true; }, 300);
+
+    }
+
+
+
+    // Wire up all "View Documentation" buttons
+
+    document.querySelectorAll('.industry-card[data-doc] .industry-doc-btn').forEach(function (btn) {
+
+      btn.addEventListener('click', function () {
+
+        var card = btn.closest('.industry-card');
+
+        var docPath = card.dataset.doc;
+
+        var name = card.querySelector('.industry-name') ? card.querySelector('.industry-name').textContent : 'Documentation';
+
+        openModal(docPath, name + ' — Documentation');
+
+      });
+
+    });
+
+
+
+    // Close handlers
+
+    closeBtn.addEventListener('click', closeModal);
+
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function (e) {
+
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+
+    });
+
+  })();
+
