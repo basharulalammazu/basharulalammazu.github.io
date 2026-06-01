@@ -150,7 +150,7 @@
   }
 
   /* ── Typing Effect ── */
-  var roles = ['ML Engineer', 'Deep Learning Researcher', 'Backend Developer', 'AI Enthusiast', 'CSE Student'];
+  var roles = ['ML Engineer', 'Deep Learning Researcher', 'Backend Developer', 'AI Enthusiast', 'BSc in CSE (AIUB)'];
   var roleEl = document.getElementById('typed-role');
   var cursorEl = document.querySelector('.cursor');
   if (roleEl) {
@@ -400,5 +400,40 @@
       }
     });
   });
+
+  /* ── Contact Form (Formspree) ── */
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('cfSubmit');
+      var btnText = document.getElementById('cfBtnText');
+      var successMsg = document.getElementById('cfSuccess');
+      var errorMsg = document.getElementById('cfError');
+      btn.disabled = true;
+      btnText.textContent = 'Sending...';
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      var data = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (r) {
+        if (r.ok) {
+          successMsg.style.display = 'block';
+          contactForm.reset();
+        } else {
+          errorMsg.style.display = 'block';
+        }
+      }).catch(function () {
+        errorMsg.style.display = 'block';
+      }).finally(function () {
+        btn.disabled = false;
+        btnText.textContent = 'Send Message';
+      });
+    });
+  }
+
 
 })();
