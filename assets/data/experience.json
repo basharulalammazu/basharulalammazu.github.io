@@ -1,5 +1,29 @@
 [
   {
+    "title": "Software Engineer - AI/ML & Backend",
+    "company": "Datasoft Manufacturing & Assembly Inc. Ltd",
+    "logo": "assets/company/DMA.gif",
+    "status": "Active", 
+    "employmentType": "Full-time",
+    "location": "Dhaka, Bangladesh",
+    "workMode": "On-site",
+    "startDate": "2026-05",
+    "description": "Building scalable software solutions and engineering robust systems. Developing web applications, backend services, and intelligent systems with focus on performance and code quality.",
+    "projects": [],
+    "skills": [
+      "Python",
+      "Django",
+      "Machine Learning",
+      "Deep Learning",
+      "IoT Systems",
+      "API Development",
+      "MQTT",
+      "Celery",
+      "SQL",
+      "Agile"
+    ]
+  },
+  {
     "title": "Software Engineer Intern",
     "company": "Datasoft Manufacturing & Assembly Inc. (DMA)",
     "logo": "assets/company/DMA.gif",
