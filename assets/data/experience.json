@@ -1,13 +1,31 @@
 [
+    {
+    "title": "LLM Engineer",
+    "company": "Social Mavericks Digital",
+    "logo": "assets/company/SocialMavericks.png",
+    "status": "Active",
+    "employmentType": "Part-time",
+    "location": "Dhaka, Bangladesh",
+    "workMode": "Remote",
+    "startDate": "2026-06",
+    "description": "Working on large language model integrations and AI-driven solutions in a remote capacity.",
+    "projects": [],
+    "skills": [
+      "LLMs",
+      "Python",
+      "Prompt Engineering",
+      "AI Integration"
+    ]
+  },
   {
-    "title": "Software Engineer - AI/ML & Backend",
+    "title": "Software Engineer – AI/ML & Backend",
     "company": "Datasoft Manufacturing & Assembly Inc. Ltd",
     "logo": "assets/company/DMA.gif",
-    "status": "Active", 
+    "status": "Active",
     "employmentType": "Full-time",
     "location": "Dhaka, Bangladesh",
     "workMode": "On-site",
-    "startDate": "2026-05",
+    "startDate": "2026-06",
     "description": "Building scalable software solutions and engineering robust systems. Developing web applications, backend services, and intelligent systems with focus on performance and code quality.",
     "projects": [],
     "skills": [
@@ -27,14 +45,13 @@
     "title": "Software Engineer Intern",
     "company": "Datasoft Manufacturing & Assembly Inc. (DMA)",
     "logo": "assets/company/DMA.gif",
-    "status": "Completed", 
-    "employmentType": "Full-time",
-    "engagementType": "Internship",
+    "status": "Completed",
+    "employmentType": "Internship",
     "location": "Dhaka, Bangladesh",
     "workMode": "On-site",
     "startDate": "2026-02",
     "endDate": "2026-05",
-    "description": "Contribute to the development of intelligent enterprise systems using Django and Python. Work on AI/ML-based solutions, backend API development, and IoT data integration. Involved in building real-time data processing systems for manufacturing and agricultural monitoring, ensuring scalable architecture and efficient performance.",
+    "description": "Engineered and deployed production-grade AI/ML pipelines using Deep Learning and Django, automating image-based quality inspections across manufacturing operations — cutting manual overhead and inspection time significantly. Integrated computer vision models into live backend workflows, enabling automated defect detection that previously required manual review. Optimized SQL queries and resolved critical production bugs within agile sprint cycles, improving application response time and system reliability. Established clean architecture standards (MVT, 3-Tier, REST API design) across the codebase, reducing onboarding time for new engineers and improving long-term maintainability.",
     "projects": [
       {
         "title": "Smart Dustbin Management System",
@@ -54,11 +71,9 @@
       "Django",
       "Machine Learning",
       "Deep Learning",
-      "IoT Systems",
-      "API Development",
-      "MQTT",
-      "Celery",
+      "Computer Vision",
       "SQL",
+      "REST API",
       "Agile"
     ]
   }
