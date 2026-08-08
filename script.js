@@ -232,7 +232,7 @@
     var endParts = (endValue || '').split('-');
     var start = new Date(parseInt(startParts[0], 10), parseInt(startParts[1], 10) - 1);
     var end = endValue ? new Date(parseInt(endParts[0], 10), parseInt(endParts[1], 10) - 1) : new Date();
-    var months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    var months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()) + 1;
     if (months < 1) months = 1;
     var years = Math.floor(months / 12);
     var rem = months % 12;
@@ -279,7 +279,9 @@
         '<div class="exp-company-row"><strong>' + e.company + '</strong>' +
         (e.employmentType || e.engagementType ? ' · ' + [e.employmentType, e.engagementType].filter(Boolean).join(' · ') : '') + '</div>' +
         '<div class="exp-meta-row">' +
-        '<span class="exp-meta-chip">📅 ' + dateRange + ' ' + duration + '</span>' +
+        '<span class="exp-meta-chip"' + (isActive ? ' data-start-date="' + e.startDate + '"' : '') + '>📅 ' + dateRange + ' ' +
+        (isActive ? '<span class="exp-duration">' + duration + '</span>' : duration) +
+        '</span>' +
         (e.location || e.workMode ? '<span class="exp-meta-chip">📍 ' + [e.location, e.workMode].filter(Boolean).join(' · ') + '</span>' : '') +
         '</div></div></div>' +
         '<p class="exp-desc">' + e.description + '</p>' +
@@ -303,6 +305,26 @@
     } else {
       newCards.forEach(function (el) { el.classList.add('visible'); });
     }
+
+    setupExperienceDurationUpdate();
+  }
+
+  function setupExperienceDurationUpdate() {
+    if (window._expDurationInterval) return;
+
+    function updateActiveDurations() {
+      var chips = document.querySelectorAll('.exp-meta-chip[data-start-date]');
+      chips.forEach(function (chip) {
+        var startDate = chip.getAttribute('data-start-date');
+        var durationSpan = chip.querySelector('.exp-duration');
+        if (startDate && durationSpan) {
+          durationSpan.textContent = getExperienceDuration(startDate, null);
+        }
+      });
+    }
+
+    updateActiveDurations();
+    window._expDurationInterval = setInterval(updateActiveDurations, 60000);
   }
 
   fetch('assets/data/experience.json', { cache: 'no-store' })
