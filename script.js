@@ -123,7 +123,7 @@
   /* ── Animated Counter ── */
   function animateCounter(el) {
     var target = parseFloat(el.textContent);
-    var suffix = el.textContent.replace(target, '');
+    var suffix = el.textContent.slice(String(target).length);
     var start = 0;
     var duration = 1400;
     var startTime = null;
@@ -327,8 +327,17 @@
     window._expDurationInterval = setInterval(updateActiveDurations, 60000);
   }
 
-  fetch('assets/data/experience.json', { cache: 'no-store' })
+  window.addEventListener('beforeunload', function() {
+    if (window._expDurationInterval) {
+      clearInterval(window._expDurationInterval);
+    }
+  });
+
+  var expController = new AbortController();
+  var expTimeoutId = setTimeout(function() { expController.abort(); }, 10000);
+  fetch('assets/data/experience.json', { cache: 'no-store', signal: expController.signal })
     .then(function (r) {
+      clearTimeout(expTimeoutId);
       if (!r.ok) throw new Error('Failed to load experience data');
       return r.json();
     })
@@ -336,6 +345,7 @@
       renderExperience(Array.isArray(data) ? data : data.experience);
     })
     .catch(function (err) {
+      clearTimeout(expTimeoutId);
       // Fallback: Try XMLHttpRequest for file:// protocol
       var xhr = new XMLHttpRequest();
       xhr.open('GET', 'assets/data/experience.json', true);
@@ -405,58 +415,26 @@
     }
   }
 
-  /* ── Copy email on click ── */
-  var emailLinks = document.querySelectorAll('[data-copy-email]');
-  emailLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      var email = this.dataset.copyEmail;
-      if (navigator.clipboard && email) {
-        e.preventDefault();
-        navigator.clipboard.writeText(email).then(function () {
-          var orig = link.textContent;
-          link.textContent = '✓ Copied!';
-          setTimeout(function () { link.textContent = orig; }, 1800);
-        }).catch(function () {
-          window.location.href = 'mailto:' + email;
-        });
-      }
-    });
-  });
-
-  /* ── Contact Form (Formspree) ── */
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = document.getElementById('cfSubmit');
-      var btnText = document.getElementById('cfBtnText');
-      var successMsg = document.getElementById('cfSuccess');
-      var errorMsg = document.getElementById('cfError');
-      btn.disabled = true;
-      btnText.textContent = 'Sending...';
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'none';
-      var data = new FormData(contactForm);
-      fetch(contactForm.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(function (r) {
-        if (r.ok) {
-          successMsg.style.display = 'block';
-          contactForm.reset();
-        } else {
-          errorMsg.style.display = 'block';
-        }
-      }).catch(function () {
-        errorMsg.style.display = 'block';
-      }).finally(function () {
-        btn.disabled = false;
-        btnText.textContent = 'Send Message';
-      });
+  var avatarImg = document.querySelector('.hero-avatar');
+  if (avatarImg) {
+    avatarImg.addEventListener('error', function () {
+      this.src = 'https://ui-avatars.com/api/?name=Basharul+Alam+Mazu&size=140&background=042c3e&color=fff&bold=true';
     });
   }
 
+  var classroomImg = document.querySelector('.about-img');
+  if (classroomImg) {
+    classroomImg.addEventListener('error', function () {
+      this.style.display = 'none';
+    });
+  }
+
+  var backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 })();
 
@@ -466,149 +444,5 @@
 
 
 
-  /* ═══════════════════════════════════════════
 
-     CLOSED-SOURCE INDUSTRY DOCS — Modal Viewer
-
-  ═══════════════════════════════════════════ */
-
-  (function () {
-
-    var modal       = document.getElementById('docModal');
-
-    var backdrop    = document.getElementById('docModalBackdrop');
-
-    var closeBtn    = document.getElementById('docModalClose');
-
-    var modalTitle  = document.getElementById('docModalTitle');
-
-    var loadingEl   = document.getElementById('docLoading');
-
-    var contentEl   = document.getElementById('docContent');
-
-    if (!modal) return;
-
-
-
-    function openModal(docPath, cardTitle) {
-
-      modal.hidden = false;
-
-      document.body.style.overflow = 'hidden';
-
-      modal.classList.add('is-open');
-
-      modalTitle.textContent = cardTitle || 'Documentation';
-
-      loadingEl.style.display = 'flex';
-
-      contentEl.style.display = 'none';
-
-      contentEl.innerHTML = '';
-
-
-
-      fetch(docPath)
-
-        .then(function (r) {
-
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-
-          return r.text();
-
-        })
-
-        .then(function (md) {
-
-          loadingEl.style.display = 'none';
-
-          contentEl.style.display = 'block';
-
-          if (typeof marked !== 'undefined') {
-
-            contentEl.innerHTML = marked.parse(md);
-
-          } else {
-
-            // fallback: plain pre
-
-            var pre = document.createElement('pre');
-
-            pre.style.whiteSpace = 'pre-wrap';
-
-            pre.textContent = md;
-
-            contentEl.appendChild(pre);
-
-          }
-
-          // Syntax-highlight code blocks (simple class add for CSS)
-
-          contentEl.querySelectorAll('pre code').forEach(function (block) {
-
-            block.classList.add('industry-code-block');
-
-          });
-
-        })
-
-        .catch(function (err) {
-
-          loadingEl.style.display = 'none';
-
-          contentEl.style.display = 'block';
-
-          contentEl.innerHTML = '<p style="color:var(--muted);padding:2rem;text-align:center">⚠️ Could not load documentation.<br><small>' + err.message + '</small></p>';
-
-        });
-
-    }
-
-
-
-    function closeModal() {
-
-      modal.classList.remove('is-open');
-
-      document.body.style.overflow = '';
-
-      setTimeout(function () { modal.hidden = true; }, 300);
-
-    }
-
-
-
-    // Wire up all "View Documentation" buttons
-
-    document.querySelectorAll('.industry-card[data-doc] .industry-doc-btn').forEach(function (btn) {
-
-      btn.addEventListener('click', function () {
-
-        var card = btn.closest('.industry-card');
-
-        var docPath = card.dataset.doc;
-
-        var name = card.querySelector('.industry-name') ? card.querySelector('.industry-name').textContent : 'Documentation';
-
-        openModal(docPath, name + ' — Documentation');
-
-      });
-
-    });
-
-
-
-    // Close handlers
-
-    closeBtn.addEventListener('click', closeModal);
-
-    backdrop.addEventListener('click', closeModal);
-
-    document.addEventListener('keydown', function (e) {
-
-      if (e.key === 'Escape' && !modal.hidden) closeModal();
-
-    });
-
-  })();
 
