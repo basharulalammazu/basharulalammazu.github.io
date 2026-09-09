@@ -198,7 +198,8 @@
       this.setAttribute('aria-pressed', 'true');
       var count = 0;
       projectItems.forEach(function (item) {
-        var show = filter === 'all' || item.dataset.category === filter;
+        var cats = (item.dataset.category || '').split(/\s+/);
+        var show = filter === 'all' || cats.indexOf(filter) !== -1;
         if (show) {
           item.classList.remove('hidden');
           item.style.animation = 'none';

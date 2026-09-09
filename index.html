@@ -207,7 +207,7 @@
           </div>
           <div class="metric-box reveal reveal-delay-1" role="listitem">
             <span class="metric-icon" aria-hidden="true">🚀</span>
-            <div class="metric-number">13+</div>
+            <div class="metric-number">18+</div>
             <div class="metric-label">Projects</div>
           </div>
           <div class="metric-box reveal reveal-delay-2" role="listitem">
@@ -473,20 +473,47 @@
       <p class="section-sub reveal">A curated selection of builds across ML, systems, and software engineering.</p>
     </div>
 
-    <div class="filter-row reveal" role="group" aria-label="Filter projects by language">
-      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
-      <button class="filter-btn" data-filter="r" aria-pressed="false">R</button>
-      <button class="filter-btn" data-filter="cpp" aria-pressed="false">C++</button>
-      <button class="filter-btn" data-filter="csharp" aria-pressed="false">C#</button>
-      <button class="filter-btn" data-filter="java" aria-pressed="false">Java</button>
-      <button class="filter-btn" data-filter="php" aria-pressed="false">PHP</button>
-      <button class="filter-btn" data-filter="industry" aria-pressed="false">🔒 Industry</button>
+    <div class="filter-bar reveal">
+      <div class="filter-row" role="group" aria-label="Filter projects by language">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
+        <button class="filter-btn" data-filter="r" aria-pressed="false">R</button>
+        <button class="filter-btn" data-filter="cpp" aria-pressed="false">C++</button>
+        <button class="filter-btn" data-filter="csharp" aria-pressed="false">C#</button>
+        <button class="filter-btn" data-filter="java" aria-pressed="false">Java</button>
+        <button class="filter-btn" data-filter="php" aria-pressed="false">PHP</button>
+        <button class="filter-btn" data-filter="industry" aria-pressed="false">🔒 Industry</button>
+      </div>
+      <span class="filter-summary" id="filterSummary" aria-live="polite">Showing all 18 projects</span>
     </div>
-    <span class="filter-summary" id="filterSummary" aria-live="polite">Showing all 17 projects</span>
 
     <div class="projects-grid" id="projectsGrid">
-      <article class="project-card reveal" data-category="industry">
+      <article class="project-card reveal" data-category="industry python">
+        <div class="project-img-wrap">
+          <img src="assets/projects/18_GOTI_ERP.png" alt="Goti ERP | Enterprise Resource Planning System" loading="lazy" decoding="async" />
+        </div>
+        <span class="project-card-badge badge-closed-source">🔒 Closed Source</span>
+        <div class="project-body">
+          <div class="project-lang">Python · Django REST Framework · MySQL</div>
+          <h3 class="project-name">Goti ERP</h3>
+          <p class="project-desc">Enterprise Resource Planning backend covering accounting, HR, inventory, and procurement — built as independent, domain-scoped Django services instead of one monolith. Delivered REST APIs for transactional and master-data workflows, JWT role-based access for HR, MySQL schema design and migrations, and Celery / django-crontab automation.</p>
+          <div class="project-tags">
+            <span class="project-tag">#erp</span>
+            <span class="project-tag">#django-rest-framework</span>
+            <span class="project-tag">#mysql</span>
+            <span class="project-tag">#jwt</span>
+            <span class="project-tag">#celery</span>
+            <span class="project-tag">#rest-api</span>
+          </div>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/goti_erp.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+              📄 Case Study
+            </a>
+          </footer>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-category="industry python">
         <div class="project-img-wrap">
           <img src="assets/projects/17_cow_weight.webp" alt="Cow Weight Estimation" loading="lazy" decoding="async" />
         </div>
@@ -501,13 +528,15 @@
             <span class="project-tag">#livestock</span>
             <span class="project-tag">#deep-learning</span>
           </div>
-          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/cow_weight.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
-            📄 Case Study
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/cow_weight.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+              📄 Case Study
+            </a>
+          </footer>
         </div>
       </article>
 
-      <article class="project-card reveal" data-category="industry">
+      <article class="project-card reveal" data-category="industry python">
         <div class="project-img-wrap">
           <img src="assets/projects/16_smart_dustbin.webp" alt="Smart Dustbin | AI Dustbin Monitoring" loading="lazy" decoding="async" />
         </div>
@@ -523,13 +552,15 @@
             <span class="project-tag">#django</span>
             <span class="project-tag">#iot</span>
           </div>
-          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/dustbin_fill_level_monitoring.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
-            📄 Case Study
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/dustbin_fill_level_monitoring.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+              📄 Case Study
+            </a>
+          </footer>
         </div>
       </article>
 
-      <article class="project-card reveal" data-category="industry">
+      <article class="project-card reveal" data-category="industry python">
         <div class="project-img-wrap">
           <img src="assets/projects/15_cow_muzzle.webp" alt="Cow Biometrics | Livestock Identification" loading="lazy" decoding="async" />
         </div>
@@ -544,13 +575,15 @@
             <span class="project-tag">#transfer-learning</span>
             <span class="project-tag">#livestock</span>
           </div>
-          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/cow_biometrics.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
-            📄 Case Study
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/cow_biometrics.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+              📄 Case Study
+            </a>
+          </footer>
         </div>
       </article>
 
-      <article class="project-card reveal" data-category="industry">
+      <article class="project-card reveal" data-category="industry python">
         <div class="project-img-wrap">
           <img src="assets/projects/14_more_fish.webp" alt="MoreFish | Aquaculture Monitoring" loading="lazy" decoding="async" />
         </div>
@@ -566,9 +599,11 @@
             <span class="project-tag">#aquaculture</span>
             <span class="project-tag">#celery</span>
           </div>
-          <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/more_fish.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
-            📄 Case Study
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/basharulalammazu.github.io/blob/main/assets/docs/more_fish.md" target="_blank" rel="noopener noreferrer" class="project-btn doc-btn">
+              📄 Case Study
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -582,10 +617,12 @@
           <h3 class="project-name">TaskSyncPro</h3>
           <p class="project-desc">Enterprise task management system with role-based access control, 3-tier architecture, and efficient workflow tracking for teams.</p>
           <div class="project-tags"><span class="project-tag">#enterprise</span><span class="project-tag">#3-tier</span><span class="project-tag">#rbac</span><span class="project-tag">#dotnet</span></div>
-          <a href="https://github.com/basharulalammazu/TaskSyncPro" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/TaskSyncPro" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -599,10 +636,12 @@
           <h3 class="project-name">QuantumHealthPulse Preprocessing</h3>
           <p class="project-desc">Robust R-based data preprocessing pipeline for heart disease prediction-cleaning, transformation, normalization, outlier detection, and dataset balancing.</p>
           <div class="project-tags"><span class="project-tag">#r</span><span class="project-tag">#data-preprocessing</span><span class="project-tag">#healthcare</span></div>
-          <a href="https://github.com/basharulalammazu/HeartHealth-DataPreprocessing-R" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/HeartHealth-DataPreprocessing-R" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -616,10 +655,12 @@
           <h3 class="project-name">Aljazeera News Analysis</h3>
           <p class="project-desc">NLP-based topic modeling and sentiment analysis on Aljazeera news data using LDA and VADER for real-time insight extraction.</p>
           <div class="project-tags"><span class="project-tag">#nlp</span><span class="project-tag">#lda</span><span class="project-tag">#topic-modeling</span></div>
-          <a href="https://github.com/basharulalammazu/Aljazeera-News-Analysis" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Aljazeera-News-Analysis" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -633,10 +674,12 @@
           <h3 class="project-name">SkyQuest Arcade-OpenGL</h3>
           <p class="project-desc">2D arcade game in C++ with OpenGL GLUT, featuring dynamic gameplay mechanics and three progressively challenging levels.</p>
           <div class="project-tags"><span class="project-tag">#opengl</span><span class="project-tag">#glut</span><span class="project-tag">#game-dev</span></div>
-          <a href="https://github.com/basharulalammazu/SkyQuest-Arcade-OpenGL" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/SkyQuest-Arcade-OpenGL" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -650,10 +693,12 @@
           <h3 class="project-name">Green Tea Coffee Shop</h3>
           <p class="project-desc">Responsive e-commerce website with sleek design, seamless shopping cart flow, and efficient admin product management panel.</p>
           <div class="project-tags"><span class="project-tag">#php</span><span class="project-tag">#mysql</span><span class="project-tag">#ecommerce</span></div>
-          <a href="https://github.com/basharulalammazu/Green-Tea-Coffee-Shop" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Green-Tea-Coffee-Shop" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -667,10 +712,12 @@
           <h3 class="project-name">Loan Eligibility Prediction</h3>
           <p class="project-desc">ML-powered system predicting loan eligibility using Decision Tree and Naive Bayes classifiers with robust missing-value handling.</p>
           <div class="project-tags"><span class="project-tag">#ml</span><span class="project-tag">#scikit-learn</span><span class="project-tag">#prediction</span></div>
-          <a href="https://github.com/basharulalammazu/Loan-Eligibility-Prediction" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Loan-Eligibility-Prediction" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -684,10 +731,12 @@
           <h3 class="project-name">Movie Recommendation System</h3>
           <p class="project-desc">Uses TF-IDF and Cosine Similarity to suggest films based on genres, keywords, cast, and user favorite history.</p>
           <div class="project-tags"><span class="project-tag">#nlp</span><span class="project-tag">#tf-idf</span><span class="project-tag">#recommender</span></div>
-          <a href="https://github.com/basharulalammazu/Movie-Recomedation-System" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Movie-Recomedation-System" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -701,10 +750,12 @@
           <h3 class="project-name">Tic Tac Toe | AI Opponent</h3>
           <p class="project-desc">Classic game featuring player vs. AI with adjustable difficulty levels, registration system, and win/loss statistics tracking.</p>
           <div class="project-tags"><span class="project-tag">#ai-opponent</span><span class="project-tag">#minimax</span><span class="project-tag">#game</span></div>
-          <a href="https://github.com/basharulalammazu/Tic-Tac-Toe" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Tic-Tac-Toe" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -718,10 +769,12 @@
           <h3 class="project-name">Mobile Retail Shop</h3>
           <p class="project-desc">Manages product display, inventory, shopping cart, and shop owner registration for a seamless retail user experience.</p>
           <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#sql</span></div>
-          <a href="https://github.com/basharulalammazu/Mobile-Retail-Shop" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Mobile-Retail-Shop" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -735,10 +788,12 @@
           <h3 class="project-name">Blood Donor</h3>
           <p class="project-desc">App for finding blood donors and managing user info-featuring registration, a searchable donor list, and password recovery.</p>
           <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#healthcare</span></div>
-          <a href="https://github.com/basharulalammazu/Blood-Donar" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Blood-Donar" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -752,10 +807,12 @@
           <h3 class="project-name">AIUB Course Suggestion System</h3>
           <p class="project-desc">Recommends next-semester courses based on completed coursework, with student input interface and downloadable output.</p>
           <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#academic</span></div>
-          <a href="https://github.com/basharulalammazu/AIUB-Offered-Courses" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/AIUB-Offered-Courses" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -769,10 +826,12 @@
           <h3 class="project-name">VOVO</h3>
           <p class="project-desc">C# / SQL .NET app managing a bus transportation system-customer registration, verification, booking, and admin panel.</p>
           <div class="project-tags"><span class="project-tag">#csharp</span><span class="project-tag">#dotnet</span><span class="project-tag">#transport</span></div>
-          <a href="https://github.com/basharulalammazu/VOVO" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/VOVO" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
@@ -786,10 +845,12 @@
           <h3 class="project-name">Prestige Motor Sales</h3>
           <p class="project-desc">Java Windows app for managing car inventory with admin and customer management roles; data stored in text-file persistence.</p>
           <div class="project-tags"><span class="project-tag">#java</span><span class="project-tag">#inventory</span><span class="project-tag">#desktop-app</span></div>
-          <a href="https://github.com/basharulalammazu/Prestige-Motor-Sales" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
-            <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
-          </a>
+          <footer class="project-actions">
+            <a href="https://github.com/basharulalammazu/Prestige-Motor-Sales" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-light" />
+              <img src="assets/icons/github_dark.png" alt="" aria-hidden="true" class="icon-dark" />GitHub
+            </a>
+          </footer>
         </div>
       </article>
 
