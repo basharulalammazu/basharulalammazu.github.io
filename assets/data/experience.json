@@ -27,7 +27,12 @@
     "workMode": "On-site",
     "startDate": "2026-06",
     "description": "Building scalable software solutions and engineering robust systems. Developing web applications, backend services, and intelligent systems with focus on performance and code quality.",
-    "projects": [],
+    "projects": [
+      {
+        "title": "Goti ERP",
+        "description": "Enterprise Resource Planning backend across accounting, HR, inventory, and procurement, built as independent domain-scoped Django services with REST APIs, JWT role-based access, and Celery automation."
+      }
+    ],
     "skills": [
       "Python",
       "Django",

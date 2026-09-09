@@ -183,41 +183,91 @@
     setTimeout(type, 800);
   }
 
-  /* ── Project Filter ── */
+  /* ── Project filter + progressive reveal ── */
   var filterBtns = document.querySelectorAll('.filter-btn');
   var projectItems = document.querySelectorAll('.project-card');
   var summary = document.getElementById('filterSummary');
+  var showAllBtn = document.getElementById('projectsShowAll');
+  var projectsGrid = document.getElementById('projectsGrid');
+  var PROJECT_BATCH = 6;
+  var activeFilter = 'all';
+  var projectsExpanded = false;
+
+  function projectMatches(item, filter) {
+    if (filter === 'all') return true;
+    return (item.dataset.category || '').split(/\s+/).indexOf(filter) !== -1;
+  }
+
+  function projectCountLabel(filter, n) {
+    var noun = ' project' + (n === 1 ? '' : 's');
+    return filter === 'all' ? n + noun : n + ' ' + filter.toUpperCase() + noun;
+  }
+
+  function applyProjectView() {
+    var matched = 0, shown = 0;
+    projectItems.forEach(function (item) {
+      var visible = projectMatches(item, activeFilter);
+      if (visible) {
+        matched++;
+        if (!projectsExpanded && matched > PROJECT_BATCH) visible = false;
+      }
+      if (!visible) {
+        item.classList.add('hidden');
+        return;
+      }
+      shown++;
+      if (item.classList.contains('hidden')) {
+        // The reveal observer never fires for a card that was display:none, so
+        // settle it into its revealed state before it is displayed again.
+        item.classList.add('visible');
+        item.classList.remove('hidden');
+      }
+    });
+
+    if (summary) {
+      summary.textContent = shown < matched
+        ? 'Showing ' + shown + ' of ' + projectCountLabel(activeFilter, matched)
+        : (activeFilter === 'all' ? 'Showing all ' : 'Showing ') + projectCountLabel(activeFilter, matched);
+    }
+
+    if (showAllBtn) {
+      var hasMore = matched > PROJECT_BATCH;
+      showAllBtn.hidden = !hasMore;
+      if (hasMore) {
+        showAllBtn.textContent = projectsExpanded
+          ? 'Show less'
+          : 'Show all ' + projectCountLabel(activeFilter, matched);
+        showAllBtn.setAttribute('aria-expanded', projectsExpanded ? 'true' : 'false');
+      }
+    }
+  }
+
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var filter = this.dataset.filter;
       filterBtns.forEach(function (b) {
         b.classList.remove('active');
         b.setAttribute('aria-pressed', 'false');
       });
       this.classList.add('active');
       this.setAttribute('aria-pressed', 'true');
-      var count = 0;
-      projectItems.forEach(function (item) {
-        var cats = (item.dataset.category || '').split(/\s+/);
-        var show = filter === 'all' || cats.indexOf(filter) !== -1;
-        if (show) {
-          item.classList.remove('hidden');
-          item.style.animation = 'none';
-          requestAnimationFrame(function () {
-            item.style.animation = '';
-          });
-          count++;
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-      if (summary) {
-        summary.textContent = filter === 'all'
-          ? 'Showing all ' + count + ' projects'
-          : 'Showing ' + count + ' ' + filter.toUpperCase() + ' project' + (count === 1 ? '' : 's');
-      }
+      activeFilter = this.dataset.filter;
+      projectsExpanded = false;
+      applyProjectView();
     });
   });
+
+  if (showAllBtn) {
+    showAllBtn.addEventListener('click', function () {
+      projectsExpanded = !projectsExpanded;
+      applyProjectView();
+      if (!projectsExpanded && projectsGrid) {
+        var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        projectsGrid.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  if (projectItems.length) applyProjectView();
 
   /* ── Experience Data ── */
   function formatMonth(value) {
@@ -382,7 +432,8 @@
   });
 
   /* ── Smooth hover tilt on project cards ── */
-  var projectCards = document.querySelectorAll('.project-card');
+  var finePointer = !window.matchMedia || window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var projectCards = finePointer ? document.querySelectorAll('.project-card') : [];
   projectCards.forEach(function (card) {
     card.addEventListener('mousemove', function (e) {
       var rect = card.getBoundingClientRect();
