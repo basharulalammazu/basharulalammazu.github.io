@@ -1,5 +1,32 @@
 [
-    {
+  {
+    "title": "Software Engineer",
+    "company": "BSSIT",
+    "logo": "assets/company/bssit.webp",
+    "status": "Active",
+    "employmentType": "Full-time",
+    "location": "Dhaka, Bangladesh",
+    "workMode": "On-site",
+    "startDate": "2026-10",
+    "description": "Developing enterprise-grade software solutions with C# and .NET, building robust backend systems, RESTful APIs, and database-driven applications. Working with ASP.NET Core, Entity Framework, LINQ, and Microsoft SQL Server to create scalable, maintainable, and performance-focused applications.",
+    "skills": [
+      "C#",
+      ".NET",
+      "ASP.NET",
+      ".NET Core",
+      "SQL",
+      "Backend Development",
+      "System Design",
+      "API Development",
+      "Microsoft SQL Server",
+      "Entity Framework",
+      "LINQ",
+      "RESTful APIs",
+      "Agile Methodologies",
+      "Version Control (Git)"
+    ]
+  },
+  {
     "title": "LLM Engineer",
     "company": "Social Mavericks Digital",
     "logo": "assets/company/SocialMavericks.png",
@@ -26,11 +53,16 @@
     "location": "Dhaka, Bangladesh",
     "workMode": "On-site",
     "startDate": "2026-06",
+    "endDate": "2026-09",
     "description": "Building scalable software solutions and engineering robust systems. Developing web applications, backend services, and intelligent systems with focus on performance and code quality.",
     "projects": [
       {
         "title": "Goti ERP",
         "description": "Enterprise Resource Planning backend across accounting, HR, inventory, and procurement, built as independent domain-scoped Django services with REST APIs, JWT role-based access, and Celery automation."
+      },
+      {
+        "title": "AC Automation, Scheduling & Manual Control",
+        "description": "Multi-store AC management platform for automated scheduling, AI-based monitoring and prediction, and manual remote control of multiple AC units using real-time sensor data, MQTT communication, and centralized dashboard controls."
       }
     ],
     "skills": [

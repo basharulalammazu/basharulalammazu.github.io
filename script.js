@@ -293,6 +293,16 @@
     if (rem) label += rem + ' mo' + (rem > 1 ? 's' : '');
     return label;
   }
+  function isExperienceAvailable(startValue) {
+    if (!startValue) return false;
+    var parts = startValue.split('-');
+    var startYear = parseInt(parts[0], 10);
+    var startMonth = parseInt(parts[1], 10);
+    var now = new Date();
+    var currentMonth = now.getFullYear() * 12 + now.getMonth() + 1;
+    var startMonthIndex = startYear * 12 + startMonth;
+    return Number.isFinite(startMonthIndex) && startMonthIndex <= currentMonth;
+  }
   function getStatusBadge(status) {
     var n = String(status || '').trim().toLowerCase();
     if (!n) return '';
@@ -305,11 +315,25 @@
   function renderExperience(entries) {
     var list = document.getElementById('experienceList');
     if (!list) return;
+    entries = (entries || []).filter(function (entry) {
+      return isExperienceAvailable(entry.startDate);
+    });
     if (!entries || !entries.length) {
       list.innerHTML = '<p class="section-sub">No experience data available.</p>';
       return;
     }
-    list.innerHTML = entries.map(function (e) {
+    var groups = [];
+    entries.forEach(function (entry) {
+      var groupKey = entry.logo || String(entry.company || '').trim().toLowerCase();
+      var group = groups.find(function (item) { return item.key === groupKey; });
+      if (!group) {
+        group = { key: groupKey, company: entry.company, logo: entry.logo, entries: [] };
+        groups.push(group);
+      }
+      group.entries.push(entry);
+    });
+
+    function renderRole(e) {
       var isActive = String(e.status || '').toLowerCase() === 'active';
       var duration = getExperienceDuration(e.startDate, isActive ? null : e.endDate);
       var dateRange = [formatMonth(e.startDate), isActive ? 'Present' : formatMonth(e.endDate)].filter(Boolean).join(' – ');
@@ -322,13 +346,12 @@
       var skills = (e.skills || []).map(function (s) {
         return '<span class="exp-skill">' + s + '</span>';
       }).join('');
-      return '<article class="exp-card reveal">' +
+      return '<div class="exp-role">' +
         '<div class="exp-header">' +
-        '<img src="' + e.logo + '" alt="' + e.company + ' logo" class="exp-logo-img" loading="lazy" width="54" height="54" />' +
         '<div class="exp-info">' +
         '<div class="exp-title-row"><h3 class="exp-job-title">' + e.title + '</h3>' + getStatusBadge(e.status) + '</div>' +
-        '<div class="exp-company-row"><strong>' + e.company + '</strong>' +
-        (e.employmentType || e.engagementType ? ' · ' + [e.employmentType, e.engagementType].filter(Boolean).join(' · ') : '') + '</div>' +
+        '<div class="exp-company-row"><strong>' + [e.employmentType, e.engagementType].filter(Boolean).join(' · ') + '</strong>' +
+        '</div>' +
         '<div class="exp-meta-row">' +
         '<span class="exp-meta-chip"' + (isActive ? ' data-start-date="' + e.startDate + '"' : '') + '>📅 ' + dateRange + ' ' +
         (isActive ? '<span class="exp-duration">' + duration + '</span>' : duration) +
@@ -338,6 +361,21 @@
         '<p class="exp-desc">' + e.description + '</p>' +
         (projects ? '<div class="exp-projects-panel"><div class="exp-projects-header">🗂 Key Projects</div>' + projects + '</div>' : '') +
         (skills ? '<div class="exp-skills-row"><span class="exp-skills-label">Stack:</span>' + skills + '</div>' : '') +
+        '</div>';
+    }
+
+    list.innerHTML = groups.map(function (group) {
+      var first = group.entries[0];
+      var roleMarkup = group.entries.length > 1
+        ? '<div class="exp-roles exp-multi-role">' + group.entries.map(renderRole).join('') + '</div>'
+        : renderRole(first);
+      return '<article class="exp-card reveal">' +
+        '<div class="exp-header exp-company-header">' +
+        '<img src="' + group.logo + '" alt="' + group.company + ' logo" class="exp-logo-img" loading="lazy" width="54" height="54" />' +
+        '<div class="exp-info"><div class="exp-company-row"><strong>' + group.company + '</strong></div>' +
+        (first.location || first.workMode ? '<div class="exp-meta-row"><span class="exp-meta-chip">📍 ' + [first.location, first.workMode].filter(Boolean).join(' · ') + '</span></div>' : '') +
+        '</div></div>' +
+        roleMarkup +
         '</article>';
     }).join('');
 
