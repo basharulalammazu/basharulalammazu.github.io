@@ -11,14 +11,28 @@
 
   /* ── Reading Progress Bar ── */
   var progressBar = document.getElementById('progress-bar');
+  var topButton = document.querySelector('.ui-top');
+  var topRing = document.querySelector('.ui-top-ring-progress');
+  var topRingLength = 2 * Math.PI * 23;
+  if (topRing) {
+    topRing.style.strokeDasharray = topRingLength;
+    topRing.style.strokeDashoffset = topRingLength;
+  }
   function updateProgress() {
-    if (!progressBar) return;
     var scrollTop = window.scrollY;
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     var pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
-    progressBar.style.width = pct + '%';
+    if (progressBar) progressBar.style.width = pct + '%';
+    if (topButton) topButton.classList.toggle('is-visible', scrollTop > 240);
+    if (topRing) topRing.style.strokeDashoffset = topRingLength - (topRingLength * pct / 100);
   }
   window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+  if (topButton) {
+    topButton.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* ── Dark Mode ── */
   var themeBtn = document.getElementById('themeToggle');
@@ -536,13 +550,6 @@
   if (classroomImg) {
     classroomImg.addEventListener('error', function () {
       this.style.display = 'none';
-    });
-  }
-
-  var backToTop = document.querySelector('.back-to-top');
-  if (backToTop) {
-    backToTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
