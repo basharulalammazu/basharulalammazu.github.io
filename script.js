@@ -388,7 +388,7 @@
         '</div>' +
         '<div class="exp-meta-row">' +
         '<span class="exp-meta-chip"' + (isActive ? ' data-start-date="' + e.startDate + '"' : '') + '>📅 ' + dateRange + ' ' +
-        (isActive ? '<span class="exp-duration">' + duration + '</span>' : duration) +
+        '<span class="exp-duration">' + duration + '</span>' +
         '</span>' +
         (e.location || e.workMode ? '<span class="exp-meta-chip">📍 ' + [e.location, e.workMode].filter(Boolean).join(' · ') + '</span>' : '') +
         '</div></div></div>' +
