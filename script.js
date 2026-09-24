@@ -121,6 +121,26 @@
   }
 
   /* ── Animated Counter ── */
+  function updateMetrics() {
+    var metricValues = {
+      languages: document.querySelectorAll('.filter-btn[data-filter]:not([data-filter="industry"])').length,
+      projects: document.querySelectorAll('.project-card').length,
+      certificates: document.querySelectorAll('.achieve-card .btn-sm-link').length,
+      years: 0
+    };
+    var yearsMetric = document.querySelector('[data-metric="years"]');
+    var startYear = yearsMetric ? parseInt(yearsMetric.dataset.startYear, 10) : NaN;
+    if (Number.isFinite(startYear)) {
+      metricValues.years = Math.max(1, new Date().getFullYear() - startYear);
+    }
+
+    document.querySelectorAll('[data-metric]').forEach(function (metric) {
+      var value = metricValues[metric.dataset.metric];
+      if (Number.isFinite(value)) metric.textContent = value + '+';
+    });
+  }
+  updateMetrics();
+
   function animateCounter(el) {
     var target = parseFloat(el.textContent);
     var suffix = el.textContent.slice(String(target).length);
